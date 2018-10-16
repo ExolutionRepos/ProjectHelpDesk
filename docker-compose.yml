@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ui.web:
+    image: ${DOCKER_REGISTRY}uiweb
+    build:
+      context: .\UI.Web
+      dockerfile: Dockerfile
