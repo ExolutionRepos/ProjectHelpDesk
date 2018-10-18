@@ -1,0 +1,5 @@
+C:\Backup\ProjectHelpDesk\Library.Class\bin\Debug\Library.Class.dll
+C:\Backup\ProjectHelpDesk\Library.Class\bin\Debug\Library.Class.pdb
+C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.csprojResolveAssemblyReference.cache
+C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.dll
+C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.pdb

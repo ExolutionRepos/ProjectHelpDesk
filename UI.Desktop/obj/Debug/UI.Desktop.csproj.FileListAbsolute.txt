@@ -1,0 +1,8 @@
+C:\Backup\ProjectHelpDesk\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Backup\ProjectHelpDesk\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Backup\ProjectHelpDesk\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
+C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.pdb
