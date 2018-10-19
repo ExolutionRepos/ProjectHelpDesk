@@ -308,3 +308,7 @@ C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\pt-br\System.Web.WebPages.Deployment.reso
 C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\GSA\UNIP\ProjectHelpDesk\UI.Web\obj\Debug\UI.Web.csproj.CopyComplete
 C:\GSA\UNIP\ProjectHelpDesk\UI.Web\obj\Debug\UI.Web.csprojAssemblyReference.cache
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\EntityFramework.dll
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\EntityFramework.SqlServer.dll
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\EntityFramework.xml
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\EntityFramework.SqlServer.xml

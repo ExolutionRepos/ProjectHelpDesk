@@ -4,7 +4,7 @@ using UI.Business.Repositories;
 
 namespace UI.Desktop
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form 
     {
         public Form1()
         {
@@ -13,8 +13,8 @@ namespace UI.Desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            usuario.CadastroUsuario();
+            RepositoryUsuario usuario = new RepositoryUsuario();
+            usuario.AdicionarioUsuario();
         }
     }
 }

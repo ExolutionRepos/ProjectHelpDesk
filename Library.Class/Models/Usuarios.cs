@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Class.Class
 {
-    [Table("tbl_Usuarios")]
+    [Table("TBL_USUARIOS_NOVO")]
     public class Usuarios : Notifiable
     {
         [Key]
@@ -49,14 +49,14 @@ namespace Library.Class.Class
             AddNotifications(endereco);
         }
 
-        
-        public Usuarios(string nome)
-        {
-            this.Nome = nome;
 
-            new AddNotifications<Usuarios>(this)
-                .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"));
-        }
+        //public Usuarios(string nome)
+        //{
+        //    this.Nome = nome;
+
+        //    new AddNotifications<Usuarios>(this)
+        //        .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"));
+        //}
 
 
     }
