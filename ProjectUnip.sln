@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Desktop", "UI.Desktop\UI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Class", "Library.Class\Library.Class.csproj", "{56C19891-4594-40E0-A9A8-9B65B2DA01D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Business", "UI.Business\UI.Business.csproj", "{C1F785AA-A6B5-4086-9FB3-09CD64D47926}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{56C19891-4594-40E0-A9A8-9B65B2DA01D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56C19891-4594-40E0-A9A8-9B65B2DA01D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56C19891-4594-40E0-A9A8-9B65B2DA01D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F785AA-A6B5-4086-9FB3-09CD64D47926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F785AA-A6B5-4086-9FB3-09CD64D47926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F785AA-A6B5-4086-9FB3-09CD64D47926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F785AA-A6B5-4086-9FB3-09CD64D47926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
