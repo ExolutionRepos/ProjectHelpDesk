@@ -137,7 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Message.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Message.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

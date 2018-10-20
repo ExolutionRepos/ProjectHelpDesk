@@ -1,18 +1,25 @@
 ﻿using Library.Class.Class;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UI.Business.Arguments.Usuario;
-using UI.Business.Repositories;
+using UI.Business.Arguments.Usuario.Request;
+using UI.Business.Arguments.Usuario.Response;
 
 namespace UI.Business.Interfaces.Repositories
 {
     interface IRepositoryUsuario
     {
-        ResponseUsuario AdicionarUsuario(RequestUsuario Request);
+        ResponseUsuarioAdi AdicionarUsuario(RequestUsuarioAdi Request);
 
-        ResponseUsuario AlterarUsuario(RequestUsuario Request);
+        ResponseBase AlterarUsuario(RequestUsuarioAlt Request);
+
+        ResponseUsuarioCon ConsultarUsuario(RequestUsuarioCon Request);
+
+        ResponseUsuarioLis ConsultarListaUsuario(RequestUsuarioLis Request);
+
+        ResponseBase DeletarUsuario(RequestUsuarioDel Request);
+
+        List<Usuarios> UConsultarUsuario(Usuarios Request);
+
+        List<Usuarios> UConsultarUsuario(RequestUsuarioCon Request);
     }
 }

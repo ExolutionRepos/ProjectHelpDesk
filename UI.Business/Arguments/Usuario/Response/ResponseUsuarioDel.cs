@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace UI.Business.Arguments.Usuario
 {
-    public class RequestUsuario
+    public class ResponseUsuarioDel
     {
-        public int iCodigoUsuario { get; set; }
-
-        public string sNome { get; set; }
-
-        public string sMensagem { get; set; }
-
     }
 }

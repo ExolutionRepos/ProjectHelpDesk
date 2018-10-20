@@ -1,4 +1,5 @@
 ﻿using Library.Class.Class;
+using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -6,19 +7,18 @@ namespace UI.Business.Persistence
 {
     class BaseContext : DbContext
     {
-
         public BaseContext(string connectionString) : base(connectionString)
         {
-
+            Database.SetInitializer<DbContext>(null);
         }
 
         public IDbSet<Usuarios> Usuarios { get; set; }
 
+        public IDbSet<Enderecos> Enderecos { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //
-            Database.SetInitializer<DbContext>(null);
-
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             //Remove exclusão em cascata
@@ -32,5 +32,7 @@ namespace UI.Business.Persistence
             modelBuilder.Properties<string>().Configure(p => p.HasMaxLength(100));
             base.OnModelCreating(modelBuilder);
         }
+
+       
     }
 }

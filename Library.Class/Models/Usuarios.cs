@@ -7,49 +7,54 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Class.Class
 {
-    [Table("TBL_USUARIOS_NOVO")]
+    [Table("TBL_USUARIOS_NOVO_LIGACAO")]
     public class Usuarios : Notifiable
     {
-        [Key]
+        [Key, ForeignKey("Endereco")]
         public int CodigoUsuario { get; private set; }
 
         public string Nome { get; private set; }
 
-        public DateTime? DataNascimento { get; private set; }
+        public DateTime ? DataNascimento { get; private set; }
 
         public string Email { get; private set; }
 
-        public string RG { get; private set; }
+        public string CPF { get; private set; }
 
-        public Enderecos Endereco { get; private set; }
-
-        public Enum.EnumSexo Sexo { get; private set; }
+        public Enum.EnumSexo.Sexo Sexo { get; private set; }
 
         public string Telefone { get; private set; }
 
         public string Celular { get; private set; }
 
-        public Usuarios(string nome, DateTime? datanascimento, string email, string rg, Enum.EnumSexo sexo,
+        public int CodigoEndereco { get; private set; }
+
+        public virtual Enderecos Endereco { get; private set; }
+
+        public Usuarios(string nome, DateTime? datanascimento, string email, string cpf, Enum.EnumSexo.Sexo sexo,
             string telefone, string celular, Enderecos endereco)
         {
             this.Nome = nome;
             this.DataNascimento = datanascimento;
             this.Email = email;
-            this.RG = rg;
+            this.CPF = cpf;
             this.Sexo = sexo;
             this.Telefone = telefone;
             this.Celular = celular;
             this.Endereco = endereco;
+            this.CodigoEndereco = endereco.CodigoEndereco;
 
             new AddNotifications<Usuarios>(this)
                 .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"))
                 .IfNotEmail(x => x.Email, Message.X0_INVALIDO.ToFormat("Email informado"))
-                .IfNullOrEmpty(x => x.Celular, Message.X0_NAO_INFORMADO.ToFormat("Celular"));
+                .IfNullOrEmpty(x => x.Celular, Message.X0_NAO_INFORMADO.ToFormat("Celular"))
+                .IfNotCpf(x => x.CPF, Message.X0_INVALIDO.ToFormat("CPF"))
+                .IfNullOrInvalidLength(x => x.Telefone, 8, 11, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Telefone", "8", "11"))
+                .IfNotDate(x => x.DataNascimento.Value.ToString(),Message.X0_INVALIDA.ToFormat("Data de Nascimento"));
 
             AddNotifications(endereco);
         }
-
-
+        
         //public Usuarios(string nome)
         //{
         //    this.Nome = nome;
@@ -58,6 +63,20 @@ namespace Library.Class.Class
         //        .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"));
         //}
 
+
+        public void AlterarUsuarios(int codigousuario, string nome)
+        {
+            this.CodigoUsuario = codigousuario;
+            this.Nome = nome;
+
+            new AddNotifications<Usuarios>(this)
+                .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"));
+        }
+
+        protected Usuarios()
+        {
+
+        }
 
     }
 

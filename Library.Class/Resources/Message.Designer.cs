@@ -22,7 +22,7 @@ namespace Library.Class.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Message {
+    public class Message {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Library.Class.Resources {
         ///   Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Library.Class.Resources.Message", typeof(Message).Assembly);
@@ -51,7 +51,7 @@ namespace Library.Class.Resources {
         ///   pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a A {0} deve ser maior ou igual a {1}..
         /// </summary>
-        internal static string A_X0_DEVE_SER_MAIOR_OU_IGUAL_A_X1 {
+        public static string A_X0_DEVE_SER_MAIOR_OU_IGUAL_A_X1 {
             get {
                 return ResourceManager.GetString("A_X0_DEVE_SER_MAIOR_OU_IGUAL_A_X1", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Dados não encontrados..
         /// </summary>
-        internal static string DADOS_NAO_ENCONTRADOS {
+        public static string DADOS_NAO_ENCONTRADOS {
             get {
                 return ResourceManager.GetString("DADOS_NAO_ENCONTRADOS", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Já existe um {0} chamado {1}..
         /// </summary>
-        internal static string JA_EXISTE_UM_X0_CHAMADO_X1 {
+        public static string JA_EXISTE_UM_X0_CHAMADO_X1 {
             get {
                 return ResourceManager.GetString("JA_EXISTE_UM_X0_CHAMADO_X1", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Já existe um {0} com a {1} {2}.
         /// </summary>
-        internal static string JA_EXISTE_UM_X0_COM_A_X1_X2 {
+        public static string JA_EXISTE_UM_X0_COM_A_X1_X2 {
             get {
                 return ResourceManager.GetString("JA_EXISTE_UM_X0_COM_A_X1_X2", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Já existe um {0} com o {1} {2}.
         /// </summary>
-        internal static string JA_EXISTE_UM_X0_COM_O_X1_X2 {
+        public static string JA_EXISTE_UM_X0_COM_O_X1_X2 {
             get {
                 return ResourceManager.GetString("JA_EXISTE_UM_X0_COM_O_X1_X2", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Já existe uma {0} chamada {1}..
         /// </summary>
-        internal static string JA_EXISTE_UMA_X0_CHAMADA_X1 {
+        public static string JA_EXISTE_UMA_X0_CHAMADA_X1 {
             get {
                 return ResourceManager.GetString("JA_EXISTE_UMA_X0_CHAMADA_X1", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Já existe uma {0} com a {1} {2}.
         /// </summary>
-        internal static string JA_EXISTE_UMA_X0_COM_A_X1_X2 {
+        public static string JA_EXISTE_UMA_X0_COM_A_X1_X2 {
             get {
                 return ResourceManager.GetString("JA_EXISTE_UMA_X0_COM_A_X1_X2", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Já existe uma {0} com o {1} {2}.
         /// </summary>
-        internal static string JA_EXISTE_UMA_X0_COM_O_X1_X2 {
+        public static string JA_EXISTE_UMA_X0_COM_O_X1_X2 {
             get {
                 return ResourceManager.GetString("JA_EXISTE_UMA_X0_COM_O_X1_X2", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir um {0} associado a um {1}..
         /// </summary>
-        internal static string NAO_E_POSSIVEL_EXCLUIR_UM_X0_ASSOCIADO_A_UM_X1 {
+        public static string NAO_E_POSSIVEL_EXCLUIR_UM_X0_ASSOCIADO_A_UM_X1 {
             get {
                 return ResourceManager.GetString("NAO_E_POSSIVEL_EXCLUIR_UM_X0_ASSOCIADO_A_UM_X1", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir um {0} associado a uma {1}..
         /// </summary>
-        internal static string NAO_E_POSSIVEL_EXCLUIR_UM_X0_ASSOCIADO_A_UMA_X1 {
+        public static string NAO_E_POSSIVEL_EXCLUIR_UM_X0_ASSOCIADO_A_UMA_X1 {
             get {
                 return ResourceManager.GetString("NAO_E_POSSIVEL_EXCLUIR_UM_X0_ASSOCIADO_A_UMA_X1", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir uma {0} associada a um {1}..
         /// </summary>
-        internal static string NAO_E_POSSIVEL_EXCLUIR_UMA_X0_ASSOCIADA_A_UM_X1 {
+        public static string NAO_E_POSSIVEL_EXCLUIR_UMA_X0_ASSOCIADA_A_UM_X1 {
             get {
                 return ResourceManager.GetString("NAO_E_POSSIVEL_EXCLUIR_UMA_X0_ASSOCIADA_A_UM_X1", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir uma {0} associada a uma {1}..
         /// </summary>
-        internal static string NAO_E_POSSIVEL_EXCLUIR_UMA_X0_ASSOCIADA_A_UMA_X1 {
+        public static string NAO_E_POSSIVEL_EXCLUIR_UMA_X0_ASSOCIADA_A_UMA_X1 {
             get {
                 return ResourceManager.GetString("NAO_E_POSSIVEL_EXCLUIR_UMA_X0_ASSOCIADA_A_UMA_X1", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O {0} deve ser maior ou igual a {1}..
         /// </summary>
-        internal static string O_X0_DEVE_SER_MAIOR_OU_IGUAL_A_X1 {
+        public static string O_X0_DEVE_SER_MAIOR_OU_IGUAL_A_X1 {
             get {
                 return ResourceManager.GetString("O_X0_DEVE_SER_MAIOR_OU_IGUAL_A_X1", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Objeto {0} é obrigatório..
         /// </summary>
-        internal static string OBJETO_X0_E_OBRIGATORIO {
+        public static string OBJETO_X0_E_OBRIGATORIO {
             get {
                 return ResourceManager.GetString("OBJETO_X0_E_OBRIGATORIO", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Operação realizada com sucesso..
         /// </summary>
-        internal static string OPERACAO_REALIZADA_COM_SUCESSO {
+        public static string OPERACAO_REALIZADA_COM_SUCESSO {
             get {
                 return ResourceManager.GetString("OPERACAO_REALIZADA_COM_SUCESSO", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} é obrigatória..
         /// </summary>
-        internal static string X0_E_OBRIGATORIA {
+        public static string X0_E_OBRIGATORIA {
             get {
                 return ResourceManager.GetString("X0_E_OBRIGATORIA", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} é obrigatória e deve conter {1} caracteres..
         /// </summary>
-        internal static string X0_E_OBRIGATORIA_E_DEVE_CONTER_X1_CARACTERES {
+        public static string X0_E_OBRIGATORIA_E_DEVE_CONTER_X1_CARACTERES {
             get {
                 return ResourceManager.GetString("X0_E_OBRIGATORIA_E_DEVE_CONTER_X1_CARACTERES", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} é obrigatório..
         /// </summary>
-        internal static string X0_E_OBRIGATORIO {
+        public static string X0_E_OBRIGATORIO {
             get {
                 return ResourceManager.GetString("X0_E_OBRIGATORIO", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} é obrigatório e deve conter {1} caracteres..
         /// </summary>
-        internal static string X0_E_OBRIGATORIO_E_DEVE_CONTER_X1_CARACTERES {
+        public static string X0_E_OBRIGATORIO_E_DEVE_CONTER_X1_CARACTERES {
             get {
                 return ResourceManager.GetString("X0_E_OBRIGATORIO_E_DEVE_CONTER_X1_CARACTERES", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} inválida..
         /// </summary>
-        internal static string X0_INVALIDA {
+        public static string X0_INVALIDA {
             get {
                 return ResourceManager.GetString("X0_INVALIDA", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} inválido..
         /// </summary>
-        internal static string X0_INVALIDO {
+        public static string X0_INVALIDO {
             get {
                 return ResourceManager.GetString("X0_INVALIDO", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} não informado..
         /// </summary>
-        internal static string X0_NAO_INFORMADO {
+        public static string X0_NAO_INFORMADO {
             get {
                 return ResourceManager.GetString("X0_NAO_INFORMADO", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} é obrigatória e deve conter entre {1} e {2} caracteres..
         /// </summary>
-        internal static string X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES {
+        public static string X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES {
             get {
                 return ResourceManager.GetString("X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace Library.Class.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} é obrigatório e deve conter entre {1} e {2} caracteres..
         /// </summary>
-        internal static string X0_OBRIGATORIO_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES {
+        public static string X0_OBRIGATORIO_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES {
             get {
                 return ResourceManager.GetString("X0_OBRIGATORIO_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES", resourceCulture);
             }
