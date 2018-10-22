@@ -31,7 +31,7 @@ namespace Library.Class.Models
             this.Descricao = Descricao;
             this.Endereco = Endereco;
             this.Nome = Nome;
-            
+
         }
     }
 }

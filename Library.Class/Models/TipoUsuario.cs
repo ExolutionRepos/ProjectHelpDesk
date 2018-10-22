@@ -10,7 +10,7 @@ namespace Library.Class.Models
 {
     [Table("TBL_TIPOUSUARIO")]
 
-    class Sexo
+    class TipoUsuario
     {
         [Key]
         public int CodigoTipoUsuario { get; private set; }
@@ -21,7 +21,7 @@ namespace Library.Class.Models
 
 
 
-        public Sexo(int CodigoTipoUsuario, string Descricao, string Nome)
+        public TipoUsuario(int CodigoTipoUsuario, string Descricao, string Nome)
         {
             this.CodigoTipoUsuario = CodigoTipoUsuario;
             this.Descricao = Descricao;
