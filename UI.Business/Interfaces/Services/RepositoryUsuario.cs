@@ -16,7 +16,7 @@ namespace UI.Business.Repositories
 {
     public class RepositoryUsuario : Notifiable, IRepositoryUsuario
     {
-        private BaseContext _db = new BaseContext("Server=.\SQLEXPRESS;UID=sa;PWD=123456;Language=us_english;DATABASE=HelpDesk");
+        private BaseContext _db = new BaseContext(@"Server=.\sQLEXPRESS;UID=sa;PWD=123456;Language=us_english;DATABASE=HelpDesk");
         
         public ResponseUsuarioAdi AdicionarUsuario(RequestUsuarioAdi Request)
         {
@@ -27,10 +27,10 @@ namespace UI.Business.Repositories
             }
 
 
-            var ListaEnderecoT = new Enderecos(1,"Test");
-            var ListaUsuarios = new Usuarios(Request.nome,null,"rogerio@gmail.com","",Library.Class.Enum.EnumSexo.Sexo.Masculino,"1111111", "1111111",ListaEnderecoT) { };
+            //var ListaEnderecoT = new Enderecos(1,"Test");
+            //var ListaUsuarios = new Usuarios(Request.nome,null,"rogerio@gmail.com","",Library.Class.Enum.EnumSexo.Sexo.Masculino,"1111111", "1111111",ListaEnderecoT) { };
 
-            //var ListaUsuarios = new Usuarios(Request.nome) { };
+            var ListaUsuarios = new Usuarios(Request.nome) { };
 
             AddNotifications(ListaUsuarios);
 

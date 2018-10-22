@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 
 namespace Library.Class.Class
 {
@@ -19,6 +21,10 @@ namespace Library.Class.Class
         {
             this.CodigoEndereco = codigoendereco;
             this.Rua = rua;
+
+            new AddNotifications<Enderecos>(this)
+        .IfNullOrInvalidLength(x => x.Rua, 5, 50, Resources.Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Endereço", "5", "50"));
+
         }
     }
 }

@@ -1,11 +1,3 @@
-C:\Backup\ProjectHelpDesk\UI.Desktop\bin\Debug\UI.Desktop.exe.config
-C:\Backup\ProjectHelpDesk\UI.Desktop\bin\Debug\UI.Desktop.exe
-C:\Backup\ProjectHelpDesk\UI.Desktop\bin\Debug\UI.Desktop.pdb
-C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
-C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
-C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
-C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.exe
-C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.pdb
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csprojAssemblyReference.cache
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Form1.resources
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
@@ -47,3 +39,7 @@ C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\bin\Debug\Library.Class.dll.config
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\bin\Debug\EntityFramework.xml
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\bin\Debug\EntityFramework.SqlServer.dll
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\bin\Debug\EntityFramework.SqlServer.xml
+C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Form1.resources
+C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
+C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache

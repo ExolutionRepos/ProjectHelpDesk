@@ -10,7 +10,7 @@ namespace Library.Class.Class
     [Table("TBL_USUARIOS_NOVO_LIGACAO")]
     public class Usuarios : Notifiable
     {
-        [Key, ForeignKey("Endereco")]
+      //  [Key, ForeignKey("Endereco")]
         public int CodigoUsuario { get; private set; }
 
         public string Nome { get; private set; }
@@ -54,14 +54,14 @@ namespace Library.Class.Class
 
             AddNotifications(endereco);
         }
-        
-        //public Usuarios(string nome)
-        //{
-        //    this.Nome = nome;
 
-        //    new AddNotifications<Usuarios>(this)
-        //        .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"));
-        //}
+        public Usuarios(string nome)
+        {
+            this.Nome = nome;
+
+            new AddNotifications<Usuarios>(this)
+                .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"));
+        }
 
 
         public void AlterarUsuarios(int codigousuario, string nome)

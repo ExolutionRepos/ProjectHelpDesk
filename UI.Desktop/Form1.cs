@@ -34,11 +34,11 @@ namespace UI.Desktop
             StringBuilder mensagem = new StringBuilder();
             string titulo = "Cadastro";
 
-            //var me = _RepositoryUsuario.AdicionarUsuario((new RequestUsuarioAdi() { nome = "Fabio" }));
-            
-            //mensagem.AppendLine(me.Nome);
-            
-            //MessageBox.Show(null, mensagem.ToString(), titulo.ToString());
+            var me = _RepositoryUsuario.AdicionarUsuario((new RequestUsuarioAdi() { nome = "Fabio" }));
+
+            mensagem.AppendLine(me.Nome);
+
+            MessageBox.Show(null, mensagem.ToString(), titulo.ToString());
         }
 
         private void Remove()

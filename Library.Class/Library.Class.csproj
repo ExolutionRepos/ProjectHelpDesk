@@ -121,7 +121,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Chamados.cs" />
+    <Compile Include="Models\DepartamentoUsuario.cs" />
     <Compile Include="Models\Enderecos.cs" />
+    <Compile Include="Models\Logins.cs" />
+    <Compile Include="Models\Sexo.cs" />
+    <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Enum\EnumSexo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

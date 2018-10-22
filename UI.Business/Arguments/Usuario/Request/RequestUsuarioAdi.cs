@@ -10,7 +10,7 @@ namespace UI.Business.Arguments.Usuario
     public class RequestUsuarioAdi : RequestEnderecoAdi
     {
 
-        public string nome { get; private set; }
+        public string nome { get;  set; }
 
         public DateTime? datanascimento { get; private set; }
 
