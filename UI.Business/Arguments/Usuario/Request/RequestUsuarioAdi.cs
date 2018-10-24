@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UI.Business.Arguments.Endereco;
+using static Library.Class.Enum.EnumSexo;
 
 namespace UI.Business.Arguments.Usuario
 {
@@ -18,7 +15,7 @@ namespace UI.Business.Arguments.Usuario
 
         public string cpf { get; private set; }
 
-        public Library.Class.Enum.EnumSexo.Sexo sexo { get; private set; }
+        public Sexo sexo { get; private set; }
 
         public string telefone { get; private set; }
 

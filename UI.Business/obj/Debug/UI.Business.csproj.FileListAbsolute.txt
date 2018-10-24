@@ -70,5 +70,4 @@ C:\GSA\UNIP\ProjectHelpDesk\UI.Business\obj\Debug\UI.Business.csproj.CopyComplet
 C:\GSA\UNIP\ProjectHelpDesk\UI.Business\obj\Debug\UI.Business.dll
 C:\GSA\UNIP\ProjectHelpDesk\UI.Business\obj\Debug\UI.Business.pdb
 C:\GSA\UNIP\ProjectHelpDesk\UI.Business\bin\Debug\Library.Class.dll.config
-C:\GSA\UNIP\ProjectHelpDesk\UI.Business\bin\Debug\en-US\prmToolkit.NotificationPattern.resources.dll
 C:\GSA\UNIP\ProjectHelpDesk\UI.Business\obj\Debug\UI.Business.csprojAssemblyReference.cache

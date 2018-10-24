@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Library.Class.Resources;
+using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 
 namespace Library.Class.Models
 
 {
     [Table("TBL_BASECONHECIMENTO")]
-    class BaseConhecimento
+    public class BaseConhecimento : Notifiable
     {
-        [Key]
+        [Key, ForeignKey("TipoChamado")]
         public int CodigoBaseConhecimento { get; private set; }
 
-        public int Chamado { get; private set; }
+        public int CodigoTipoChamado { get; private set; }
 
         public string Descricao { get; private set; }
 
@@ -23,15 +21,21 @@ namespace Library.Class.Models
 
         public string PalavraChave { get; private set; }
 
+        public virtual TipoChamado TipoChamado { get; private set; }
 
-        public BaseConhecimento(int CodigoBaseConhecimento, int Chamado, string Descricao, string Nome,
-            string PalavraChave)
+
+        public BaseConhecimento(int codigobaseconhecimento, int codigotipochamado, string descricao, string nome,
+            string palavrachave, TipoChamado tipochamado)
         {
-            this.CodigoBaseConhecimento = CodigoBaseConhecimento;
-            this.Chamado = Chamado;
-            this.Descricao = Descricao;
-            this.Nome = Nome;
-            this.PalavraChave = PalavraChave;
+            this.CodigoBaseConhecimento = codigobaseconhecimento;
+            this.CodigoTipoChamado = tipochamado.CodigoTipoChamado;
+            this.Descricao = descricao;
+            this.Nome = nome;
+            this.PalavraChave = palavrachave;
 
+            new AddNotifications<BaseConhecimento>(this)
+                .IfNullOrEmpty(this.Descricao, Message.OBJETO_X0_E_OBRIGATORIO.ToFormat("Descricao"))
+                .IfNullOrEmpty(this.Nome, Message.OBJETO_X0_E_OBRIGATORIO.ToFormat("Nome"));
         }
     }
+}

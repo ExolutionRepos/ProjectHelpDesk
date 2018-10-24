@@ -1,11 +1,9 @@
 ﻿using prmToolkit.NotificationPattern;
-using System.Collections.Generic;
+using prmToolkit.NotificationPattern.Extensions;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using prmToolkit.NotificationPattern;
-using prmToolkit.NotificationPattern.Extensions;
 
-namespace Library.Class.Class
+namespace Library.Class.Models
 {
     [Table("TBL_ENDERECO_NOVO_LIGACAO")]
     public class Enderecos : Notifiable

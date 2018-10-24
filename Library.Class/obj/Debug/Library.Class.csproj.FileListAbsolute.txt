@@ -32,4 +32,3 @@ C:\GSA\UNIP\ProjectHelpDesk\Library.Class\bin\Debug\EntityFramework.dll
 C:\GSA\UNIP\ProjectHelpDesk\Library.Class\bin\Debug\EntityFramework.SqlServer.dll
 C:\GSA\UNIP\ProjectHelpDesk\Library.Class\bin\Debug\EntityFramework.xml
 C:\GSA\UNIP\ProjectHelpDesk\Library.Class\bin\Debug\EntityFramework.SqlServer.xml
-C:\GSA\UNIP\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.Resources.Conexao.resources

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prmToolkit.NotificationPattern;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +11,7 @@ namespace Library.Class.Models
 {
 
     [Table("TBL_TIPOCHAMADO")]
-    class TipoChamado
+    public class TipoChamado : Notifiable
     {
         [Key]
         public int CodigoTipoChamado { get; private set; }
@@ -21,13 +22,14 @@ namespace Library.Class.Models
 
         public string SLA { get; private set; }
 
+        public virtual BaseConhecimento BaseConhecimento { get; private set; }
 
-        public TipoChamado(int CodigoTipoChamado, string Descricao, string Nome, string SLA)
+        public TipoChamado(int codigotipochamado, string descricao, string nome, string sla)
         {
-            this.CodigoTipoChamado = CodigoTipoChamado;
-            this.Descricao = Descricao;
-            this.Nome = Nome;
-            this.SLA = SLA;
+            this.CodigoTipoChamado = codigotipochamado;
+            this.Descricao = descricao;
+            this.Nome = nome;
+            this.SLA = sla;
         }
 
     }

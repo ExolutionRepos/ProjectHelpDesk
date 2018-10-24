@@ -8,6 +8,8 @@ namespace UI.Business.Arguments.Endereco
 {
     public class RequestEnderecoAdi
     {
+        public int CodigoEndereco { get; set; }
 
+        public string Rua { get; set; }
     }
 }

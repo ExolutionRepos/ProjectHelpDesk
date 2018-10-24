@@ -121,6 +121,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\EnumMarca.cs" />
+    <Compile Include="Enum\EnumModelo.cs" />
+    <Compile Include="Enum\EnumStatusLogin.cs" />
+    <Compile Include="Enum\EnumTipoUsuario.cs" />
     <Compile Include="Models\BaseConhecimento.cs" />
     <Compile Include="Models\Chamados.cs" />
     <Compile Include="Models\Departamentos.cs" />
@@ -129,7 +133,6 @@
     <Compile Include="Models\Logins.cs" />
     <Compile Include="Models\Perfis.cs" />
     <Compile Include="Models\Produtos.cs" />
-    <Compile Include="Models\Sexo.cs" />
     <Compile Include="Models\TipoChamado.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\UsuarioChamado.cs" />
@@ -141,6 +144,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Message.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utils\StringExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

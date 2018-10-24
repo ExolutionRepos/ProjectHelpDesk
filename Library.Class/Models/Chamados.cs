@@ -1,16 +1,11 @@
-﻿using Library.Class.Class;
-using System;
-using System.Collections.Generic;
+﻿using prmToolkit.NotificationPattern;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Library.Class.Models
 {
     [Table("TBL_CHAMADOS")]
-    class Chamados
+    public class Chamados : Notifiable
     {
         [Key]
         public int CodigoChamado { get; private set; }
@@ -28,17 +23,17 @@ namespace Library.Class.Models
         public int CodigoTipoChamado { get; private set; }
         //no diagrama de classes está somente TipoChamado
 
-        public Chamados(int CodigoChamado, int CodigoCliente, int CodigoDepartamento, int CodigoProduto, int CodigoUsuario,
-            string Descricao, int CodigoTipoChamado)
+        public Chamados(int codigochamado, int codigocliente, int codigodepartamento, int codigoproduto, int codigousuario,
+            string descricao, int codigotipochamado)
 
         {
-            this.CodigoChamado = CodigoChamado;
-            this.CodigoCliente = CodigoCliente;
-            this.CodigoDepartamento = CodigoDepartamento;
-            this.CodigoProduto = CodigoProduto;
-            this.CodigoUsuario = CodigoUsuario;
-            this.Descricao = Descricao;
-            this.CodigoTipoChamado = CodigoTipoChamado;
+            this.CodigoChamado = codigochamado;
+            this.CodigoCliente = codigocliente;
+            this.CodigoDepartamento = codigodepartamento;
+            this.CodigoProduto = codigoproduto;
+            this.CodigoUsuario = codigousuario;
+            this.Descricao = descricao;
+            this.CodigoTipoChamado = codigotipochamado;
 
         }
     }

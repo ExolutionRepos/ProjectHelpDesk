@@ -61,6 +61,15 @@ namespace Library.Class.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A {0} deve ser igual a {1}..
+        /// </summary>
+        public static string A_X0_DEVE_SER_IGUAL_A_X11 {
+            get {
+                return ResourceManager.GetString("A_X0_DEVE_SER_IGUAL_A_X11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a A {0} deve ser maior ou igual a {1}..
         /// </summary>
         public static string A_X0_DEVE_SER_MAIOR_OU_IGUAL_A_X1 {

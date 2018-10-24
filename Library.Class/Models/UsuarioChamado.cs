@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Library.Class.Models
 {
     [Table("TBL_USUARIOCHAMADO")]
-    class UsuarioChamado
+    public class UsuarioChamado
     {
         [Key]
         public int CodigoUsuarioChamado { get; private set; }
@@ -18,13 +18,12 @@ namespace Library.Class.Models
 
         public string Usuario { get; private set; }
 
-        public UsuarioChamado(int CodigoTipoUsuario, int Cliente, string Usuario)
+        public UsuarioChamado(int codigousuariochamado, int cliente, string usuario)
         {
-            this.CodigoUsuarioChamado = CodigoUsuarioChamado;
-            this.Cliente = Cliente;
-            this.Usuario = Usuario;
-
-
+            this.CodigoUsuarioChamado = codigousuariochamado;
+            this.Cliente = cliente;
+            this.Usuario = usuario;
+            
         }
     }
 }

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using prmToolkit.NotificationPattern;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Library.Class.Models
 {
     [Table("TBL_PERFIS")]
-    class Perfis
+    public class Perfis : Notifiable
     {
         [Key]
         public int CodigoPerfil { get; private set; }
@@ -19,11 +15,11 @@ namespace Library.Class.Models
         public string Nome { get; private set; }
 
 
-        public Perfis(int CodigoPerfil, string Descricao, string Nome)
+        public Perfis(int codigoperfil, string descricao, string nome)
         {
-            this.CodigoPerfil = CodigoPerfil;
-            this.Descricao = Descricao;
-            this.Nome = Nome;
+            this.CodigoPerfil = codigoperfil;
+            this.Descricao = descricao;
+            this.Nome = nome;
         }
     }
 }

@@ -1,45 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Library.Class.Resources;
+using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static Library.Class.Enum.EnumMarca;
+using static Library.Class.Enum.EnumModelo;
 
 namespace Library.Class.Models
 {
     [Table("TBL_PRODUTOS")]
-    class Produtos
+    public class Produtos : Notifiable
     {
         [Key]
         public int CodigoProduto { get; private set; }
-
-        public DateTime DataCompra { get; private set; }
-
-        public DateTime DataFabricacao { get; private set; }
-
+        
         public string Descricao { get; private set; }
-
-        public string Marca { get; private set; }
-
-        public string Modelo { get; private set; }
 
         public string Nome { get; private set; }
 
+        public DateTime? DataCompra { get; private set; }
 
-        public Produtos(int CodigoProduto, DateTime DataCompra, DateTime DataFabricacao, string Descricao, string Marca,
-            string Modelo, string nome)
+        public DateTime? DataFabricacao { get; private set; }
+
+        public Marcas Marca { get; private set; }
+
+        public Modelos Modelo { get; private set; }
+
+
+        public Produtos(/*DateTime ? datacompra, DateTime ? datafabricacao,*/ string descricao, Marcas marca,
+            Modelos modelo, string nome)
+        {            
+            //this.DataCompra = datacompra;
+            //this.DataFabricacao = datafabricacao;
+            this.Descricao = descricao;
+            this.Marca = marca;
+            this.Modelo = modelo;
+            this.Nome = nome;
+
+            new AddNotifications<Produtos>(this)
+                .IfEnumInvalid(y => y.Marca, Message.X0_INVALIDA.ToFormat("Marca"))
+                .IfEnumInvalid(y => y.Modelo, Message.X0_INVALIDA.ToFormat("Modelo"));
+                //.IfNotDate(y => y.DataFabricacao.Value.ToString(), Message.X0_INVALIDA.ToFormat("Data de fabricação"))
+                //.IfNotDate(y => y.DataCompra.Value.ToString(), Message.X0_INVALIDA.ToFormat("Data de compra"));
+        }
+
+        public void AlterarProdutos(int codigoproduto,/*DateTime? datacompra, DateTime? datafabricacao,*/ string descricao, Marcas marca,
+            Modelos modelo, string nome)
         {
-            this.CodigoProduto = CodigoProduto;
-            this.DataCompra = DataCompra;
-            this.DataFabricacao = DataFabricacao;
-            this.Descricao = Descricao;
-            this.Marca = Marca;
-            this.Modelo = Modelo;
-            this.Nome = Nome;
 
+            this.CodigoProduto = codigoproduto;
+            //this.DataCompra = datacompra;
+            //this.DataFabricacao = datafabricacao;
+            this.Descricao = descricao;
+            this.Marca = marca;
+            this.Modelo = modelo;
+            this.Nome = nome;
 
+            new AddNotifications<Produtos>(this)
+                .IfEnumInvalid(y => y.Marca, Message.X0_INVALIDA.ToFormat("Marca"))
+                .IfEnumInvalid(y => y.Modelo, Message.X0_INVALIDA.ToFormat("Modelo"))
+                .IfNullOrEmpty(x => x.CodigoProduto.ToString(), Message.X0_NAO_INFORMADO.ToFormat("Celular"));
+                //.IfNotDate(y => y.DataFabricacao.Value.ToString(), Message.X0_INVALIDA.ToFormat("Data de fabricação"))
+                //.IfNotDate(y => y.DataCompra.Value.ToString(), Message.X0_INVALIDA.ToFormat("Data de compra"));
 
+            
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Library.Class.Class;
-using System.Configuration;
+﻿using Library.Class.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 

@@ -1,4 +1,4 @@
-﻿using Library.Class.Class;
+﻿using Library.Class.Models;
 using Library.Class.Resources;
 using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;
@@ -6,18 +6,20 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using UI.Business.Arguments;
 using UI.Business.Arguments.Usuario;
 using UI.Business.Arguments.Usuario.Request;
 using UI.Business.Arguments.Usuario.Response;
 using UI.Business.Interfaces.Repositories;
 using UI.Business.Persistence;
+using static Library.Class.Enum.EnumSexo;
 
 namespace UI.Business.Repositories
 {
     public class RepositoryUsuario : Notifiable, IRepositoryUsuario
     {
         private BaseContext _db = new BaseContext(@"Server=.\sQLEXPRESS;UID=sa;PWD=123456;Language=us_english;DATABASE=HelpDesk");
-        
+
         public ResponseUsuarioAdi AdicionarUsuario(RequestUsuarioAdi Request)
         {
             if (Request == null)
@@ -26,11 +28,11 @@ namespace UI.Business.Repositories
                 return null;
             }
 
+            var ListaEnderecoT = new Enderecos(Request.CodigoEndereco, Request.Rua);
 
-            //var ListaEnderecoT = new Enderecos(1,"Test");
-            //var ListaUsuarios = new Usuarios(Request.nome,null,"rogerio@gmail.com","",Library.Class.Enum.EnumSexo.Sexo.Masculino,"1111111", "1111111",ListaEnderecoT) { };
-
-            var ListaUsuarios = new Usuarios(Request.nome) { };
+            var ListaUsuarios = new Usuarios(Request.nome, Request.datanascimento, Request.email,
+                Request.cpf, Request.sexo, Request.telefone, Request.celular, ListaEnderecoT)
+            { };
 
             AddNotifications(ListaUsuarios);
 
@@ -38,7 +40,6 @@ namespace UI.Business.Repositories
             {
                 return null;
             }
-
 
             var a = "";
             try
@@ -48,9 +49,9 @@ namespace UI.Business.Repositories
                 _db.SaveChanges();
                 return (ResponseUsuarioAdi)ListaUsuarios;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                 a = e.Message;
+                a = e.Message;
             }
             return (ResponseUsuarioAdi)ListaUsuarios;
 
@@ -145,14 +146,14 @@ namespace UI.Business.Repositories
 
         public Usuarios UConsultarUsuario(RequestUsuarioCon Request)
         {
-          
+
             if (Request == null)
             {
                 AddNotification("Consultar", Message.OBJETO_X0_E_OBRIGATORIO.ToFormat("ConsultarUsuario"));
                 return null;
             }
 
-                return _db.Usuarios.FirstOrDefault(p => p.CodigoUsuario == Request.CodigoUsuario);
+            return _db.Usuarios.FirstOrDefault(p => p.CodigoUsuario == Request.CodigoUsuario);
         }
 
         public List<Usuarios> UConsultarUsuario(Usuarios Request)

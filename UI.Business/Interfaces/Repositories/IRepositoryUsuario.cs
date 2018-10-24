@@ -1,5 +1,6 @@
-﻿using Library.Class.Class;
+﻿using Library.Class.Models;
 using System.Collections.Generic;
+using UI.Business.Arguments;
 using UI.Business.Arguments.Usuario;
 using UI.Business.Arguments.Usuario.Request;
 using UI.Business.Arguments.Usuario.Response;

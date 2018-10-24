@@ -1,31 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Library.Class.Resources;
+using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
+using static Library.Class.Enum.EnumTipoUsuario;
 
 namespace Library.Class.Models
 {
     [Table("TBL_TIPOUSUARIO")]
 
-    class TipoUsuario
+    public class TipoUsuarios : Notifiable
     {
         [Key]
-        public int CodigoTipoUsuario { get; private set; }
+        public TipoUsuario CodigoTipoUsuario { get; private set; }
 
         public string Descricao { get; private set; }
 
         public string Nome { get; private set; }
+        
 
-
-
-        public TipoUsuario(int CodigoTipoUsuario, string Descricao, string Nome)
+        public TipoUsuarios(TipoUsuario codigotipousuario, string descricao, string nome)
         {
-            this.CodigoTipoUsuario = CodigoTipoUsuario;
-            this.Descricao = Descricao;
-            this.Nome = Nome;
+            this.CodigoTipoUsuario = codigotipousuario;
+            this.Descricao = descricao;
+            this.Nome = nome;
+
+            new AddNotifications<TipoUsuarios>(this)
+                .IfEnumInvalid(codigotipousuario, Message.X0_INVALIDA.ToFormat("Tipo usuario"));
         }
 
     }

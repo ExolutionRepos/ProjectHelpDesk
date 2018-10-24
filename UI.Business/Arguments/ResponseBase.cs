@@ -1,7 +1,7 @@
-﻿using Library.Class.Class;
+﻿using Library.Class.Models;
 using System.Collections.Generic;
 
-namespace UI.Business.Arguments.Usuario
+namespace UI.Business.Arguments
 {
     public class ResponseBase
     {

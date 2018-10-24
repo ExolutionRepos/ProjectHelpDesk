@@ -4,13 +4,14 @@ using prmToolkit.NotificationPattern.Extensions;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static Library.Class.Enum.EnumSexo;
 
-namespace Library.Class.Class
+namespace Library.Class.Models
 {
     [Table("TBL_USUARIOS_NOVO_LIGACAO")]
     public class Usuarios : Notifiable
     {
-      //  [Key, ForeignKey("Endereco")]
+        [Key, ForeignKey("Endereco")]
         public int CodigoUsuario { get; private set; }
 
         public string Nome { get; private set; }
@@ -21,7 +22,7 @@ namespace Library.Class.Class
 
         public string CPF { get; private set; }
 
-        public Enum.EnumSexo.Sexo Sexo { get; private set; }
+        public Sexo Sexo { get; private set; }
 
         public string Telefone { get; private set; }
 
@@ -31,7 +32,9 @@ namespace Library.Class.Class
 
         public virtual Enderecos Endereco { get; private set; }
 
-        public Usuarios(string nome, DateTime? datanascimento, string email, string cpf, Enum.EnumSexo.Sexo sexo,
+        public virtual Logins Logins { get; private set; }
+
+        public Usuarios(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo,
             string telefone, string celular, Enderecos endereco)
         {
             this.Nome = nome;

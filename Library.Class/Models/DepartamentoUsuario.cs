@@ -1,4 +1,5 @@
-﻿using Library.Class.Class;
+﻿using Library.Class.Models;
+using prmToolkit.NotificationPattern;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,7 +12,7 @@ namespace Library.Class.Models
 {
     [Table("TBL_DEPARTAMENTOUSUARIO")]
 
-    class DepartamentoUsuario
+    public class DepartamentoUsuario : Notifiable
     {
         [Key]
         public int CodigoDepartamentoUsuario { get; private set; }
@@ -20,11 +21,11 @@ namespace Library.Class.Models
 
         public int CodigoUsuario { get; private set; }
 
-        public DepartamentoUsuario(int CodigoDepartamentoUsuario, int CodigoDepartamento, int CodigoUsuario)
+        public DepartamentoUsuario(int codigodepartamentousuario, int codigodepartamento, int codigousuario)
         {
-            this.CodigoDepartamentoUsuario = CodigoDepartamentoUsuario;
-            this.CodigoDepartamento = CodigoDepartamento;
-            this.CodigoUsuario = CodigoUsuario;
+            this.CodigoDepartamentoUsuario = codigodepartamentousuario;
+            this.CodigoDepartamento = codigodepartamento;
+            this.CodigoUsuario = codigousuario;
 
         }
 
