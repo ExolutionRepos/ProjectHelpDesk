@@ -21,6 +21,11 @@ namespace Library.Class.Models
 
         public virtual DepartamentoUsuario DepartamentoUsuario { get; private set; }
 
+        public Departamentos()
+        {
+                
+        }
+
         public Departamentos(string descricao, 
             string nome, Enderecos endereco)
         {

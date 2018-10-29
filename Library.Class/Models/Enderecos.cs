@@ -12,17 +12,18 @@ namespace Library.Class.Models
         public int CodigoEndereco { get; private set; }
 
         public string Rua { get; private set; }
-
-        public virtual Usuarios Usuario { get; private set; }
-
-        public Enderecos(int codigoendereco, string rua)
+        
+        public Enderecos(string rua)
         {
-            this.CodigoEndereco = codigoendereco;
+            //this.CodigoEndereco = codigoendereco;
             this.Rua = rua;
 
             new AddNotifications<Enderecos>(this)
         .IfNullOrInvalidLength(x => x.Rua, 5, 50, Resources.Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Endereço", "5", "50"));
 
         }
+
+        protected Enderecos() { }
+
     }
 }

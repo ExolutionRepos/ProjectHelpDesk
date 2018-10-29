@@ -161,6 +161,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library.Class\Library.Class.csproj">
+      <Project>{56C19891-4594-40E0-A9A8-9B65B2DA01D2}</Project>
+      <Name>Library.Class</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UI.Business\UI.Business.csproj">
       <Project>{c1f785aa-a6b5-4086-9fb3-09cd64d47926}</Project>
       <Name>UI.Business</Name>

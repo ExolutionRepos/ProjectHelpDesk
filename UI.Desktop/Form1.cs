@@ -1,90 +1,53 @@
-﻿using System;
+﻿using Library.Class.Utils;
+using System;
 using System.Windows.Forms;
-using UI.Business.Arguments.Usuario;
-using UI.Business.Repositories;
-using System.Collections.Generic;
-using System.Text;
+using UI.Business.Validator;
+using static Library.Class.Enum.EnumSexo;
 
 namespace UI.Desktop
 {
     public partial class Form1 : Form
+
     {
-        private readonly RepositoryUsuario _RepositoryUsuario;
-        
+        private readonly ValUsuarios _ValUsuarios;
+
         public Form1()
         {
             InitializeComponent();
-            _RepositoryUsuario = new RepositoryUsuario();
+            _ValUsuarios = new ValUsuarios();
         }
+        
+        //private void Cadastrar(Usuarios usuarios)
+        //{
+        //    _RepositoryUsuario.Add(usuarios);
+        //}
 
-        private void Form1_Load(object sender, EventArgs e)
+        //private void Alterar()
+        //{
+        //    var Endereco = new Enderecos(1, "Test");
+        //    _RepositoryUsuario.Edit((new Usuarios(1,"Luiz",Endereco)));
+        //}
+
+        //private void Excluir()
+        //{
+        //    var Endereco = new Enderecos(1, "Test");
+        //    _RepositoryUsuario.Remove(_RepositoryUsuario.Find(1));
+        //}
+
+        private void btnLimpar_Click(object sender, EventArgs e)
         {
-            Colzultar();
+            this.ClearControlAll();
         }
 
-        private void Colzultar()
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            var me = _RepositoryUsuario.ConsultarUsuario((new RequestUsuarioCon() { CodigoUsuario = 1 }));
-            MessageBox.Show(me.Nome.ToString());
+            Sexo DadosSexo = (Sexo)Enum.Parse(typeof(Sexo), comboSexo.SelectedItem.ToString());
+
+            var DadosUsuarios = _ValUsuarios.Cadastrar(textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelUm.Text, textRua.Text);
+                
+            MessageBox.Show("Novo Usuario cadastrado" + DadosUsuarios);
         }
 
-        private void Cadastro()
-        {
-            
-            StringBuilder mensagem = new StringBuilder();
-            string titulo = "Cadastro";
-
-            var me = _RepositoryUsuario.AdicionarUsuario((new RequestUsuarioAdi() { nome = "Fabio" }));
-
-            mensagem.AppendLine(me.Nome);
-
-            MessageBox.Show(null, mensagem.ToString(), titulo.ToString());
-        }
-
-        private void Remove()
-        {
-
-            StringBuilder mensagem = new StringBuilder();
-            string titulo = "Remover";
-
-            var me = _RepositoryUsuario.DeletarUsuario((new RequestUsuarioDel() { CodigoUsuario = 4 }));
-
-            if (me.ResponseBaseDictionary == null)
-            {
-                mensagem.AppendLine(me.Message);
-            }
-            else
-            {
-                foreach (KeyValuePair<string, string> pair in me.ResponseBaseDictionary)
-                {
-                    mensagem.AppendLine(pair.Value);
-                }
-            }
-
-            MessageBox.Show(null, mensagem.ToString(), titulo.ToString());
-        }
-
-        private void Alterar()
-        {
-            StringBuilder mensagem = new StringBuilder();
-            string titulo = "Alterar";
-
-            var me = _RepositoryUsuario.AlterarUsuario((new RequestUsuarioAlt() { CodigoUsuario = 1, Nome = "Fabio" }));
-
-            if (me.ResponseBaseDictionary == null)
-            {
-                mensagem.AppendLine(me.Message);
-            }
-            else
-            {
-                foreach (KeyValuePair<string, string> pair in me.ResponseBaseDictionary)
-                {
-                    mensagem.AppendLine(pair.Value);
-                }
-            }
-
-            MessageBox.Show(null, mensagem.ToString(), titulo.ToString());
-        }
-
+        
     }
 }
