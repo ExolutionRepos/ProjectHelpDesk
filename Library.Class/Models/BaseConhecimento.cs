@@ -21,11 +21,11 @@ namespace Library.Class.Models
 
         public string PalavraChave { get; private set; }
 
-        public virtual TipoChamado TipoChamado { get; private set; }
+        public virtual TipoChamados TipoChamado { get; private set; }
 
 
         public BaseConhecimento(int codigobaseconhecimento, int codigotipochamado, string descricao, string nome,
-            string palavrachave, TipoChamado tipochamado)
+            string palavrachave, TipoChamados tipochamado)
         {
             this.CodigoBaseConhecimento = codigobaseconhecimento;
             this.CodigoTipoChamado = tipochamado.CodigoTipoChamado;

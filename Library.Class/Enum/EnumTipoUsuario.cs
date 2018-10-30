@@ -5,7 +5,7 @@
         public enum TipoUsuario
         {
             Funcionario = 1,
-            cliente = 2
+            Cliente = 2
         }
     }
 }

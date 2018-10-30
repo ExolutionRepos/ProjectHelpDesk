@@ -19,9 +19,9 @@ namespace Library.Class.Models
         public int CodigoUsuario { get; private set; }
 
         public string Descricao { get; private set; }
-
-        public int CodigoTipoChamado { get; private set; }
-        //no diagrama de classes está somente TipoChamado
+        
+        [Required]
+        public virtual TipoChamados TipoChamado { get; private set; }
 
         public Chamados(int codigochamado, int codigocliente, int codigodepartamento, int codigoproduto, int codigousuario,
             string descricao, int codigotipochamado)
@@ -33,7 +33,6 @@ namespace Library.Class.Models
             this.CodigoProduto = codigoproduto;
             this.CodigoUsuario = codigousuario;
             this.Descricao = descricao;
-            this.CodigoTipoChamado = codigotipochamado;
 
         }
     }

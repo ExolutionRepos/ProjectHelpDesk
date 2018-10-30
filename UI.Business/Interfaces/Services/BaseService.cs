@@ -31,10 +31,20 @@ namespace UI.Business.Interfaces.Services
             unitOfWork.SALVAR();
         }
 
+        public void AddNotSave(T item)
+        {
+            _repository.Add(item);
+        }
+
         public void Remove(T item)
         {
             _repository.Remove(item);
             unitOfWork.SALVAR();
+        }
+
+        public void RemoveNotSave(T item)
+        {
+            _repository.Remove(item);
         }
 
         public void Edit(T item)
@@ -42,7 +52,13 @@ namespace UI.Business.Interfaces.Services
             _repository.Edit(item);
             unitOfWork.SALVAR();
         }
-    
+
+        public void EditNotSave(T item)
+        {
+            _repository.Edit(item);
+            unitOfWork.SALVAR();
+        }
+
         //public void Dispose()
         //{
         //    _repository.Dispose();
