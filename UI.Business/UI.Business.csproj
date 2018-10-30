@@ -61,11 +61,10 @@
     <Compile Include="Interfaces\Services\BaseService.cs" />
     <Compile Include="Persistence\ApplicationDBContext.cs" />
     <Compile Include="Persistence\BaseContext.cs" />
+    <Compile Include="Persistence\ResponseBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

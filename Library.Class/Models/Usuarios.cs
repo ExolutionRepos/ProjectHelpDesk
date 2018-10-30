@@ -2,7 +2,6 @@
 using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using static Library.Class.Enum.EnumSexo;
@@ -50,7 +49,6 @@ namespace Library.Class.Models
             this.Telefone = telefone;
             this.Celular = celular;
             this.Endereco = endereco;
-            //this.CodigoEndereco = endereco.CodigoEndereco;
             
                 new AddNotifications<Usuarios>(this)
             .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"))
@@ -64,27 +62,35 @@ namespace Library.Class.Models
             AddNotifications(endereco);
         }
 
-        public Usuarios(string nome)
+        public Usuarios(int codigousuario, string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo,
+            string telefone, string celular
+            , Enderecos endereco, int codigoendereco)
         {
+
             this.Nome = nome;
+            this.DataNascimento = datanascimento;
+            this.Email = email;
+            this.CPF = cpf;
+            this.Sexo = sexo;
+            this.Telefone = telefone;
+            this.Celular = celular;
+            this.Endereco = endereco;
+            //this.Endereco.CodigoEndereco = codigoendereco;
 
             new AddNotifications<Usuarios>(this)
-                .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"));
-        }
+        .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"))
+        .IfNotEmail(x => x.Email, Message.X0_INVALIDO.ToFormat("Email informado"))
+        .IfNullOrEmpty(x => x.Celular, Message.X0_NAO_INFORMADO.ToFormat("Celular"))
+        .IfNotCpf(x => x.CPF, Message.X0_INVALIDO.ToFormat("CPF"))
+        .IfNullOrInvalidLength(x => x.Telefone, 8, 11, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Telefone 1", "8", "11"))
+        .IfNullOrInvalidLength(x => x.Celular, 8, 11, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Telefone 2", "8", "11"))
+        .IfNotDate(x => x.DataNascimento.Value.ToString(), Message.X0_INVALIDA.ToFormat("Data de Nascimento"));
 
-
-        public Usuarios(int codigousuario, string nome, Enderecos endereco)
-        {
-            this.CodigoUsuario = codigousuario;
-            this.Nome = nome;
-
-            new AddNotifications<Usuarios>(this)
-                .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"));
+            AddNotifications(endereco);
         }
 
         protected Usuarios()
         {
-
         }
 
     }

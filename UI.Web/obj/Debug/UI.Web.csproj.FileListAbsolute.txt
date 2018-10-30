@@ -216,3 +216,9 @@ C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\EntityFramework.dll
 C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\EntityFramework.SqlServer.dll
 C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\EntityFramework.xml
 C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\EntityFramework.SqlServer.xml
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\Library.Class.dll
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\UI.Business.dll
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\Library.Class.pdb
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\Library.Class.dll.config
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\UI.Business.pdb
+C:\GSA\UNIP\ProjectHelpDesk\UI.Web\bin\UI.Business.dll.config

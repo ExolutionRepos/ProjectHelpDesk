@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UI.Business.Interfaces.Repositories;
 using UI.Business.Persistence;
 
@@ -41,7 +42,7 @@ namespace UI.Business.Interfaces.Services
             _repository.Edit(item);
             unitOfWork.SALVAR();
         }
-
+    
         //public void Dispose()
         //{
         //    _repository.Dispose();

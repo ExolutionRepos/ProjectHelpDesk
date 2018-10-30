@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace UI.Business.Interfaces.Repositories
 {
@@ -15,6 +16,5 @@ namespace UI.Business.Interfaces.Repositories
         void Add(T item);
         void Remove(T item);
         void Edit(T item);
-        
     }
 }
