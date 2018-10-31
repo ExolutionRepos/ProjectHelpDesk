@@ -13,19 +13,14 @@ namespace UI.Business.Persistence
         }
         
         public IDbSet<Usuarios> Usuarios { get; set; }
-
         public IDbSet<Enderecos> Enderecos { get; set; }
-
         public IDbSet<TipoUsuarios> TiposUsuarios { get; set; }
-
         public IDbSet<Logins> Logins { get; set; }
-
         public IDbSet<TipoChamados> TipoChamados { get; set; }
-
         public IDbSet<Chamados> Chamados { get; set; }
-
-        //public IDbSet<Departamentos> Departamentos { get; set; }
-
+        public IDbSet<Departamentos> Departamentos { get; set; }
+        public IDbSet<Perfis> Perfis { get; set; }
+        
         public void SALVAR()
         {
             var a = "";
@@ -57,7 +52,6 @@ namespace UI.Business.Persistence
             
             base.OnModelCreating(modelBuilder);
         }
-
-       
+        
     }
 }

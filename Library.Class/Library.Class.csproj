@@ -124,12 +124,12 @@
   <ItemGroup>
     <Compile Include="Enum\EnumMarca.cs" />
     <Compile Include="Enum\EnumModelo.cs" />
+    <Compile Include="Enum\EnumPerfil.cs" />
     <Compile Include="Enum\EnumStatusLogin.cs" />
     <Compile Include="Enum\EnumTipoUsuario.cs" />
     <Compile Include="Models\BaseConhecimento.cs" />
     <Compile Include="Models\Chamados.cs" />
     <Compile Include="Models\Departamentos.cs" />
-    <Compile Include="Models\DepartamentoUsuario.cs" />
     <Compile Include="Models\Enderecos.cs" />
     <Compile Include="Models\Logins.cs" />
     <Compile Include="Models\Perfis.cs" />

@@ -1,5 +1,6 @@
 ﻿using Library.Class.Models;
 using prmToolkit.NotificationPattern;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,36 +16,15 @@ namespace Library.Class.Models
 
         public string Nome { get; private set; }
 
-        public int CodigoEndereco { get; private set; }
+        public ICollection<Usuarios> Usuario { get; private set; }
 
-        public virtual Enderecos Endereco { get; private set; }
-
-        public virtual DepartamentoUsuario DepartamentoUsuario { get; private set; }
-
-        public Departamentos()
-        {
-                
-        }
-
-        public Departamentos(string descricao, 
-            string nome, Enderecos endereco)
+        public Departamentos(string descricao, string nome)
         {
             this.Descricao = descricao;
-            this.CodigoEndereco = endereco.CodigoEndereco;
             this.Nome = nome;
 
-            AddNotifications(Endereco);
+            Usuario = new HashSet<Usuarios>();
         }
-
-        public void AlterarDepartamentos(int codigodepartamento, string descricao,
-            string nome, Enderecos endereco)
-        {
-            this.CodigoDepartamento = codigodepartamento;
-            this.Descricao = descricao;
-            this.CodigoEndereco = endereco.CodigoEndereco;
-            this.Nome = nome;
-
-            AddNotifications(Endereco);
-        }
+        
     }
 }

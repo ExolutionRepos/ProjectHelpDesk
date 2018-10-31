@@ -3,6 +3,7 @@ using Library.Class.Utils;
 using System;
 using System.Windows.Forms;
 using UI.Business.Interfaces.Services;
+using static Library.Class.Enum.EnumPerfil;
 using static Library.Class.Enum.EnumSexo;
 using static Library.Class.Enum.EnumTipoUsuario;
 
@@ -16,16 +17,19 @@ namespace UI.Desktop
         private readonly BaseService<Enderecos> _RepositoryEndereco;
         private readonly BaseService<TipoUsuarios> _RepositoryTipoPerfil;
         private readonly BaseService<Logins> _RepositoryLogin;
-
+        private readonly BaseService<Departamentos> _RepositoryDepartamento;
+        private readonly BaseService<Perfis> _RepositoryPerfil;
 
         public Form1()
         {
             InitializeComponent();
-            //_ValUsuarios = new ValUsuarios();
+            
             _RepositoryUsuario = new BaseService<Usuarios>();
             _RepositoryEndereco = new BaseService<Enderecos>();
             _RepositoryTipoPerfil = new BaseService<TipoUsuarios>();
             _RepositoryLogin = new BaseService<Logins>();
+            _RepositoryDepartamento = new BaseService<Departamentos>();
+            _RepositoryPerfil = new BaseService<Perfis>();
 
         }
         
@@ -74,13 +78,30 @@ namespace UI.Desktop
             Endereco.Usuario.Add(DadosUsuarios1);
             Endereco.Usuario.Add(DadosUsuarios2);
 
-            //Salvar 
+            //Não salvar, somente adicionar
             _RepositoryEndereco.AddNotSave(Endereco);
 
+            Departamentos departamento1 = new Departamentos("Teztando", "Matriz");
+            
+            departamento1.Usuario.Add(DadosUsuarios1);
+            departamento1.Usuario.Add(DadosUsuarios2);
+
+            //Não salvar, somente adicionar
+            _RepositoryDepartamento.AddNotSave(departamento1);
 
             Logins login = new Logins("Rogerio.junior", "3148", "3148rogerio",DadosUsuarios1);
-            _RepositoryLogin.Add(login);
-            
+            _RepositoryLogin.AddNotSave(login);
+
+            //cadastro tipo de usuario
+            Perfis Analista = new Perfis(TipoPerfils.Analista, "Analistas ...", "Analistas");
+            //Perfis Adiministrador = new Perfis(TipoPerfils.Adiministrador, "Adiministradores ...", "Adiministradores");
+
+            Analista.Login.Add(login);
+
+            //Não salvar, somente adicionar
+            _RepositoryPerfil.Add(Analista);
+
+
 
             MessageBox.Show("Novo Usuario cadastrado");
 

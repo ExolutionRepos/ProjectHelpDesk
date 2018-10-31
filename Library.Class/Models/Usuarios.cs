@@ -34,7 +34,10 @@ namespace Library.Class.Models
 
         [Required]
         public virtual TipoUsuarios Usuario { get; private set; }
-        
+
+        //[Required]
+        public virtual Departamentos Departamento { get; private set; }
+
         public Usuarios(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular)
         {
             this.Nome = nome;
@@ -44,8 +47,7 @@ namespace Library.Class.Models
             this.Sexo = sexo;
             this.Telefone = telefone;
             this.Celular = celular;
-
-
+            
             new AddNotifications<Usuarios>(this)
         .IfNullOrInvalidLength(x => x.Nome, 5, 50, Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Nome do usuarios", "5", "50"))
         .IfNotEmail(x => x.Email, Message.X0_INVALIDO.ToFormat("Email informado"))

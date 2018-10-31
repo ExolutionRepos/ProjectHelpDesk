@@ -26,6 +26,10 @@ namespace Library.Class.Models
         [Required]
         public virtual Usuarios Usuarios { get; private set; }
 
+        [Required]
+        public virtual Perfis Perfi { get; private set; }
+
+
         public Logins(string login,string senha, string senhaantiga, Usuarios usuarios)
         {
             this.Login = login;

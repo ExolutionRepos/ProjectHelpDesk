@@ -1,6 +1,8 @@
 ﻿using prmToolkit.NotificationPattern;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static Library.Class.Enum.EnumPerfil;
 
 namespace Library.Class.Models
 {
@@ -8,18 +10,26 @@ namespace Library.Class.Models
     public class Perfis : Notifiable
     {
         [Key]
-        public int CodigoPerfil { get; private set; }
+        public TipoPerfils CodigoPerfil { get; private set; }
 
         public string Descricao { get; private set; }
 
         public string Nome { get; private set; }
 
+        public ICollection<Logins> Login { get; private set; }
 
-        public Perfis(int codigoperfil, string descricao, string nome)
+        public Perfis(TipoPerfils codigoperfil,string descricao, string nome)
         {
             this.CodigoPerfil = codigoperfil;
             this.Descricao = descricao;
             this.Nome = nome;
+
+            Login = new HashSet<Logins>();
+        }
+
+        protected Perfis()
+        {
+
         }
     }
 }
