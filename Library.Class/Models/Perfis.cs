@@ -29,7 +29,7 @@ namespace Library.Class.Models
 
         protected Perfis()
         {
-
+            Login = new HashSet<Logins>();
         }
     }
 }

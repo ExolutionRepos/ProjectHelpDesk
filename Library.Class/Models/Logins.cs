@@ -40,7 +40,7 @@ namespace Library.Class.Models
 
             new AddNotifications<Logins>(this)
                 .IfAreEquals(Senha, SenhaAntiga, Message.A_X0_DEVE_SER_IGUAL_A_X11.ToFormat("Senha", "Senha Antiga"))
-                //.IfNullOrInvalidLength(x => x.Senha, 6, 32, "A senha deve ter entre 6 a 32 caracteres")
+                .IfNullOrInvalidLength(x => x.Senha, 6, 32, "A senha deve ter entre 6 a 32 caracteres")
                 ;
 
             if (IsValid())
@@ -65,6 +65,11 @@ namespace Library.Class.Models
             {
                 this.Senha = this.Senha.ConvertToMD5();
             }
+
+        }
+
+        protected Logins()
+        {
 
         }
 

@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Class", "Library.Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Business", "UI.Business\UI.Business.csproj", "{C1F785AA-A6B5-4086-9FB3-09CD64D47926}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{72899E91-DE7B-449E-9A70-F2BEE8F20B12}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{C1F785AA-A6B5-4086-9FB3-09CD64D47926}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1F785AA-A6B5-4086-9FB3-09CD64D47926}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1F785AA-A6B5-4086-9FB3-09CD64D47926}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72899E91-DE7B-449E-9A70-F2BEE8F20B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72899E91-DE7B-449E-9A70-F2BEE8F20B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72899E91-DE7B-449E-9A70-F2BEE8F20B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72899E91-DE7B-449E-9A70-F2BEE8F20B12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

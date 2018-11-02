@@ -58,14 +58,14 @@ namespace UI.Desktop
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Sexo DadosSexo = (Sexo)Enum.Parse(typeof(Sexo), comboSexo.SelectedItem.ToString());
-
+            
             Usuarios DadosUsuarios1 = new Usuarios("rogerio", dateTimeNascimento.Value, "rogerio.silva@tivit.com", "46282434840", DadosSexo, "1141938361", "964273148");
             Usuarios DadosUsuarios2 = new Usuarios("fabio", dateTimeNascimento.Value, "rogerio.silva@tivit.com", "46282434840", DadosSexo, "1141938361", "964273148");
 
 
             //cadastro tipo de usuario
-            TipoUsuarios Funcionario = new TipoUsuarios(TipoUsuario.Funcionario, "Acesso para resolução e apoio aos chamados", "Funcionarios");
-            TipoUsuarios Cliente = new TipoUsuarios(TipoUsuario.Cliente, "Acesso somente de pesquisa e abertura/acompanhamento de chamados", "Clientes");
+            TipoUsuarios Funcionario = new TipoUsuarios(1, "Acesso para resolução e apoio aos chamados", "Funcionarios");
+            TipoUsuarios Cliente = new TipoUsuarios(2, "Acesso somente de pesquisa e abertura/acompanhamento de chamados", "Clientes");
             Funcionario.Usuario.Add(DadosUsuarios1);
             Cliente.Usuario.Add(DadosUsuarios2);
 
@@ -73,13 +73,13 @@ namespace UI.Desktop
             _RepositoryTipoPerfil.AddNotSave(Funcionario);
             _RepositoryTipoPerfil.AddNotSave(Cliente);
 
-            // Cadastro de endereço
-            Enderecos Endereco = new Enderecos("Rua abelardo");
-            Endereco.Usuario.Add(DadosUsuarios1);
-            Endereco.Usuario.Add(DadosUsuarios2);
+            //// Cadastro de endereço
+            //Enderecos Endereco = new Enderecos("Rua abelardo");
+            //Endereco.Usuario.Add(DadosUsuarios1);
+            //Endereco.Usuario.Add(DadosUsuarios2);
 
-            //Não salvar, somente adicionar
-            _RepositoryEndereco.AddNotSave(Endereco);
+            ////Não salvar, somente adicionar
+            //_RepositoryEndereco.AddNotSave(Endereco);
 
             Departamentos departamento1 = new Departamentos("Teztando", "Matriz");
             
@@ -98,9 +98,8 @@ namespace UI.Desktop
 
             Analista.Login.Add(login);
 
-            //Não salvar, somente adicionar
+            //Salvar (Efetuar a query.)
             _RepositoryPerfil.Add(Analista);
-
 
 
             MessageBox.Show("Novo Usuario cadastrado");
@@ -109,7 +108,8 @@ namespace UI.Desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Usuario form = new Usuario();
+            form.Show();
         }
     }
 }

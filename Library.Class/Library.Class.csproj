@@ -136,7 +136,6 @@
     <Compile Include="Models\Produtos.cs" />
     <Compile Include="Models\TipoChamado.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
-    <Compile Include="Models\UsuarioChamado.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Enum\EnumSexo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

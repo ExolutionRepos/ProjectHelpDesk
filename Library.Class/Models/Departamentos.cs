@@ -26,5 +26,9 @@ namespace Library.Class.Models
             Usuario = new HashSet<Usuarios>();
         }
         
+        protected Departamentos()
+        {
+            Usuario = new HashSet<Usuarios>();
+        }
     }
 }

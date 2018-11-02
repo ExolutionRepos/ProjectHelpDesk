@@ -14,11 +14,32 @@ namespace Library.Class.Models
 
         public string Rua { get; private set; }
 
+        public string Bairro { get; private set; }
+
+        public string CEP { get; private set; }
+
+        public string Cidade { get; private set; }
+
+        public string UF { get; private set; }
+
+        //public string Complemento { get; private set; }
+
+        public int? Numero { get; private set; }
+
         public ICollection<Usuarios> Usuario { get; private set; }
         
-        public Enderecos(string rua)
+        public Enderecos(string rua, string bairro, string cep, string cidade, int? numero, string uf
+            //, string complemento
+            )
         {
             this.Rua = rua;
+            this.Bairro = bairro;
+            this.CEP = cep;
+            this.Cidade = cidade;
+            this.Numero = numero;
+            this.UF = uf;
+            //this.Complemento = complemento;
+
             Usuario = new HashSet<Usuarios>();
 
             new AddNotifications<Enderecos>(this)

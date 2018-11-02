@@ -20,6 +20,9 @@ namespace Library.Class.Models
 
         public ICollection<Chamados> Chamado { get; private set; }
 
+        public ICollection<BaseConhecimento> BaseConhecimento { get; private set; }
+
+
         public TipoChamados(int codigotipochamado, string descricao, string nome, string sla)
         {
             this.CodigoTipoChamado = codigotipochamado;
@@ -28,11 +31,13 @@ namespace Library.Class.Models
             this.SLA = sla;
 
             Chamado = new HashSet<Chamados>();
+            BaseConhecimento = new HashSet<BaseConhecimento>();
         }
 
         protected TipoChamados()
         {
             Chamado = new HashSet<Chamados>();
+            BaseConhecimento = new HashSet<BaseConhecimento>();
         }
 
     }

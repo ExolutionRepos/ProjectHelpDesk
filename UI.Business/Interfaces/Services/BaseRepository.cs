@@ -40,8 +40,19 @@ namespace UI.Business.Interfaces.Services
 
         public IQueryable<T> List()
         {
+            var a = "";
+            try
+            {
+                return _context.Set<T>();
+            }
+            catch (Exception e)
+            {
+                a = e.Message;
+            }
+
             return _context.Set<T>();
         }
+
 
         public void Add(T item)
         {
