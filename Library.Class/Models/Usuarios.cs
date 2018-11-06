@@ -33,10 +33,12 @@ namespace Library.Class.Models
         [Required]
         public virtual Enderecos Endereco { get; private set; }
 
-        [Required]
+        //[Required]
         public virtual TipoUsuarios Usuario { get; private set; }
 
         public virtual Departamentos Departamento { get; private set; }
+
+        public virtual ConfigFont Fonte { get; private set; }
 
         public ICollection<Chamados> Cliente { get; private set; }
 
@@ -54,15 +56,16 @@ namespace Library.Class.Models
             this.Celular = celular;
 
             Cliente = new HashSet<Chamados>();
-
             Funcionario = new HashSet<Chamados>();
-
+            
             Validar();
-
         }
         
-        public void AlterarUsuarios(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular)
+        public void AlterarUsuarios(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular, Enderecos endereco, TipoUsuarios tipousuario)
         {
+            Cliente = new HashSet<Chamados>();
+            Funcionario = new HashSet<Chamados>();
+
             this.Nome = nome;
             this.DataNascimento = datanascimento;
             this.Email = email;
@@ -70,6 +73,8 @@ namespace Library.Class.Models
             this.Sexo = sexo;
             this.Telefone = telefone;
             this.Celular = celular;
+            this.Endereco = endereco;
+            this.Usuario = tipousuario;
 
             Validar();
             

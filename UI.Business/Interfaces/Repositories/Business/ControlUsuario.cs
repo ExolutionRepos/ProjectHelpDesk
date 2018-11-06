@@ -1,22 +1,24 @@
 ﻿using Library.Class.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UI.Business.Interfaces.Services;
 using static Library.Class.Enum.EnumSexo;
+using static Library.Class.Utils.StringExtension;
 
 namespace UI.Business.Interfaces.Repositories.Business
 {
     public class ControlUsuario
     {
 
-        private readonly BaseService<Usuarios> _RepositoryUsuario;
-        private readonly BaseService<Departamentos> _RepositoryDepartamento;
-        private readonly BaseService<TipoUsuarios> _RepositoryTipoUsuario;
-        private readonly BaseService<Enderecos> _RepositoryEndereco;
+        //private readonly BaseService<Usuarios> _RepositoryUsuario;
+        //private readonly BaseService<Departamentos> _RepositoryDepartamento;
+        //private readonly BaseService<TipoUsuarios> _RepositoryTipoUsuario;
+        //private readonly BaseService<Enderecos> _RepositoryEndereco;
 
+        private BaseService<Usuarios> _RepositoryUsuario;
+        private BaseService<Departamentos> _RepositoryDepartamento;
+        private BaseService<TipoUsuarios> _RepositoryTipoUsuario;
+        private BaseService<Enderecos> _RepositoryEndereco;
 
         public ControlUsuario()
         {
@@ -24,20 +26,33 @@ namespace UI.Business.Interfaces.Repositories.Business
             _RepositoryDepartamento = new BaseService<Departamentos>();
             _RepositoryTipoUsuario = new BaseService<TipoUsuarios>();
             _RepositoryEndereco = new BaseService<Enderecos>();
-
         }
 
         public BaseReturn CadastrarUsuario(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular
-            , string rua, string bairro, string cep, string cidade, int? numero, string uf
+            , string rua, string bairro, string cep, string cidade, int numero, string uf
             , int codigotipousuario)
         {
-            
+
             Usuarios DadosUsuarios = new Usuarios(nome, datanascimento, email, cpf, sexo, telefone, celular);
 
             if (DadosUsuarios.IsInvalid())
             {
-                return new BaseReturn(DadosUsuarios.Notifications.FirstOrDefault().Property, DadosUsuarios.Notifications.FirstOrDefault().Message,false);
+                return new BaseReturn(DadosUsuarios.Notifications.FirstOrDefault().Property, DadosUsuarios.Notifications.FirstOrDefault().Message, false);
             }
+
+            // Cadastro de endereço
+            Enderecos DadosEndereco = new Enderecos(rua, bairro, cep, cidade, numero, uf);
+
+            if (DadosEndereco.IsInvalid())
+            {
+                return new BaseReturn(DadosEndereco.Notifications.FirstOrDefault().Property, DadosEndereco.Notifications.FirstOrDefault().Message, false);
+            }
+
+            DadosEndereco.Usuario.Add(DadosUsuarios);
+
+            //Adicionar
+            _RepositoryEndereco.AddNotSave(DadosEndereco);
+
 
             TipoUsuarios TipoUsuario = _RepositoryTipoUsuario.Find(codigotipousuario);
 
@@ -45,25 +60,10 @@ namespace UI.Business.Interfaces.Repositories.Business
             TipoUsuario.Usuario.Add(DadosUsuarios);
 
             //Não salvar, somente adicionar
-            _RepositoryTipoUsuario.AddNotSave(TipoUsuario);
+            _RepositoryTipoUsuario.Edit(TipoUsuario);
 
-            // Cadastro de endereço
-            Enderecos DadosEndereco = new Enderecos(rua, bairro, cep, cidade, numero,uf);
 
-            if (DadosEndereco.IsInvalid())
-            {
-                return new BaseReturn(DadosEndereco.Notifications.FirstOrDefault().Property, DadosEndereco.Notifications.FirstOrDefault().Message,false);
-            }
-
-            DadosEndereco.Usuario.Add(DadosUsuarios);
-
-            //Não salvar, somente adicionar
-            _RepositoryEndereco.AddNotSave(DadosEndereco);
-
-            //Add
-            _RepositoryUsuario.Add(DadosUsuarios);
-
-            return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO,true);
+            return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
 
         }
 
@@ -73,17 +73,41 @@ namespace UI.Business.Interfaces.Repositories.Business
             , int codigotipousuario)
         {
             Usuarios DadosUsuarios = _RepositoryUsuario.Find(CodigoUsuario);
-            
-            DadosUsuarios.AlterarUsuarios(nome, datanascimento, email, cpf, sexo, telefone, celular);
 
-            if (DadosUsuarios.IsInvalid())
-            {
-                return new BaseReturn(DadosUsuarios.Notifications.FirstOrDefault().Property, DadosUsuarios.Notifications.FirstOrDefault().Message,false);
-            }
+            Enderecos DadosEnderecos = DadosUsuarios.Endereco.AlterarEnderecos(rua, bairro, cep, cidade, numero, uf, DadosUsuarios);
+
+            TipoUsuarios DadosTipoUsuarios = _RepositoryTipoUsuario.Find(codigotipousuario);
+
+            DadosTipoUsuarios.AlterarTipoUsuarios(DadosUsuarios);
+
+            DadosUsuarios.AlterarUsuarios(nome, datanascimento, email, cpf, sexo, telefone, celular, DadosEnderecos,DadosTipoUsuarios);
 
             _RepositoryUsuario.Edit(DadosUsuarios);
-            
-            return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO,true);
+
+            //if (DadosUsuarios.IsInvalid())
+            //{
+            //    return new BaseReturn(DadosUsuarios.Notifications.FirstOrDefault().Property, DadosUsuarios.Notifications.FirstOrDefault().Message,false);
+            //}
+
+            //Enderecos DadosEnderecos = DadosUsuarios.Endereco.AlterarEnderecos(rua, bairro, cep, cidade, numero, uf, DadosUsuarios);
+
+            //if (DadosEnderecos.IsInvalid())
+            //{
+            //    return new BaseReturn(DadosEnderecos.Notifications.FirstOrDefault().Property, DadosEnderecos.Notifications.FirstOrDefault().Message, false);
+            //}
+
+            ////_RepositoryEndereco.Edit(DadosEnderecos);
+
+            //TipoUsuarios DadosTipoUsuarios = _RepositoryTipoUsuario.Find(codigotipousuario);
+
+            ////TipoUsuarios DadosTipoUsuarios = DadosUsuarios.Usuario.AlterarTipoUsuarios(DadosUsuarios);
+            //DadosTipoUsuarios.AlterarTipoUsuarios(DadosUsuarios);
+
+            ////_RepositoryUsuario.Edit(DadosUsuarios);
+
+            //_RepositoryUsuario.Edit(DadosUsuarios);
+
+            return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
 
         }
 
@@ -95,6 +119,7 @@ namespace UI.Business.Interfaces.Repositories.Business
             return retorno;
         }
 
+
         public Usuarios Pesquisar(int id)
         {
             return _RepositoryUsuario.Find(id);
@@ -104,7 +129,7 @@ namespace UI.Business.Interfaces.Repositories.Business
         {
             _RepositoryUsuario.Remove(_RepositoryUsuario.Find(id));
 
-            return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO,true);
+            return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
         }
 
     }

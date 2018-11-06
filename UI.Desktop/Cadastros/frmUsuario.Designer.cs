@@ -1,6 +1,6 @@
 ﻿namespace UI.Desktop
 {
-    partial class Usuario
+    partial class frmUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.textEmail = new System.Windows.Forms.TextBox();
             this.textNome = new System.Windows.Forms.TextBox();
@@ -74,15 +75,31 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboTelDois = new System.Windows.Forms.ComboBox();
             this.labelTitulo = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.salvarToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.recortarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.copiarToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.colarToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ajudaToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.copiarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.colarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ajudaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.lblAtencao = new System.Windows.Forms.Label();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gpbDados.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textEmail
@@ -101,11 +118,11 @@
             // 
             this.textNome.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpProvider1.SetHelpString(this.textNome, "Informe seu nome ");
-            this.textNome.Location = new System.Drawing.Point(86, 49);
+            this.textNome.Location = new System.Drawing.Point(86, 53);
             this.textNome.Margin = new System.Windows.Forms.Padding(4);
             this.textNome.Name = "textNome";
             this.helpProvider1.SetShowHelp(this.textNome, true);
-            this.textNome.Size = new System.Drawing.Size(421, 26);
+            this.textNome.Size = new System.Drawing.Size(390, 26);
             this.textNome.TabIndex = 0;
             this.textNome.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingTextBox);
             // 
@@ -141,7 +158,7 @@
             this.textComplemento.Margin = new System.Windows.Forms.Padding(4);
             this.textComplemento.Name = "textComplemento";
             this.helpProvider1.SetShowHelp(this.textComplemento, true);
-            this.textComplemento.Size = new System.Drawing.Size(213, 26);
+            this.textComplemento.Size = new System.Drawing.Size(171, 26);
             this.textComplemento.TabIndex = 6;
             // 
             // textCEP
@@ -172,7 +189,7 @@
             // 
             this.textBairro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpProvider1.SetHelpString(this.textBairro, "Informe o  Bairro");
-            this.textBairro.Location = new System.Drawing.Point(781, 39);
+            this.textBairro.Location = new System.Drawing.Point(739, 39);
             this.textBairro.Margin = new System.Windows.Forms.Padding(4);
             this.textBairro.Name = "textBairro";
             this.helpProvider1.SetShowHelp(this.textBairro, true);
@@ -196,7 +213,7 @@
             // 
             this.textCPF.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpProvider1.SetHelpString(this.textCPF, "Informe o CFP");
-            this.textCPF.Location = new System.Drawing.Point(579, 50);
+            this.textCPF.Location = new System.Drawing.Point(530, 53);
             this.textCPF.Margin = new System.Windows.Forms.Padding(4);
             this.textCPF.Name = "textCPF";
             this.helpProvider1.SetShowHelp(this.textCPF, true);
@@ -231,6 +248,7 @@
             this.btnCadastrar.TabIndex = 2;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Visible = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnLimpar
@@ -244,6 +262,7 @@
             this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Visible = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // labelRua
@@ -287,7 +306,7 @@
             this.labelBairro.AutoSize = true;
             this.labelBairro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBairro.ForeColor = System.Drawing.Color.Black;
-            this.labelBairro.Location = new System.Drawing.Point(723, 44);
+            this.labelBairro.Location = new System.Drawing.Point(681, 44);
             this.labelBairro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBairro.Name = "labelBairro";
             this.labelBairro.Size = new System.Drawing.Size(55, 18);
@@ -324,7 +343,7 @@
             this.groupBox1.Controls.Add(this.btnPesquisar);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 20.25F);
-            this.groupBox1.Location = new System.Drawing.Point(975, 112);
+            this.groupBox1.Location = new System.Drawing.Point(927, 108);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(303, 470);
             this.groupBox1.TabIndex = 5;
@@ -334,13 +353,11 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Font = new System.Drawing.Font("Arial", 12F);
-            this.dataGridView1.Location = new System.Drawing.Point(10, 82);
+            this.dataGridView1.Font = new System.Drawing.Font("Arial", 11F);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 83);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(285, 382);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.Size = new System.Drawing.Size(288, 381);
+            this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnPesquisar
@@ -377,7 +394,7 @@
             this.gpbDados.Font = new System.Drawing.Font("Arial", 20.25F);
             this.gpbDados.Location = new System.Drawing.Point(12, 112);
             this.gpbDados.Name = "gpbDados";
-            this.gpbDados.Size = new System.Drawing.Size(957, 156);
+            this.gpbDados.Size = new System.Drawing.Size(909, 156);
             this.gpbDados.TabIndex = 0;
             this.gpbDados.TabStop = false;
             this.gpbDados.Text = "Dados Pessoais";
@@ -402,7 +419,7 @@
             this.comboTipo.Items.AddRange(new object[] {
             "Cliente",
             "Funcionario"});
-            this.comboTipo.Location = new System.Drawing.Point(666, 102);
+            this.comboTipo.Location = new System.Drawing.Point(666, 103);
             this.comboTipo.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.Size = new System.Drawing.Size(167, 26);
@@ -413,7 +430,7 @@
             this.labelNome.AutoSize = true;
             this.labelNome.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNome.ForeColor = System.Drawing.Color.Black;
-            this.labelNome.Location = new System.Drawing.Point(31, 53);
+            this.labelNome.Location = new System.Drawing.Point(30, 55);
             this.labelNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNome.Name = "labelNome";
             this.labelNome.Size = new System.Drawing.Size(54, 18);
@@ -425,7 +442,7 @@
             this.labelCPF.AutoSize = true;
             this.labelCPF.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCPF.ForeColor = System.Drawing.Color.Black;
-            this.labelCPF.Location = new System.Drawing.Point(533, 54);
+            this.labelCPF.Location = new System.Drawing.Point(484, 56);
             this.labelCPF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCPF.Name = "labelCPF";
             this.labelCPF.Size = new System.Drawing.Size(45, 18);
@@ -459,7 +476,7 @@
             this.labelSexo.AutoSize = true;
             this.labelSexo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSexo.ForeColor = System.Drawing.Color.Black;
-            this.labelSexo.Location = new System.Drawing.Point(731, 52);
+            this.labelSexo.Location = new System.Drawing.Point(682, 55);
             this.labelSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSexo.Name = "labelSexo";
             this.labelSexo.Size = new System.Drawing.Size(48, 18);
@@ -474,7 +491,7 @@
             this.comboSexo.Items.AddRange(new object[] {
             "Feminino",
             "Masculino"});
-            this.comboSexo.Location = new System.Drawing.Point(783, 50);
+            this.comboSexo.Location = new System.Drawing.Point(734, 53);
             this.comboSexo.Margin = new System.Windows.Forms.Padding(4);
             this.comboSexo.Name = "comboSexo";
             this.comboSexo.Size = new System.Drawing.Size(167, 26);
@@ -511,7 +528,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Arial", 20.25F);
             this.groupBox2.Location = new System.Drawing.Point(13, 274);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(956, 136);
+            this.groupBox2.Size = new System.Drawing.Size(908, 136);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
@@ -578,6 +595,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Alterar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelTelUm
@@ -659,24 +677,12 @@
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.ForeColor = System.Drawing.Color.Black;
-            this.labelTitulo.Location = new System.Drawing.Point(328, 9);
+            this.labelTitulo.Location = new System.Drawing.Point(330, 47);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(372, 42);
             this.labelTitulo.TabIndex = 44;
             this.labelTitulo.Text = "Cadastro de Usuários";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(13, 74);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(17, 22);
-            this.statusStrip1.TabIndex = 45;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
@@ -684,12 +690,165 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
-            // Usuario
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.salvarToolStripButton1,
+            this.toolStripButton2,
+            this.toolStripSeparator2,
+            this.recortarToolStripButton,
+            this.copiarToolStripButton1,
+            this.colarToolStripButton1,
+            this.toolStripSeparator3,
+            this.ajudaToolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip1.Size = new System.Drawing.Size(1285, 25);
+            this.toolStrip1.TabIndex = 46;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "&Salvar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // salvarToolStripButton1
+            // 
+            this.salvarToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.salvarToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripButton1.Image")));
+            this.salvarToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.salvarToolStripButton1.Name = "salvarToolStripButton1";
+            this.salvarToolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.salvarToolStripButton1.Text = "&Salvar";
+            this.salvarToolStripButton1.Click += new System.EventHandler(this.salvarToolStripButton1_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // recortarToolStripButton
+            // 
+            this.recortarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.recortarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("recortarToolStripButton.Image")));
+            this.recortarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.recortarToolStripButton.Name = "recortarToolStripButton";
+            this.recortarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.recortarToolStripButton.Text = "Recor&tar";
+            // 
+            // copiarToolStripButton1
+            // 
+            this.copiarToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copiarToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("copiarToolStripButton1.Image")));
+            this.copiarToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copiarToolStripButton1.Name = "copiarToolStripButton1";
+            this.copiarToolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.copiarToolStripButton1.Text = "&Copiar";
+            // 
+            // colarToolStripButton1
+            // 
+            this.colarToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.colarToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("colarToolStripButton1.Image")));
+            this.colarToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.colarToolStripButton1.Name = "colarToolStripButton1";
+            this.colarToolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.colarToolStripButton1.Text = "C&olar";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // ajudaToolStripButton1
+            // 
+            this.ajudaToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ajudaToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("ajudaToolStripButton1.Image")));
+            this.ajudaToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ajudaToolStripButton1.Name = "ajudaToolStripButton1";
+            this.ajudaToolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.ajudaToolStripButton1.Text = "&Ajuda";
+            // 
+            // salvarToolStripButton
+            // 
+            this.salvarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.salvarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripButton.Image")));
+            this.salvarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.salvarToolStripButton.Name = "salvarToolStripButton";
+            this.salvarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.salvarToolStripButton.Text = "&Salvar";
+            this.salvarToolStripButton.Click += new System.EventHandler(this.salvarToolStripButton1_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // copiarToolStripButton
+            // 
+            this.copiarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copiarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copiarToolStripButton.Image")));
+            this.copiarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copiarToolStripButton.Name = "copiarToolStripButton";
+            this.copiarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.copiarToolStripButton.Text = "&Copiar";
+            // 
+            // colarToolStripButton
+            // 
+            this.colarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.colarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("colarToolStripButton.Image")));
+            this.colarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.colarToolStripButton.Name = "colarToolStripButton";
+            this.colarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.colarToolStripButton.Text = "C&olar";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // ajudaToolStripButton
+            // 
+            this.ajudaToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ajudaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("ajudaToolStripButton.Image")));
+            this.ajudaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ajudaToolStripButton.Name = "ajudaToolStripButton";
+            this.ajudaToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.ajudaToolStripButton.Text = "&Ajuda";
+            // 
+            // lblAtencao
+            // 
+            this.lblAtencao.AutoSize = true;
+            this.lblAtencao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtencao.ForeColor = System.Drawing.Color.Red;
+            this.lblAtencao.Location = new System.Drawing.Point(42, 608);
+            this.lblAtencao.Name = "lblAtencao";
+            this.lblAtencao.Size = new System.Drawing.Size(0, 18);
+            this.lblAtencao.TabIndex = 47;
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "&Salvar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 647);
-            this.Controls.Add(this.statusStrip1);
+            this.ClientSize = new System.Drawing.Size(1285, 635);
+            this.Controls.Add(this.lblAtencao);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.groupBox1);
@@ -698,9 +857,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.labelTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.KeywordIndex);
-            this.Name = "Usuario";
+            this.Name = "frmUsuario";
             this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.Usuario_Load);
@@ -714,8 +874,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -768,7 +928,23 @@
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboTipo;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton salvarToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripButton copiarToolStripButton;
+        private System.Windows.Forms.ToolStripButton colarToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton ajudaToolStripButton;
+        private System.Windows.Forms.ToolStripButton salvarToolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton recortarToolStripButton;
+        private System.Windows.Forms.ToolStripButton copiarToolStripButton1;
+        private System.Windows.Forms.ToolStripButton colarToolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton ajudaToolStripButton1;
+        private System.Windows.Forms.Label lblAtencao;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

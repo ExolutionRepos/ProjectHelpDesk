@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Repositories\Business\ControlConfigFonte.cs" />
     <Compile Include="Interfaces\Repositories\Business\ControlUsuario.cs" />
     <Compile Include="Interfaces\Repositories\IBaseRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBaseService.cs" />

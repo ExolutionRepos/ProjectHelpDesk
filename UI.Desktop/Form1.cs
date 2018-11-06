@@ -63,15 +63,15 @@ namespace UI.Desktop
             Usuarios DadosUsuarios2 = new Usuarios("fabio", dateTimeNascimento.Value, "rogerio.silva@tivit.com", "46282434840", DadosSexo, "1141938361", "964273148");
 
 
-            //cadastro tipo de usuario
-            TipoUsuarios Funcionario = new TipoUsuarios(1, "Acesso para resolução e apoio aos chamados", "Funcionarios");
-            TipoUsuarios Cliente = new TipoUsuarios(2, "Acesso somente de pesquisa e abertura/acompanhamento de chamados", "Clientes");
-            Funcionario.Usuario.Add(DadosUsuarios1);
-            Cliente.Usuario.Add(DadosUsuarios2);
+            ////cadastro tipo de usuario
+            //TipoUsuarios Funcionario = new TipoUsuarios(1, "Acesso para resolução e apoio aos chamados", "Funcionarios");
+            //TipoUsuarios Cliente = new TipoUsuarios(2, "Acesso somente de pesquisa e abertura/acompanhamento de chamados", "Clientes");
+            //Funcionario.Usuario.Add(DadosUsuarios1);
+            //Cliente.Usuario.Add(DadosUsuarios2);
 
             //Não salvar, somente adicionar
-            _RepositoryTipoPerfil.AddNotSave(Funcionario);
-            _RepositoryTipoPerfil.AddNotSave(Cliente);
+            //_RepositoryTipoPerfil.AddNotSave(Funcionario);
+            //_RepositoryTipoPerfil.AddNotSave(Cliente);
 
             //// Cadastro de endereço
             //Enderecos Endereco = new Enderecos("Rua abelardo");
@@ -108,8 +108,7 @@ namespace UI.Desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Usuario form = new Usuario();
-            form.Show();
+            
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace Library.Class.Utils
 {
@@ -15,6 +16,18 @@ namespace Library.Class.Utils
                 sbString.Append(t.ToString("x2"));
 
             return sbString.ToString();
+        }
+
+        public static int ToInt32(object value)
+        {
+            if (value == null || value == "")
+            {
+                return 0;
+            }
+            else
+            {
+                return Convert.ToInt32(value);
+            }
         }
     }
 }

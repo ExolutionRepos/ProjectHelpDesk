@@ -43,4 +43,7 @@ C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Form1.resources
 C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
 C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
 C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
-C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Usuario.resources
+C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.frmUsuario.resources
+C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.MenuPrincipal.resources
+C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Atencao.resources
+C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Autenticar.resources

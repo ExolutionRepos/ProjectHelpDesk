@@ -59,10 +59,10 @@ namespace UI.Business.Interfaces.Services
             unitOfWork.SALVAR();
         }
 
-        //public void Dispose()
-        //{
-        //    _repository.Dispose();
-        //}
+        public void Dispose()
+        {
+            _repository.Dispose();
+        }
     }
     
 }

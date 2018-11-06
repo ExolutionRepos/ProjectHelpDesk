@@ -60,6 +60,7 @@
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
       <Private>True</Private>
@@ -129,6 +130,7 @@
     <Compile Include="Enum\EnumTipoUsuario.cs" />
     <Compile Include="Models\BaseConhecimento.cs" />
     <Compile Include="Models\Chamados.cs" />
+    <Compile Include="Models\ConfigFont.cs" />
     <Compile Include="Models\Departamentos.cs" />
     <Compile Include="Models\Enderecos.cs" />
     <Compile Include="Models\Logins.cs" />
@@ -145,6 +147,7 @@
       <DependentUpon>Message.resx</DependentUpon>
     </Compile>
     <Compile Include="Utils\ClearControl.cs" />
+    <Compile Include="Utils\ConfigurarFonte.cs" />
     <Compile Include="Utils\StringExtension.cs" />
   </ItemGroup>
   <ItemGroup>

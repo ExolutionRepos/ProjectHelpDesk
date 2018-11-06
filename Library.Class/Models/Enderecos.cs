@@ -41,6 +41,33 @@ namespace Library.Class.Models
             //this.Complemento = complemento;
 
             Usuario = new HashSet<Usuarios>();
+            Validar();
+        }
+
+        public Enderecos AlterarEnderecos(string rua, string bairro, string cep, string cidade, int? numero, string uf, Usuarios usuario
+           //, string complemento
+           )
+        {
+            Usuario = new HashSet<Usuarios>();
+
+            this.Rua = rua;
+            this.Bairro = bairro;
+            this.CEP = cep;
+            this.Cidade = cidade;
+            this.Numero = numero;
+            this.UF = uf;
+            //this.Complemento = complemento;
+
+            this.Usuario.Add(usuario);
+            
+            Validar();
+
+            return this;
+        }
+
+
+        protected void Validar()
+        {
 
             new AddNotifications<Enderecos>(this)
         .IfNullOrInvalidLength(x => x.Rua, 5, 50, Resources.Message.X0_OBRIGATORIA_E_DEVE_CONTER_ENTRE_X1_E_X2_CARACTERES.ToFormat("Endereço", "5", "50"));

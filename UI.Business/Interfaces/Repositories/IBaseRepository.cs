@@ -16,5 +16,6 @@ namespace UI.Business.Interfaces.Repositories
         void Add(T item);
         void Remove(T item);
         void Edit(T item);
+        void Dispose();
     }
 }
