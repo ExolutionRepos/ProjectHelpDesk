@@ -20,6 +20,10 @@ namespace UI.Desktop
         {
             InitializeComponent();
             _RepositoryControlUsuario = new ControlUsuario();
+
+            //Configurando o tamanho da fonte
+            this.ConfigurarTamanhoFonte(new ConfigFont("Arial", 14F));
+
         }
 
         private void ValidatingTextBox(object sender, CancelEventArgs e)
@@ -183,11 +187,7 @@ namespace UI.Desktop
                 var retorno = _RepositoryControlUsuario.CadastrarUsuario(textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
                     (int)comboTipo.SelectedIndex + 1);
-
                 
-                //toolStripStatusLabel1.Text =
-                // retorno.Propert + ": " + retorno.Message;
-
                 lblAtencao.Text = retorno.Propert + ": " + retorno.Message;
 
                 if (retorno.Status)
@@ -217,10 +217,7 @@ namespace UI.Desktop
                 var retorno = _RepositoryControlUsuario.AlterarUsuario(Convert.ToInt32(campo), textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
                     (int)comboTipo.SelectedIndex + 1);
-
-                //toolStripStatusLabel1.Text =
-                // retorno.Propert + ": " + retorno.Message;
-
+                
                 lblAtencao.Text = retorno.Propert + ": " + retorno.Message;
                 
                 if (retorno.Status)
@@ -251,15 +248,14 @@ namespace UI.Desktop
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
                 (int)comboTipo.SelectedIndex + 1);
 
-                //toolStripStatusLabel1.Text =
-                // retorno.Propert + ": " + retorno.Message;
-
+                
                 lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
                 if (retorno.Status)
                 {
                     Pesquisar(textBox2.Text);
                     Limpar();
+                    this.Refresh();
                 }
             }
             else
@@ -279,16 +275,14 @@ namespace UI.Desktop
                 var retorno = _RepositoryControlUsuario.CadastrarUsuario(textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, StringExtension.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
                     (int)comboTipo.SelectedIndex + 1);
-
-                //Convert.ToInt32(textN.Text)
-
-                //toolStripStatusLabel1.Text =
-                // retorno.Propert + ": " + retorno.Message;
-
+                
                 lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
                 if (retorno.Status)
-                    Pesquisar(null);
+                {
+                    Pesquisar(textBox2.Text);
+                    Limpar();
+                }
             }
             else
             {

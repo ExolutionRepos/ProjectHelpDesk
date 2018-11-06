@@ -31,15 +31,9 @@ namespace Library.Class.Models
             
         }
 
-        public TipoUsuarios AlterarTipoUsuarios(Usuarios usuario)
+        public TipoUsuarios AlterarTipoUsuarios()
         {
-            //this.Descricao = descricao;
-            //this.Nome = nome;
-
-            Usuario = new HashSet<Usuarios>();
-
-            this.Usuario.Add(usuario);
-
+            
             //Usuario = new HashSet<Usuarios>();
             return this;
         }

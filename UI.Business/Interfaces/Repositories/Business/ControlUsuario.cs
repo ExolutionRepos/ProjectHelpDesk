@@ -10,15 +10,10 @@ namespace UI.Business.Interfaces.Repositories.Business
     public class ControlUsuario
     {
 
-        //private readonly BaseService<Usuarios> _RepositoryUsuario;
-        //private readonly BaseService<Departamentos> _RepositoryDepartamento;
-        //private readonly BaseService<TipoUsuarios> _RepositoryTipoUsuario;
-        //private readonly BaseService<Enderecos> _RepositoryEndereco;
-
-        private BaseService<Usuarios> _RepositoryUsuario;
-        private BaseService<Departamentos> _RepositoryDepartamento;
-        private BaseService<TipoUsuarios> _RepositoryTipoUsuario;
-        private BaseService<Enderecos> _RepositoryEndereco;
+        private readonly BaseService<Usuarios> _RepositoryUsuario;
+        private readonly BaseService<Departamentos> _RepositoryDepartamento;
+        private readonly BaseService<TipoUsuarios> _RepositoryTipoUsuario;
+        private readonly BaseService<Enderecos> _RepositoryEndereco;
 
         public ControlUsuario()
         {
@@ -75,38 +70,11 @@ namespace UI.Business.Interfaces.Repositories.Business
             Usuarios DadosUsuarios = _RepositoryUsuario.Find(CodigoUsuario);
 
             Enderecos DadosEnderecos = DadosUsuarios.Endereco.AlterarEnderecos(rua, bairro, cep, cidade, numero, uf, DadosUsuarios);
-
-            TipoUsuarios DadosTipoUsuarios = _RepositoryTipoUsuario.Find(codigotipousuario);
-
-            DadosTipoUsuarios.AlterarTipoUsuarios(DadosUsuarios);
-
-            DadosUsuarios.AlterarUsuarios(nome, datanascimento, email, cpf, sexo, telefone, celular, DadosEnderecos,DadosTipoUsuarios);
-
+            
+            DadosUsuarios.AlterarUsuarios(nome, datanascimento, email, cpf, sexo, telefone, celular, DadosEnderecos, DadosUsuarios.Usuario);
+            
             _RepositoryUsuario.Edit(DadosUsuarios);
-
-            //if (DadosUsuarios.IsInvalid())
-            //{
-            //    return new BaseReturn(DadosUsuarios.Notifications.FirstOrDefault().Property, DadosUsuarios.Notifications.FirstOrDefault().Message,false);
-            //}
-
-            //Enderecos DadosEnderecos = DadosUsuarios.Endereco.AlterarEnderecos(rua, bairro, cep, cidade, numero, uf, DadosUsuarios);
-
-            //if (DadosEnderecos.IsInvalid())
-            //{
-            //    return new BaseReturn(DadosEnderecos.Notifications.FirstOrDefault().Property, DadosEnderecos.Notifications.FirstOrDefault().Message, false);
-            //}
-
-            ////_RepositoryEndereco.Edit(DadosEnderecos);
-
-            //TipoUsuarios DadosTipoUsuarios = _RepositoryTipoUsuario.Find(codigotipousuario);
-
-            ////TipoUsuarios DadosTipoUsuarios = DadosUsuarios.Usuario.AlterarTipoUsuarios(DadosUsuarios);
-            //DadosTipoUsuarios.AlterarTipoUsuarios(DadosUsuarios);
-
-            ////_RepositoryUsuario.Edit(DadosUsuarios);
-
-            //_RepositoryUsuario.Edit(DadosUsuarios);
-
+            
             return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
 
         }

@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Desktop.Cadastros;
+using UI.Desktop.Chamado;
+using UI.Desktop.Sistema;
 
 namespace UI.Desktop
 {
@@ -85,7 +88,22 @@ namespace UI.Desktop
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+            AbrirForm(new frmLogin());
+        }
 
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new Pre_Chamado());
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmDashBoard());
+        }
+
+        private void fonteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new frmConfigFonte()).ShowDialog();
         }
     }
 }

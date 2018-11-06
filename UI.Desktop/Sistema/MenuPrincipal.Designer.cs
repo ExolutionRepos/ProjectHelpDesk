@@ -81,8 +81,9 @@
             // fonteToolStripMenuItem
             // 
             this.fonteToolStripMenuItem.Name = "fonteToolStripMenuItem";
-            this.fonteToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.fonteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fonteToolStripMenuItem.Text = "&Fonte";
+            this.fonteToolStripMenuItem.Click += new System.EventHandler(this.fonteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -156,6 +157,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(107, 124);
             this.toolStripButton2.Text = "Chamados";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton5
             // 
@@ -166,6 +168,7 @@
             this.toolStripButton5.Size = new System.Drawing.Size(107, 124);
             this.toolStripButton5.Text = "DashBoard";
             this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton3
             // 

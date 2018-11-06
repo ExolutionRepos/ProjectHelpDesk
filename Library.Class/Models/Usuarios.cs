@@ -61,7 +61,9 @@ namespace Library.Class.Models
             Validar();
         }
         
-        public void AlterarUsuarios(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular, Enderecos endereco, TipoUsuarios tipousuario)
+        public void AlterarUsuarios(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular, Enderecos endereco
+            , TipoUsuarios tipousuario
+            )
         {
             Cliente = new HashSet<Chamados>();
             Funcionario = new HashSet<Chamados>();
@@ -73,7 +75,9 @@ namespace Library.Class.Models
             this.Sexo = sexo;
             this.Telefone = telefone;
             this.Celular = celular;
+
             this.Endereco = endereco;
+
             this.Usuario = tipousuario;
 
             Validar();

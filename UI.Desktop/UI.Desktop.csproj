@@ -144,16 +144,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Atencao.cs">
+    <Compile Include="Sistema\Atencao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Atencao.Designer.cs">
+    <Compile Include="Sistema\Atencao.Designer.cs">
       <DependentUpon>Atencao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Autenticar.cs">
+    <Compile Include="Sistema\Autenticar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Autenticar.Designer.cs">
+    <Compile Include="Sistema\Autenticar.Designer.cs">
       <DependentUpon>Autenticar.cs</DependentUpon>
     </Compile>
     <Compile Include="Cadastros\frmLogin.cs">
@@ -162,16 +162,40 @@
     <Compile Include="Cadastros\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Chamado\frmChamado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Chamado\frmChamado.Designer.cs">
+      <DependentUpon>frmChamado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chamado\frmDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chamado\frmDashBoard.Designer.cs">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chamado\frmPreChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chamado\frmPreChamado.Designer.cs">
+      <DependentUpon>frmPreChamado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
+    <Compile Include="Sistema\frmConfigFonte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
+    <Compile Include="Sistema\frmConfigFonte.Designer.cs">
+      <DependentUpon>frmConfigFonte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -182,19 +206,28 @@
     <Compile Include="Cadastros\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Atencao.resx">
+    <EmbeddedResource Include="Chamado\frmDashBoard.resx">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\Atencao.resx">
       <DependentUpon>Atencao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Autenticar.resx">
+    <EmbeddedResource Include="Sistema\Autenticar.resx">
       <DependentUpon>Autenticar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Cadastros\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
+    <EmbeddedResource Include="Sistema\frmConfigFonte.resx">
+      <DependentUpon>frmConfigFonte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
