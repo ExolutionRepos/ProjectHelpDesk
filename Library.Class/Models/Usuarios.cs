@@ -29,15 +29,21 @@ namespace Library.Class.Models
         public string Telefone { get; private set; }
 
         public string Celular { get; private set; }
-
-        [Required]
+        
+        
+        [Required]         
         public virtual Enderecos Endereco { get; private set; }
 
-        //[Required]
+        
+        public int CodigoTipoUsuario { get; private set; }
+        [ForeignKey("CodigoTipoUsuario")]
         public virtual TipoUsuarios Usuario { get; private set; }
 
-        public virtual Departamentos Departamento { get; private set; }
 
+        public int? CodigoDepartamento { get; private set; }
+        [ForeignKey("CodigoDepartamento")]
+        public virtual Departamentos Departamento { get; private set; }
+        
         public virtual ConfigFont Fonte { get; private set; }
 
         public ICollection<Chamados> Cliente { get; private set; }

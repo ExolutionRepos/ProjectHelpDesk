@@ -10,7 +10,7 @@ namespace Library.Class.Models
     public class Departamentos : Notifiable
     {
         [Key]
-        public int CodigoDepartamento { get; private set; }
+        public int? CodigoDepartamento { get; private set; }
         
         public string Descricao { get; private set; }
 

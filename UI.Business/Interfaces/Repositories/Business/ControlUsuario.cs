@@ -74,7 +74,20 @@ namespace UI.Business.Interfaces.Repositories.Business
             DadosUsuarios.AlterarUsuarios(nome, datanascimento, email, cpf, sexo, telefone, celular, DadosEnderecos, DadosUsuarios.Usuario);
             
             _RepositoryUsuario.Edit(DadosUsuarios);
-            
+
+            var query = from t1 in _RepositoryUsuario.List()
+                        join t2 in _RepositoryTipoUsuario.List() on t1.CodigoTipoUsuario equals t2.CodigoTipoUsuario
+                        select new { t1, t2 } ;
+
+            var query1 =_RepositoryTipoUsuario.List().Join(
+                _RepositoryUsuario.List(),
+                    s => s.CodigoTipoUsuario,
+                    sa => sa.CodigoTipoUsuario,
+                    (s, sa) => new { service = s, asgnmt = sa })
+                .Where(ssa => ssa.service.CodigoTipoUsuario == 1 || ssa.asgnmt.CodigoUsuario == 1)
+                .Select(ssa => ssa.service)
+                .FirstOrDefault();
+
             return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
 
         }

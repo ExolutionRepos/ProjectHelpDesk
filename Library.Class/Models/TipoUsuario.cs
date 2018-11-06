@@ -13,7 +13,7 @@ namespace Library.Class.Models
     public class TipoUsuarios : Notifiable
     {
         [Key]
-        public int? CodigoTipoUsuario { get; private set; }
+        public int CodigoTipoUsuario { get; private set; }
 
         public string Descricao { get; private set; }
 
@@ -21,7 +21,7 @@ namespace Library.Class.Models
 
         public ICollection<Usuarios> Usuario { get; private set; }
 
-        public TipoUsuarios(int? codigotipousuario, string descricao, string nome)
+        public TipoUsuarios(int codigotipousuario, string descricao, string nome)
         {
             this.CodigoTipoUsuario = codigotipousuario;
             this.Descricao = descricao;
