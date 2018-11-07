@@ -105,5 +105,27 @@ namespace UI.Desktop
         {
             (new frmConfigFonte()).ShowDialog();
         }
+
+        private void configurarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new frmConfiguracao()).ShowDialog();
+        }
+
+        private void alertaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form mdiChildForm in MdiChildren)
+                mdiChildForm.Close();
+
+            Atencao form = new Atencao();
+            form.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            form.MdiParent = this;
+            form.Location = new Point(370, 180);
+            form.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmUsuario(Convert.ToInt32(toolStripMenuItem2.Tag)));
+        }
     }
 }

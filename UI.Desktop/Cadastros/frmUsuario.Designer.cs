@@ -53,7 +53,6 @@
             this.labelN = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.gpbDados = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -93,6 +92,9 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ajudaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lblAtencao = new System.Windows.Forms.Label();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboDepartamento = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -339,8 +341,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.btnPesquisar);
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 20.25F);
             this.groupBox1.Location = new System.Drawing.Point(927, 108);
@@ -368,15 +370,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(262, 49);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(33, 26);
-            this.btnPesquisar.TabIndex = 1;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -389,6 +382,8 @@
             // 
             // gpbDados
             // 
+            this.gpbDados.Controls.Add(this.label2);
+            this.gpbDados.Controls.Add(this.comboDepartamento);
             this.gpbDados.Controls.Add(this.label1);
             this.gpbDados.Controls.Add(this.comboTipo);
             this.gpbDados.Controls.Add(this.textNome);
@@ -412,7 +407,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(562, 105);
+            this.label1.Location = new System.Drawing.Point(330, 105);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 18);
@@ -427,10 +422,10 @@
             this.comboTipo.Items.AddRange(new object[] {
             "Cliente",
             "Funcionario"});
-            this.comboTipo.Location = new System.Drawing.Point(666, 103);
+            this.comboTipo.Location = new System.Drawing.Point(434, 103);
             this.comboTipo.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(167, 26);
+            this.comboTipo.Size = new System.Drawing.Size(144, 26);
             this.comboTipo.TabIndex = 4;
             // 
             // labelNome
@@ -473,10 +468,12 @@
             // 
             this.dateTimeNascimento.CalendarFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeNascimento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeNascimento.Location = new System.Drawing.Point(186, 102);
             this.dateTimeNascimento.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimeNascimento.MaxDate = new System.DateTime(2018, 12, 31, 0, 0, 0, 0);
             this.dateTimeNascimento.Name = "dateTimeNascimento";
-            this.dateTimeNascimento.Size = new System.Drawing.Size(321, 26);
+            this.dateTimeNascimento.Size = new System.Drawing.Size(117, 26);
             this.dateTimeNascimento.TabIndex = 3;
             // 
             // labelSexo
@@ -734,7 +731,7 @@
             this.salvarToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.salvarToolStripButton1.Name = "salvarToolStripButton1";
             this.salvarToolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.salvarToolStripButton1.Text = "&Salvar";
+            this.salvarToolStripButton1.Text = "&Alterar";
             this.salvarToolStripButton1.Click += new System.EventHandler(this.salvarToolStripButton1_Click);
             // 
             // toolStripButton2
@@ -744,7 +741,7 @@
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "&Salvar";
+            this.toolStripButton2.Text = "&Excluir";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator2
@@ -850,6 +847,48 @@
             this.lblAtencao.Size = new System.Drawing.Size(0, 18);
             this.lblAtencao.TabIndex = 47;
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.BackgroundImage")));
+            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
+            this.btnPesquisar.Location = new System.Drawing.Point(265, 51);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(33, 26);
+            this.btnPesquisar.TabIndex = 4;
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(608, 106);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 18);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Departamentos:";
+            // 
+            // comboDepartamento
+            // 
+            this.comboDepartamento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboDepartamento.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboDepartamento.FormattingEnabled = true;
+            this.comboDepartamento.Items.AddRange(new object[] {
+            "Cliente",
+            "Funcionario"});
+            this.comboDepartamento.Location = new System.Drawing.Point(731, 104);
+            this.comboDepartamento.Margin = new System.Windows.Forms.Padding(4);
+            this.comboDepartamento.Name = "comboDepartamento";
+            this.comboDepartamento.Size = new System.Drawing.Size(167, 26);
+            this.comboDepartamento.TabIndex = 13;
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -897,7 +936,6 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox gpbDados;
         private System.Windows.Forms.TextBox textNome;
@@ -954,5 +992,8 @@
         private System.Windows.Forms.Label lblAtencao;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboDepartamento;
     }
 }

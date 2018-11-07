@@ -192,6 +192,12 @@
     <Compile Include="Sistema\frmConfigFonte.Designer.cs">
       <DependentUpon>frmConfigFonte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sistema\frmConfiguracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\frmConfiguracao.Designer.cs">
+      <DependentUpon>frmConfiguracao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sistema\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\frmConfigFonte.resx">
       <DependentUpon>frmConfigFonte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\frmConfiguracao.resx">
+      <DependentUpon>frmConfiguracao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

@@ -49,10 +49,13 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.alertaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -88,13 +91,14 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // configurarToolStripMenuItem
             // 
             this.configurarToolStripMenuItem.Name = "configurarToolStripMenuItem";
-            this.configurarToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.configurarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.configurarToolStripMenuItem.Text = "Configurar&";
+            this.configurarToolStripMenuItem.Click += new System.EventHandler(this.configurarToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -121,6 +125,7 @@
             this.toolStripMenuItem2.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always;
             this.toolStripMenuItem2.Size = new System.Drawing.Size(269, 112);
             this.toolStripMenuItem2.Text = "Rogério Júnior";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStrip1
             // 
@@ -225,11 +230,27 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alertaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowCheckMargin = true;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 26);
+            // 
+            // alertaToolStripMenuItem
+            // 
+            this.alertaToolStripMenuItem.Name = "alertaToolStripMenuItem";
+            this.alertaToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.alertaToolStripMenuItem.Text = "Alerta";
+            this.alertaToolStripMenuItem.Click += new System.EventHandler(this.alertaToolStripMenuItem_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1161, 692);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip2);
@@ -247,6 +268,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +282,6 @@
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         public System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
@@ -273,5 +294,8 @@
         private System.Windows.Forms.ToolStripMenuItem configurarToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem alertaToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

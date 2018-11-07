@@ -27,8 +27,12 @@ namespace UI.Desktop
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            (new MenuPrincipal()).ShowDialog();
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.toolStripMenuItem2.Tag = 1;
+            menuPrincipal.ShowDialog();
             this.Show();
+
+
         }
 
         private void Autenticar_FormClosing(object sender, FormClosingEventArgs e)

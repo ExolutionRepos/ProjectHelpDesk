@@ -84,7 +84,9 @@ namespace Library.Class.Models
 
             this.Endereco = endereco;
 
-            this.Usuario = tipousuario;
+            //this.Usuario = tipousuario;
+
+            this.CodigoTipoUsuario = tipousuario.CodigoTipoUsuario;
 
             Validar();
             
@@ -105,7 +107,7 @@ namespace Library.Class.Models
         }
 
 
-        protected Usuarios()
+        public Usuarios()
         {
             Cliente = new HashSet<Chamados>();
             Funcionario = new HashSet<Chamados>();

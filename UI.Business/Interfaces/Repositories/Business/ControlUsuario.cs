@@ -45,16 +45,14 @@ namespace UI.Business.Interfaces.Repositories.Business
 
             DadosEndereco.Usuario.Add(DadosUsuarios);
 
-            //Adicionar
+            //Não salvar, somente adicionar
             _RepositoryEndereco.AddNotSave(DadosEndereco);
 
-
+            // Tipo de Usuarios
             TipoUsuarios TipoUsuario = _RepositoryTipoUsuario.Find(codigotipousuario);
-
             //cadastro tipo de usuario
             TipoUsuario.Usuario.Add(DadosUsuarios);
-
-            //Não salvar, somente adicionar
+            //Adicionar
             _RepositoryTipoUsuario.Edit(TipoUsuario);
 
 
@@ -67,29 +65,38 @@ namespace UI.Business.Interfaces.Repositories.Business
             , string rua, string bairro, string cep, string cidade, int? numero, string uf
             , int codigotipousuario)
         {
+            
             Usuarios DadosUsuarios = _RepositoryUsuario.Find(CodigoUsuario);
 
+            if (DadosUsuarios == null)
+            {
+                return new BaseReturn("Usuario", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
+            }
+
             Enderecos DadosEnderecos = DadosUsuarios.Endereco.AlterarEnderecos(rua, bairro, cep, cidade, numero, uf, DadosUsuarios);
-            
-            DadosUsuarios.AlterarUsuarios(nome, datanascimento, email, cpf, sexo, telefone, celular, DadosEnderecos, DadosUsuarios.Usuario);
-            
+
+            if (DadosEnderecos.IsInvalid())
+            {
+                return new BaseReturn(DadosEnderecos.Notifications.FirstOrDefault().Property, DadosEnderecos.Notifications.FirstOrDefault().Message, false);
+            }
+
+            TipoUsuarios DadosTiposUsuarios = _RepositoryTipoUsuario.Find(codigotipousuario);
+
+            if (DadosTiposUsuarios == null)
+            {
+                return new BaseReturn("Tipos Usuarios", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
+            }
+
+            DadosUsuarios.AlterarUsuarios(nome, datanascimento, email, cpf, sexo, telefone, celular, DadosEnderecos, DadosTiposUsuarios);
+
+            if (DadosUsuarios.IsInvalid())
+            {
+                return new BaseReturn(DadosUsuarios.Notifications.FirstOrDefault().Property, DadosUsuarios.Notifications.FirstOrDefault().Message, false);
+            }
+
             _RepositoryUsuario.Edit(DadosUsuarios);
 
-            var query = from t1 in _RepositoryUsuario.List()
-                        join t2 in _RepositoryTipoUsuario.List() on t1.CodigoTipoUsuario equals t2.CodigoTipoUsuario
-                        select new { t1, t2 } ;
-
-            var query1 =_RepositoryTipoUsuario.List().Join(
-                _RepositoryUsuario.List(),
-                    s => s.CodigoTipoUsuario,
-                    sa => sa.CodigoTipoUsuario,
-                    (s, sa) => new { service = s, asgnmt = sa })
-                .Where(ssa => ssa.service.CodigoTipoUsuario == 1 || ssa.asgnmt.CodigoUsuario == 1)
-                .Select(ssa => ssa.service)
-                .FirstOrDefault();
-
             return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
-
         }
 
         public IQueryable<Usuarios> PesquisarUsuario(string nome)
@@ -108,8 +115,14 @@ namespace UI.Business.Interfaces.Repositories.Business
 
         public BaseReturn Remover(int id)
         {
-            _RepositoryUsuario.Remove(_RepositoryUsuario.Find(id));
+            Usuarios DadosUsuarios = _RepositoryUsuario.Find(id);
 
+            if (DadosUsuarios == null)
+            {
+                return new BaseReturn("Usuario", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
+            }
+
+            _RepositoryUsuario.Remove(DadosUsuarios);
             return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
         }
 

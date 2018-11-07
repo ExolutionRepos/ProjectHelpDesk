@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UI.Business.Interfaces.Repositories;
 using UI.Business.Persistence;
 
@@ -56,6 +55,10 @@ namespace UI.Business.Interfaces.Services
         public void EditNotSave(T item)
         {
             _repository.Edit(item);
+        }
+
+        public void SaveChances()
+        {
             unitOfWork.SALVAR();
         }
 

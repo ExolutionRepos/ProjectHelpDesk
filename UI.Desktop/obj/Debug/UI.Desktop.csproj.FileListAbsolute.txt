@@ -50,3 +50,4 @@ C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Autenticar.resources
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Cadastros.frmLogin.resources
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Chamado.frmDashBoard.resources
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Sistema.frmConfigFonte.resources
+C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Sistema.frmConfiguracao.resources

@@ -26,6 +26,20 @@ namespace UI.Desktop
 
         }
 
+        public frmUsuario(int id)
+        {
+            InitializeComponent();
+            _RepositoryControlUsuario = new ControlUsuario();
+
+            //Configurando o tamanho da fonte
+            this.ConfigurarTamanhoFonte(new ConfigFont("Arial", 14F));
+
+            CompletarCampos(_RepositoryControlUsuario.Pesquisar(id));
+
+            toolStripButton1.Enabled = true;
+            salvarToolStripButton1.Enabled = false;
+        }
+
         private void ValidatingTextBox(object sender, CancelEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -98,8 +112,8 @@ namespace UI.Desktop
                 }
                 DataGridViewButtonColumn btnColumn = new DataGridViewButtonColumn();
                 btnColumn.Name = "Del";
-                btnColumn.HeaderText = "Del";
-                btnColumn.Text = "Del";
+                btnColumn.HeaderText = "Ação";
+                btnColumn.Text = "Excluir";
                 btnColumn.UseColumnTextForButtonValue = true;
                 btnColumn.CellTemplate.Style.BackColor = Color.Orange;
                 dataGridView1.Columns.Add(btnColumn);
@@ -295,6 +309,11 @@ namespace UI.Desktop
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             Limpar();
+        }
+
+        private void btnPesquisar_Click_1(object sender, EventArgs e)
+        {
+            Pesquisar(textBox2.Text);
         }
     }
 }

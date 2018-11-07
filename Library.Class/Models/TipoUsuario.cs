@@ -30,15 +30,7 @@ namespace Library.Class.Models
             //Usuario = new HashSet<Usuarios>();
             
         }
-
-        public TipoUsuarios AlterarTipoUsuarios()
-        {
-            
-            //Usuario = new HashSet<Usuarios>();
-            return this;
-        }
-
-
+        
         protected TipoUsuarios()
         {
             Usuario = new HashSet<Usuarios>();
