@@ -1,4 +1,6 @@
-﻿namespace Library.Class.Enum
+﻿
+
+namespace Library.Class.Enum
 {
     public class EnumTipoUsuario
     {

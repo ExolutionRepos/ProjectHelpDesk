@@ -241,6 +241,8 @@ namespace UI.Desktop
             {
                 Sexo DadosSexo = (Sexo)Enum.Parse(typeof(Sexo), comboSexo.SelectedItem.ToString());
 
+
+
                 //var campo = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
 
@@ -248,7 +250,7 @@ namespace UI.Desktop
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
                 (int)comboTipo.SelectedIndex + 1);
 
-                
+
                 lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
                 if (retorno.Status)
@@ -275,6 +277,7 @@ namespace UI.Desktop
                 var retorno = _RepositoryControlUsuario.CadastrarUsuario(textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, StringExtension.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
                     (int)comboTipo.SelectedIndex + 1);
+                //FABIO: MANO, NAO ENTENDI PQ VC SEMPRE ADD 1 NO SELECTINDEX DO COMBO.. 
                 
                 lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 

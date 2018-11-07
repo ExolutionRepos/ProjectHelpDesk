@@ -19,6 +19,7 @@ namespace UI.Desktop.Cadastros
         {
             InitializeComponent();
             _RepositoryControlUsuario = new ControlUsuario();
+
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
