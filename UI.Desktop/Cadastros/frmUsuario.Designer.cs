@@ -52,9 +52,12 @@
             this.labelCidade = new System.Windows.Forms.Label();
             this.labelN = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.gpbDados = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboDepartamento = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.labelNome = new System.Windows.Forms.Label();
@@ -92,9 +95,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ajudaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lblAtencao = new System.Windows.Forms.Label();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboDepartamento = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -144,11 +144,11 @@
             // 
             this.textRua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpProvider1.SetHelpString(this.textRua, "Informe a Rua");
-            this.textRua.Location = new System.Drawing.Point(52, 41);
+            this.textRua.Location = new System.Drawing.Point(114, 41);
             this.textRua.Margin = new System.Windows.Forms.Padding(4);
             this.textRua.Name = "textRua";
             this.helpProvider1.SetShowHelp(this.textRua, true);
-            this.textRua.Size = new System.Drawing.Size(395, 26);
+            this.textRua.Size = new System.Drawing.Size(361, 26);
             this.textRua.TabIndex = 0;
             this.textRua.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingTextBox);
             // 
@@ -160,7 +160,7 @@
             this.textComplemento.Margin = new System.Windows.Forms.Padding(4);
             this.textComplemento.Name = "textComplemento";
             this.helpProvider1.SetShowHelp(this.textComplemento, true);
-            this.textComplemento.Size = new System.Drawing.Size(171, 26);
+            this.textComplemento.Size = new System.Drawing.Size(176, 26);
             this.textComplemento.TabIndex = 6;
             // 
             // textCEP
@@ -171,7 +171,7 @@
             this.textCEP.Margin = new System.Windows.Forms.Padding(4);
             this.textCEP.Name = "textCEP";
             this.helpProvider1.SetShowHelp(this.textCEP, true);
-            this.textCEP.Size = new System.Drawing.Size(136, 26);
+            this.textCEP.Size = new System.Drawing.Size(135, 26);
             this.textCEP.TabIndex = 1;
             this.textCEP.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingTextBox);
             // 
@@ -183,7 +183,7 @@
             this.textCidade.Margin = new System.Windows.Forms.Padding(4);
             this.textCidade.Name = "textCidade";
             this.helpProvider1.SetShowHelp(this.textCidade, true);
-            this.textCidade.Size = new System.Drawing.Size(184, 26);
+            this.textCidade.Size = new System.Drawing.Size(206, 26);
             this.textCidade.TabIndex = 3;
             this.textCidade.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingTextBox);
             // 
@@ -195,7 +195,7 @@
             this.textBairro.Margin = new System.Windows.Forms.Padding(4);
             this.textBairro.Name = "textBairro";
             this.helpProvider1.SetShowHelp(this.textBairro, true);
-            this.textBairro.Size = new System.Drawing.Size(153, 26);
+            this.textBairro.Size = new System.Drawing.Size(158, 26);
             this.textBairro.TabIndex = 2;
             this.textBairro.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingTextBox);
             // 
@@ -203,11 +203,11 @@
             // 
             this.textN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpProvider1.SetHelpString(this.textN, "Informe o Numero");
-            this.textN.Location = new System.Drawing.Point(525, 94);
+            this.textN.Location = new System.Drawing.Point(514, 97);
             this.textN.Margin = new System.Windows.Forms.Padding(4);
             this.textN.Name = "textN";
             this.helpProvider1.SetShowHelp(this.textN, true);
-            this.textN.Size = new System.Drawing.Size(66, 26);
+            this.textN.Size = new System.Drawing.Size(86, 26);
             this.textN.TabIndex = 5;
             this.textN.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingTextBox);
             // 
@@ -275,9 +275,9 @@
             this.labelRua.Location = new System.Drawing.Point(13, 44);
             this.labelRua.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRua.Name = "labelRua";
-            this.labelRua.Size = new System.Drawing.Size(40, 18);
+            this.labelRua.Size = new System.Drawing.Size(93, 18);
             this.labelRua.TabIndex = 13;
-            this.labelRua.Text = "Rua:";
+            this.labelRua.Text = "Logradouro:";
             // 
             // labelCEP
             // 
@@ -332,7 +332,7 @@
             this.labelN.AutoSize = true;
             this.labelN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelN.ForeColor = System.Drawing.Color.Black;
-            this.labelN.Location = new System.Drawing.Point(494, 97);
+            this.labelN.Location = new System.Drawing.Point(477, 101);
             this.labelN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelN.Name = "labelN";
             this.labelN.Size = new System.Drawing.Size(29, 18);
@@ -351,6 +351,22 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Procurar";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.BackgroundImage")));
+            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
+            this.btnPesquisar.Location = new System.Drawing.Point(265, 51);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(33, 26);
+            this.btnPesquisar.TabIndex = 4;
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click_1);
             // 
             // dataGridView1
             // 
@@ -401,6 +417,32 @@
             this.gpbDados.TabIndex = 0;
             this.gpbDados.TabStop = false;
             this.gpbDados.Text = "Dados Pessoais";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(608, 106);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 18);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Departamentos:";
+            // 
+            // comboDepartamento
+            // 
+            this.comboDepartamento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboDepartamento.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboDepartamento.FormattingEnabled = true;
+            this.comboDepartamento.Items.AddRange(new object[] {
+            "Cliente",
+            "Funcionario"});
+            this.comboDepartamento.Location = new System.Drawing.Point(731, 104);
+            this.comboDepartamento.Margin = new System.Windows.Forms.Padding(4);
+            this.comboDepartamento.Name = "comboDepartamento";
+            this.comboDepartamento.Size = new System.Drawing.Size(167, 26);
+            this.comboDepartamento.TabIndex = 13;
             // 
             // label1
             // 
@@ -499,7 +541,7 @@
             this.comboSexo.Location = new System.Drawing.Point(734, 53);
             this.comboSexo.Margin = new System.Windows.Forms.Padding(4);
             this.comboSexo.Name = "comboSexo";
-            this.comboSexo.Size = new System.Drawing.Size(167, 26);
+            this.comboSexo.Size = new System.Drawing.Size(164, 26);
             this.comboSexo.TabIndex = 2;
             // 
             // labelUF
@@ -574,7 +616,7 @@
             this.comboUF.Location = new System.Drawing.Point(333, 97);
             this.comboUF.Margin = new System.Windows.Forms.Padding(4);
             this.comboUF.Name = "comboUF";
-            this.comboUF.Size = new System.Drawing.Size(130, 26);
+            this.comboUF.Size = new System.Drawing.Size(142, 26);
             this.comboUF.TabIndex = 4;
             // 
             // labelEmail
@@ -846,48 +888,6 @@
             this.lblAtencao.Name = "lblAtencao";
             this.lblAtencao.Size = new System.Drawing.Size(0, 18);
             this.lblAtencao.TabIndex = 47;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.BackgroundImage")));
-            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesquisar.FlatAppearance.BorderSize = 0;
-            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
-            this.btnPesquisar.Location = new System.Drawing.Point(265, 51);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(33, 26);
-            this.btnPesquisar.TabIndex = 4;
-            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPesquisar.UseVisualStyleBackColor = false;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(608, 106);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 18);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Departamentos:";
-            // 
-            // comboDepartamento
-            // 
-            this.comboDepartamento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboDepartamento.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboDepartamento.FormattingEnabled = true;
-            this.comboDepartamento.Items.AddRange(new object[] {
-            "Cliente",
-            "Funcionario"});
-            this.comboDepartamento.Location = new System.Drawing.Point(731, 104);
-            this.comboDepartamento.Margin = new System.Windows.Forms.Padding(4);
-            this.comboDepartamento.Name = "comboDepartamento";
-            this.comboDepartamento.Size = new System.Drawing.Size(167, 26);
-            this.comboDepartamento.TabIndex = 13;
             // 
             // frmUsuario
             // 

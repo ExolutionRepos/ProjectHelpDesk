@@ -39,5 +39,10 @@ namespace UI.Desktop
         {
             //Environment.Exit(0);
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

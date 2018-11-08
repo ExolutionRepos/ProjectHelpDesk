@@ -19,7 +19,7 @@ namespace UI.Desktop
 
         private void Atencao_Load(object sender, EventArgs e)
         {
-            richTextBox1.Text = "Que coiza chata de fazer";
+            richTextBox1.Text = "Bem vindo ao sistema Help Desk";
         }
     }
 }
