@@ -9,8 +9,9 @@ namespace Library.Class.Models
     [Table("TBL_PERFIS")]
     public class Perfis : Notifiable
     {
+        //Enum TipoPerfils
         [Key]
-        public TipoPerfils CodigoPerfil { get; private set; }
+        public int CodigoPerfil { get; private set; }
 
         public string Descricao { get; private set; }
 
@@ -18,7 +19,7 @@ namespace Library.Class.Models
 
         public ICollection<Logins> Login { get; private set; }
 
-        public Perfis(TipoPerfils codigoperfil,string descricao, string nome)
+        public Perfis(int codigoperfil,string descricao, string nome)
         {
             this.CodigoPerfil = codigoperfil;
             this.Descricao = descricao;

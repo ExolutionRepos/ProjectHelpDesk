@@ -43,9 +43,9 @@
             this.labelNome = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboStatus = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboTelUm = new System.Windows.Forms.ComboBox();
+            this.comboPerfil = new System.Windows.Forms.ComboBox();
             this.textSenha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textLogin = new System.Windows.Forms.TextBox();
@@ -215,9 +215,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.comboStatus);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboTelUm);
+            this.groupBox2.Controls.Add(this.comboPerfil);
             this.groupBox2.Controls.Add(this.textSenha);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textLogin);
@@ -242,19 +242,19 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Status:";
             // 
-            // comboBox1
+            // comboStatus
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboStatus.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboStatus.FormattingEnabled = true;
+            this.comboStatus.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.comboBox1.Location = new System.Drawing.Point(507, 132);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 26);
-            this.comboBox1.TabIndex = 9;
+            this.comboStatus.Location = new System.Drawing.Point(507, 132);
+            this.comboStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.comboStatus.Name = "comboStatus";
+            this.comboStatus.Size = new System.Drawing.Size(195, 26);
+            this.comboStatus.TabIndex = 9;
             // 
             // label3
             // 
@@ -268,19 +268,19 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Perfil:";
             // 
-            // comboTelUm
+            // comboPerfil
             // 
-            this.comboTelUm.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboTelUm.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboTelUm.FormattingEnabled = true;
-            this.comboTelUm.Items.AddRange(new object[] {
+            this.comboPerfil.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboPerfil.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboPerfil.FormattingEnabled = true;
+            this.comboPerfil.Items.AddRange(new object[] {
             "Operador",
             "Administrador"});
-            this.comboTelUm.Location = new System.Drawing.Point(507, 63);
-            this.comboTelUm.Margin = new System.Windows.Forms.Padding(4);
-            this.comboTelUm.Name = "comboTelUm";
-            this.comboTelUm.Size = new System.Drawing.Size(195, 26);
-            this.comboTelUm.TabIndex = 7;
+            this.comboPerfil.Location = new System.Drawing.Point(507, 63);
+            this.comboPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.comboPerfil.Name = "comboPerfil";
+            this.comboPerfil.Size = new System.Drawing.Size(195, 26);
+            this.comboPerfil.TabIndex = 7;
             // 
             // textSenha
             // 
@@ -354,6 +354,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "&Salvar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // salvarToolStripButton1
             // 
@@ -507,9 +508,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAtencao;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboStatus;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboTelUm;
+        private System.Windows.Forms.ComboBox comboPerfil;
         private System.Windows.Forms.Label labelTitulo;
     }
 }

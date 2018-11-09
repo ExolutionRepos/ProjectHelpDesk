@@ -122,5 +122,20 @@ namespace UI.Desktop.Cadastros
 
             }
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+
+            var retorno = _RepositoryControlLogin.CadastrarLogin(StringExtension.ToInt32(campo), textLogin.Text, textSenha.Text, textSenha.Text, (int)comboPerfil.SelectedIndex + 1);
+            
+            lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                Pesquisar(textBox2.Text);
+                Limpar();
+            }
+        }
     }
 }

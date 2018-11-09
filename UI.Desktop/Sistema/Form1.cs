@@ -89,17 +89,17 @@ namespace UI.Desktop
             //Não salvar, somente adicionar
             _RepositoryDepartamento.AddNotSave(departamento1);
 
-            Logins login = new Logins("Rogerio.junior", "3148", "3148rogerio",DadosUsuarios1);
-            _RepositoryLogin.AddNotSave(login);
+            //Logins login = new Logins("Rogerio.junior", "3148", "3148rogerio",DadosUsuarios1);
+            //_RepositoryLogin.AddNotSave(login);
 
-            //cadastro tipo de usuario
-            Perfis Analista = new Perfis(TipoPerfils.Analista, "Analistas ...", "Analistas");
-            //Perfis Adiministrador = new Perfis(TipoPerfils.Adiministrador, "Adiministradores ...", "Adiministradores");
+            ////cadastro tipo de usuario
+            //Perfis Analista = new Perfis(TipoPerfils.Analista, "Analistas ...", "Analistas");
+            ////Perfis Adiministrador = new Perfis(TipoPerfils.Adiministrador, "Adiministradores ...", "Adiministradores");
 
-            Analista.Login.Add(login);
+            //Analista.Login.Add(login);
 
             //Salvar (Efetuar a query.)
-            _RepositoryPerfil.Add(Analista);
+            //_RepositoryPerfil.Add(Analista);
 
 
             MessageBox.Show("Novo Usuario cadastrado");

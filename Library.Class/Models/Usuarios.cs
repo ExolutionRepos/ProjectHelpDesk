@@ -34,7 +34,10 @@ namespace Library.Class.Models
         [Required]         
         public virtual Enderecos Endereco { get; private set; }
 
-        
+        public int? CodigoLogin { get; private set; }
+        [ForeignKey("CodigoLogin")]
+        public virtual Logins Login { get; private set; }
+
         public int CodigoTipoUsuario { get; private set; }
         [ForeignKey("CodigoTipoUsuario")]
         public virtual TipoUsuarios Usuario { get; private set; }
@@ -84,12 +87,21 @@ namespace Library.Class.Models
 
             this.Endereco = endereco;
 
-            //this.Usuario = tipousuario;
-
             this.CodigoTipoUsuario = tipousuario.CodigoTipoUsuario;
 
             Validar();
             
+        }
+
+        public void AlterarUsuarios(Logins login)
+        {
+            Cliente = new HashSet<Chamados>();
+            Funcionario = new HashSet<Chamados>();
+
+            this.CodigoLogin = login.CodigoLogin;
+            
+            Validar();
+
         }
 
 
