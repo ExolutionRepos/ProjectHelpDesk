@@ -31,10 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -57,7 +57,6 @@
             this.groupBox1.Size = new System.Drawing.Size(252, 433);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // groupBox2
             // 
@@ -67,7 +66,13 @@
             this.groupBox2.Size = new System.Drawing.Size(252, 433);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(13, 33);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(226, 391);
+            this.panel2.TabIndex = 1;
             // 
             // groupBox3
             // 
@@ -77,7 +82,13 @@
             this.groupBox3.Size = new System.Drawing.Size(252, 433);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(12, 33);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(226, 391);
+            this.panel3.TabIndex = 1;
             // 
             // groupBox4
             // 
@@ -87,21 +98,6 @@
             this.groupBox4.Size = new System.Drawing.Size(252, 433);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(13, 33);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(226, 391);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(12, 33);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(226, 391);
-            this.panel3.TabIndex = 1;
             // 
             // panel4
             // 

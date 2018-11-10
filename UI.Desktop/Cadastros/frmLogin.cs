@@ -87,6 +87,8 @@ namespace UI.Desktop.Cadastros
 
                 textLogin.Text = logins.Login.ToString();
                 textSenha.Text = logins.Senha;
+                comboPerfil.SelectedItem = logins.Perfil.Descricao.ToString();
+                comboStatus.SelectedItem = logins.Status.ToString(); 
             }
             else
             {

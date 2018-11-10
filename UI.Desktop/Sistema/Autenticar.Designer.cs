@@ -29,27 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Autenticar));
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textLogin = new System.Windows.Forms.TextBox();
+            this.textSenha = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.Button();
+            this.lblAtencao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Arial", 8F);
-            this.linkLabel1.Location = new System.Drawing.Point(38, 258);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(51, 14);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Cadastro";
             // 
             // label1
             // 
@@ -71,28 +60,29 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Senha";
             // 
-            // textBox1
+            // textLogin
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBox1.Location = new System.Drawing.Point(35, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 26);
-            this.textBox1.TabIndex = 3;
+            this.textLogin.Font = new System.Drawing.Font("Arial", 12F);
+            this.textLogin.Location = new System.Drawing.Point(35, 76);
+            this.textLogin.Name = "textLogin";
+            this.textLogin.Size = new System.Drawing.Size(154, 26);
+            this.textLogin.TabIndex = 1;
             // 
-            // textBox2
+            // textSenha
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 12F);
-            this.textBox2.Location = new System.Drawing.Point(33, 182);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 26);
-            this.textBox2.TabIndex = 4;
+            this.textSenha.Font = new System.Drawing.Font("Arial", 12F);
+            this.textSenha.Location = new System.Drawing.Point(33, 182);
+            this.textSenha.Name = "textSenha";
+            this.textSenha.PasswordChar = '•';
+            this.textSenha.Size = new System.Drawing.Size(156, 26);
+            this.textSenha.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(32, 224);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Logar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -108,27 +98,37 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(127, 224);
+            this.btnSair.Location = new System.Drawing.Point(113, 224);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
-            this.btnSair.TabIndex = 7;
+            this.btnSair.TabIndex = 4;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // lblAtencao
+            // 
+            this.lblAtencao.AutoSize = true;
+            this.lblAtencao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtencao.ForeColor = System.Drawing.Color.Red;
+            this.lblAtencao.Location = new System.Drawing.Point(22, 264);
+            this.lblAtencao.Name = "lblAtencao";
+            this.lblAtencao.Size = new System.Drawing.Size(0, 18);
+            this.lblAtencao.TabIndex = 49;
             // 
             // Autenticar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 292);
+            this.Controls.Add(this.lblAtencao);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textSenha);
+            this.Controls.Add(this.textLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel1);
             this.Name = "Autenticar";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -142,14 +142,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textLogin;
+        private System.Windows.Forms.TextBox textSenha;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Label lblAtencao;
     }
 }

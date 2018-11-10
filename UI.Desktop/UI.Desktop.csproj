@@ -212,6 +212,9 @@
     <Compile Include="Cadastros\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Chamado\frmChamado.resx">
+      <DependentUpon>frmChamado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chamado\frmDashBoard.resx">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </EmbeddedResource>

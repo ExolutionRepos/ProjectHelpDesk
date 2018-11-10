@@ -92,3 +92,4 @@ C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.r
 C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
 C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.exe
 C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.pdb
+C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Chamado.frmChamado.resources

@@ -1,4 +1,6 @@
 ﻿using Library.Class.Models;
+using prmToolkit.NotificationPattern.Extensions;
+using System.Collections.Generic;
 using System.Linq;
 using UI.Business.Interfaces.Services;
 
@@ -19,6 +21,12 @@ namespace UI.Business.Interfaces.Repositories.Business
 
         public BaseReturn CadastrarLogin(int codigousuario, string login, string senha, string senhaantiga, int codigoperfil)
         {
+
+            if(PesquisarLogin(login).FirstOrDefault() != null)
+            {
+                return new BaseReturn("Login", Library.Class.Resources.Message.JA_EXISTE_UM_X0_CHAMADO_X1.ToFormat("Login",login), false);
+            }
+
             Usuarios DadosUsuarios = _RepositoryUsuario.Find(codigousuario);
 
             if (DadosUsuarios.IsInvalid())
@@ -27,21 +35,55 @@ namespace UI.Business.Interfaces.Repositories.Business
             }
             
             Logins DadosLogin = new Logins(login, senha, senhaantiga);
-            
-            DadosUsuarios.AlterarUsuarios(DadosLogin);
+
+            if (DadosLogin.IsInvalid())
+            {
+                return new BaseReturn(DadosLogin.Notifications.FirstOrDefault().Property, DadosLogin.Notifications.FirstOrDefault().Message, false);
+            }
             
             Perfis DadosPerfis = _RepositoryPerfi.Find(codigoperfil);
-
+            
             DadosPerfis.Login.Add(DadosLogin);
 
             _RepositoryPerfi.Edit(DadosPerfis);
 
-            return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
+
+            DadosUsuarios.AlterarUsuarios(DadosLogin);
+
+            _RepositoryUsuario.Edit(DadosUsuarios);
+
+            return new BaseReturn("Login", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
         }
 
         public Logins Pesquisar(int id)
         {
             return _RepositoryLogin.Find(id);
         }
+
+
+        public IQueryable<Logins> PesquisarLogin(string login)
+        {
+            var retorno = _RepositoryLogin.List()
+                .Where(query => query.Login.Contains(login));
+
+            return retorno;
+        }
+
+        public IQueryable<Logins> PesquisarLogin()
+        {
+            var retorno = _RepositoryLogin.List();
+
+            return retorno;
+        }
+
+        public Logins Autenticar(string login, string senha)
+        {
+            var retorno = PesquisarLogin()
+                .Where(y => y.Login == login
+                && y.Senha == senha).FirstOrDefault<Logins>();
+            
+            return retorno;
+        }
+
     }
 }

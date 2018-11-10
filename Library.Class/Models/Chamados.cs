@@ -32,7 +32,7 @@ namespace Library.Class.Models
 
         public virtual Departamentos Departamento { get; private set; }
 
-
+        
         protected Chamados(string descricao, string observacao)
         {
             this.Descricao = descricao;

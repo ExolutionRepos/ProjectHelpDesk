@@ -1,4 +1,5 @@
 ﻿using Library.Class.Models;
+using prmToolkit.NotificationPattern.Extensions;
 using System;
 using System.Linq;
 using UI.Business.Interfaces.Services;
@@ -27,6 +28,10 @@ namespace UI.Business.Interfaces.Repositories.Business
             , string rua, string bairro, string cep, string cidade, int numero, string uf
             , int codigotipousuario)
         {
+            if (PesquisarUsuario().Where(y => y.CPF == cpf).FirstOrDefault() != null)
+            {
+                return new BaseReturn("Usuario", Library.Class.Resources.Message.JA_EXISTE_UM_X0_COM_O_X1_X2.ToFormat("Usuario", "CPF: ", cpf), false);
+            }
 
             Usuarios DadosUsuarios = new Usuarios(nome, datanascimento, email, cpf, sexo, telefone, celular);
 
@@ -65,7 +70,7 @@ namespace UI.Business.Interfaces.Repositories.Business
             , string rua, string bairro, string cep, string cidade, int? numero, string uf
             , int codigotipousuario)
         {
-            
+
             Usuarios DadosUsuarios = _RepositoryUsuario.Find(CodigoUsuario);
 
             if (DadosUsuarios == null)
@@ -106,6 +111,24 @@ namespace UI.Business.Interfaces.Repositories.Business
 
             return retorno;
         }
+
+
+        public IQueryable<Usuarios> PesquisarUsuario()
+        {
+            var retorno = _RepositoryUsuario.List();
+
+            return retorno;
+        }
+
+        public Usuarios PesquisarUsuario(Logins login)
+        {
+            var retorno = _RepositoryUsuario.List()
+                .Where(y => y.CodigoLogin == login.CodigoLogin)
+                .FirstOrDefault();
+
+            return retorno;
+        }
+
 
 
         public Usuarios Pesquisar(int id)

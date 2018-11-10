@@ -9,12 +9,14 @@ namespace UI.Desktop
     {
         private readonly ControlConfigFonte _RepositoryControlConfigFonte;
         private readonly ControlUsuario _RepositoryControlUsuario;
+        private readonly ControlLogin _RepositoryControlLogin;
 
         public Autenticar()
         {
             InitializeComponent();
             _RepositoryControlConfigFonte = new ControlConfigFonte();
             _RepositoryControlUsuario = new ControlUsuario();
+            _RepositoryControlLogin = new ControlLogin();
         }
 
         private void Autenticar_Load(object sender, EventArgs e)
@@ -26,14 +28,42 @@ namespace UI.Desktop
 
         private void button1_Click(object sender, EventArgs e)
         {
+            lblAtencao.Text = null;
+
+            if (textSenha.Text != null && textLogin.Text != null)
+            {
+                var retorno = _RepositoryControlLogin.Autenticar(textLogin.Text, textSenha.Text.ConvertToMD5());
+
+                if (retorno != null)
+                {
+                    var usuario = _RepositoryControlUsuario.PesquisarUsuario(retorno);
+
+                    AbrirForm(usuario.CodigoUsuario, retorno.Perfil.Descricao, usuario.Nome);
+                }
+                else
+                {
+                    lblAtencao.Text = "Usuario / Senha não encontrados ";
+                }
+            }
+            else
+            {
+                AbrirForm(null, "", "");
+            }
+        }
+
+        private void AbrirForm(int? tag, string perfil, string nome)
+        {
             this.Hide();
             MenuPrincipal menuPrincipal = new MenuPrincipal();
-            menuPrincipal.toolStripMenuItem2.Tag = 1;
+            menuPrincipal.toolStripMenuItem2.Tag = tag;
+            menuPrincipal.toolStripStatusLabel3.Text = nome;
+            menuPrincipal.toolStripStatusLabel4.Text = perfil;
+            menuPrincipal.toolStripMenuItem2.Text = nome;
             menuPrincipal.ShowDialog();
             this.Show();
 
-
         }
+
 
         private void Autenticar_FormClosing(object sender, FormClosingEventArgs e)
         {
