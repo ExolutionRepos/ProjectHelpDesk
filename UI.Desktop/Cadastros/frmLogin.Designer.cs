@@ -364,6 +364,7 @@
             this.salvarToolStripButton1.Name = "salvarToolStripButton1";
             this.salvarToolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.salvarToolStripButton1.Text = "&Alterar";
+            this.salvarToolStripButton1.Click += new System.EventHandler(this.salvarToolStripButton1_Click);
             // 
             // toolStripButton2
             // 

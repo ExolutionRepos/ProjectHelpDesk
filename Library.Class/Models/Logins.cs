@@ -42,6 +42,22 @@ namespace Library.Class.Models
             Validar();            
         }
 
+        public Logins AlterarLogin(string login, string senha, int codigoperfil)
+        {
+            this.Login = login;
+            this.Senha = senha;
+            //this.SenhaAntiga = senhaantiga;
+            this.CodigoPerfil = codigoperfil;
+            this.Status = StatusLogin.Ativo;
+
+            Usuario = new HashSet<Usuarios>();
+
+            Validar();
+
+            return this;
+        }
+
+
         public void Validar()
         {
             new AddNotifications<Logins>(this)

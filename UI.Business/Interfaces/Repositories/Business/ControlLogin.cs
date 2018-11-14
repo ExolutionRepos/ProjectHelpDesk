@@ -1,6 +1,5 @@
 ﻿using Library.Class.Models;
 using prmToolkit.NotificationPattern.Extensions;
-using System.Collections.Generic;
 using System.Linq;
 using UI.Business.Interfaces.Services;
 
@@ -83,6 +82,21 @@ namespace UI.Business.Interfaces.Repositories.Business
                 && y.Senha == senha).FirstOrDefault<Logins>();
             
             return retorno;
+        }
+
+        public BaseReturn AlterarLogin(int codigologin, string login, string senha, int codigoperfil)
+        {
+
+            Logins Dadoslogin = Pesquisar(codigologin).AlterarLogin(login, senha, codigoperfil);
+
+            if (Dadoslogin.IsInvalid())
+            {
+                return new BaseReturn(Dadoslogin.Notifications.FirstOrDefault().Property, Dadoslogin.Notifications.FirstOrDefault().Message, false);
+            }
+
+            _RepositoryLogin.Edit(Dadoslogin);
+
+            return new BaseReturn("Login", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
         }
 
     }

@@ -14,5 +14,11 @@
             this.Message = message;
             this.Status = status;
         }
+
+        public BaseReturn()
+        {
+            this.Message = Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO;
+            this.Status = true;
+        }
     }
 }
