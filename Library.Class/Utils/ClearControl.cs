@@ -22,6 +22,16 @@ namespace Library.Class.Utils
                 {
                     ResetAll((GroupBox)item);
                 }
+
+                if (item.GetType() == typeof(TabControl))
+                {
+                    ClearControlAll(item);
+                }
+
+                if (item.GetType() == typeof(TabPage))
+                {
+                    ClearControlAll(item);
+                }
             }
 
             return Control;

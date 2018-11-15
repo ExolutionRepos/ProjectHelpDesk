@@ -39,6 +39,8 @@ namespace UI.Desktop
                     var usuario = _RepositoryControlUsuario.PesquisarUsuario(retorno);
 
                     AbrirForm(usuario.CodigoUsuario, retorno.Perfil.Descricao, usuario.Nome);
+
+                    this.ClearControlAll();
                 }
                 else
                 {

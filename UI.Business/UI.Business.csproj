@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\Repositories\Business\ControlConfigFonte.cs" />
     <Compile Include="Interfaces\Repositories\Business\ControlLogin.cs" />
+    <Compile Include="Interfaces\Repositories\Business\ControlTipoUsuario.cs" />
     <Compile Include="Interfaces\Repositories\Business\ControlUsuario.cs" />
     <Compile Include="Interfaces\Repositories\IBaseRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBaseService.cs" />

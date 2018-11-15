@@ -88,7 +88,7 @@ namespace UI.Desktop.Cadastros
                 textLogin.Text = logins.Login.ToString();
                 textSenha.Text = logins.Senha;
                 comboPerfil.SelectedItem = logins.Perfil.Descricao.ToString();
-                comboStatus.SelectedItem = logins.Status.ToString(); 
+                comboStatus.SelectedItem = logins.Status.ToString();
             }
             else
             {
@@ -130,7 +130,7 @@ namespace UI.Desktop.Cadastros
             var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
 
             var retorno = _RepositoryControlLogin.CadastrarLogin(StringExtension.ToInt32(campo), textLogin.Text, textSenha.Text, textSenha.Text, (int)comboPerfil.SelectedIndex + 1);
-            
+
             lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
             if (retorno.Status)
@@ -153,6 +153,11 @@ namespace UI.Desktop.Cadastros
                 Pesquisar(textBox2.Text);
                 Limpar();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pesquisar(textBox2.Text);
         }
     }
 }
