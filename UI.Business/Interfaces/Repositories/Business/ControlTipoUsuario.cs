@@ -1,7 +1,7 @@
 ﻿using Library.Class.Models;
+using prmToolkit.NotificationPattern.Extensions;
 using System.Linq;
 using UI.Business.Interfaces.Services;
-using prmToolkit.NotificationPattern.Extensions;
 
 namespace UI.Business.Interfaces.Repositories.Business
 {
@@ -35,8 +35,16 @@ namespace UI.Business.Interfaces.Repositories.Business
             return retorno;
         }
 
-        public BaseReturn CadastrarTipoUsuario(string descricao, string nome)
+        public BaseReturn CadastrarTipoUsuario(string nome, string descricao)
         {
+            var Dados = PesquisarTipoUsuario()
+                .Where(y => y.Nome == nome).FirstOrDefault();
+
+            if (Dados != null)
+            {
+                return new BaseReturn("Tipo Usuario", Library.Class.Resources.Message.JA_EXISTE_UMA_X0_CHAMADA_X1.ToFormat("Nome", Dados.Nome), true);
+            }
+
             TipoUsuarios DadosTipoUsuarios = new TipoUsuarios(descricao, nome);
 
             if (DadosTipoUsuarios.IsInvalid())

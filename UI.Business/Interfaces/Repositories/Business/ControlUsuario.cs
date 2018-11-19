@@ -26,7 +26,7 @@ namespace UI.Business.Interfaces.Repositories.Business
 
         public BaseReturn CadastrarUsuario(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular
             , string rua, string bairro, string cep, string cidade, int numero, string uf
-            , int codigotipousuario)
+            , int codigotipousuario,int codigodepartamento)
         {
             if (PesquisarUsuario().Where(y => y.CPF == cpf).FirstOrDefault() != null)
             {
@@ -61,6 +61,17 @@ namespace UI.Business.Interfaces.Repositories.Business
             _RepositoryTipoUsuario.Edit(TipoUsuario);
 
 
+            Departamentos DadosDepartamentos = _RepositoryDepartamento.Find(codigodepartamento);
+
+            if (DadosDepartamentos == null)
+            {
+                return new BaseReturn("Departamento", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
+            }
+
+            DadosDepartamentos.Usuario.Add(DadosUsuarios);
+            _RepositoryDepartamento.Edit(DadosDepartamentos);
+
+
             return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
 
         }
@@ -68,7 +79,7 @@ namespace UI.Business.Interfaces.Repositories.Business
 
         public BaseReturn AlterarUsuario(int CodigoUsuario, string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular
             , string rua, string bairro, string cep, string cidade, int? numero, string uf
-            , int codigotipousuario)
+            , int codigotipousuario, int codigodepartamento)
         {
 
             Usuarios DadosUsuarios = _RepositoryUsuario.Find(CodigoUsuario);
@@ -92,7 +103,14 @@ namespace UI.Business.Interfaces.Repositories.Business
                 return new BaseReturn("Tipos Usuarios", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
             }
 
-            DadosUsuarios.AlterarUsuarios(nome, datanascimento, email, cpf, sexo, telefone, celular, DadosEnderecos, DadosTiposUsuarios);
+            Departamentos DadosDepartamentos = _RepositoryDepartamento.Find(codigodepartamento);
+
+            if (DadosDepartamentos == null)
+            {
+                return new BaseReturn("Departamento", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
+            }
+
+            DadosUsuarios.AlterarUsuarios(nome, datanascimento, email, cpf, sexo, telefone, celular, DadosEnderecos, DadosTiposUsuarios, DadosDepartamentos);
 
             if (DadosUsuarios.IsInvalid())
             {

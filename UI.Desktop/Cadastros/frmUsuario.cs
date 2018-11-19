@@ -1,7 +1,9 @@
 ﻿using Library.Class.Models;
 using Library.Class.Utils;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,11 +17,15 @@ namespace UI.Desktop
     {
 
         private readonly ControlUsuario _RepositoryControlUsuario;
+        private readonly ControlDepartamento _RepositoryControlDepartamento;
+        private readonly ControlTipoUsuario _RepositoryControlTipoUsuario;
 
         public frmUsuario()
         {
             InitializeComponent();
             _RepositoryControlUsuario = new ControlUsuario();
+            _RepositoryControlDepartamento = new ControlDepartamento();
+            _RepositoryControlTipoUsuario = new ControlTipoUsuario();
 
             //Configurando o tamanho da fonte
             this.ConfigurarTamanhoFonte(new ConfigFont("Arial", 14F));
@@ -30,6 +36,8 @@ namespace UI.Desktop
         {
             InitializeComponent();
             _RepositoryControlUsuario = new ControlUsuario();
+            _RepositoryControlDepartamento = new ControlDepartamento();
+            _RepositoryControlTipoUsuario = new ControlTipoUsuario();
 
             //Configurando o tamanho da fonte
             this.ConfigurarTamanhoFonte(new ConfigFont("Arial", 14F));
@@ -68,6 +76,18 @@ namespace UI.Desktop
 
             button1.Enabled = false;
             salvarToolStripButton1.Enabled = false;
+
+
+            comboDepartamento.CarregarCombo<Departamentos>(
+                _RepositoryControlDepartamento.PesquisarDepartamento().ToList(),
+                "CodigoDepartamento", "Descricao");
+
+            comboTipo.CarregarCombo<TipoUsuarios>(
+                _RepositoryControlTipoUsuario.PesquisarTipoUsuario().ToList(),
+                "CodigoTipoUsuario", "Descricao");
+
+            
+            comboSexo.DataSource = Enum.GetValues(typeof(Sexo));
         }
 
         private void ValidationTextBox(object sender, EventArgs e)
@@ -141,12 +161,21 @@ namespace UI.Desktop
 
         private void CompletarCampos(Usuarios usuarios)
         {
-            
+
             textNome.Text = usuarios.Nome;
             textCPF.Text = usuarios.CPF;
             dateTimeNascimento.Value = usuarios.DataNascimento.Value;
             comboSexo.SelectedItem = usuarios.Sexo.ToString();
-            comboTipo.SelectedItem = usuarios.Usuario.Descricao.ToString();
+
+            if (usuarios.Usuario != null)
+            {
+                comboTipo.SelectedIndex = (int)usuarios.Usuario.CodigoTipoUsuario;
+            }
+
+            if (usuarios.Departamento != null)
+            {
+                comboDepartamento.SelectedIndex = (int)usuarios.Departamento.CodigoDepartamento;
+            }
 
             textRua.Text = usuarios.Endereco.Rua;
             textCEP.Text = usuarios.Endereco.CEP;
@@ -193,15 +222,16 @@ namespace UI.Desktop
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            
+
             if (comboSexo.SelectedItem != null)
             {
                 Sexo DadosSexo = (Sexo)Enum.Parse(typeof(Sexo), comboSexo.SelectedItem.ToString());
 
                 var retorno = _RepositoryControlUsuario.CadastrarUsuario(textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
-                    (int)comboTipo.SelectedIndex + 1);
-                
+                    (int)comboTipo.SelectedIndex,
+                    (int)comboDepartamento.SelectedIndex);
+
                 lblAtencao.Text = retorno.Propert + ": " + retorno.Message;
 
                 if (retorno.Status)
@@ -209,7 +239,7 @@ namespace UI.Desktop
                     Pesquisar(textBox2.Text);
                     Limpar();
                 }
-                    
+
             }
             else
             {
@@ -230,10 +260,11 @@ namespace UI.Desktop
 
                 var retorno = _RepositoryControlUsuario.AlterarUsuario(Convert.ToInt32(campo), textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
-                    (int)comboTipo.SelectedIndex + 1);
-                
+                    (int)comboTipo.SelectedIndex + 1,
+                    (int)comboDepartamento.SelectedIndex + 1);
+
                 lblAtencao.Text = retorno.Propert + ": " + retorno.Message;
-                
+
                 if (retorno.Status)
                 {
                     Pesquisar(textBox2.Text);
@@ -247,7 +278,7 @@ namespace UI.Desktop
 
 
         }
-        
+
         private void salvarToolStripButton1_Click(object sender, EventArgs e)
         {
 
@@ -260,9 +291,10 @@ namespace UI.Desktop
 
                 var retorno = _RepositoryControlUsuario.AlterarUsuario(Convert.ToInt32(campo), textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
-                (int)comboTipo.SelectedIndex + 1);
+                (int)comboTipo.SelectedIndex,
+                (int)comboDepartamento.SelectedIndex);
 
-                
+
                 lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
                 if (retorno.Status)
@@ -288,8 +320,9 @@ namespace UI.Desktop
 
                 var retorno = _RepositoryControlUsuario.CadastrarUsuario(textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
                     textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, StringExtension.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
-                    (int)comboTipo.SelectedIndex + 1);
-                
+                    (int)comboTipo.SelectedIndex,
+                    (int)comboDepartamento.SelectedIndex);
+
                 lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
                 if (retorno.Status)
@@ -315,5 +348,6 @@ namespace UI.Desktop
         {
             Pesquisar(textBox2.Text);
         }
+
     }
 }

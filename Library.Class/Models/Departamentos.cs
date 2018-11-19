@@ -1,5 +1,7 @@
 ﻿using Library.Class.Models;
+using Library.Class.Resources;
 using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,8 +26,29 @@ namespace Library.Class.Models
             this.Nome = nome;
 
             Usuario = new HashSet<Usuarios>();
+
+            Validar();
+
         }
-        
+
+        public Departamentos AlterarDepartamento(string descricao, string nome)
+        {
+            this.Descricao = descricao;
+            this.Nome = nome;
+
+            Validar();
+
+            return this;
+        }
+
+        private void Validar()
+        {
+            new AddNotifications<Departamentos>(this)
+                .IfNullOrEmpty(Descricao, Message.OBJETO_X0_E_OBRIGATORIO.ToFormat("Descricao"))
+                .IfNullOrEmpty(Nome, Message.OBJETO_X0_E_OBRIGATORIO.ToFormat("Tipo "));
+        }
+
+
         protected Departamentos()
         {
             Usuario = new HashSet<Usuarios>();

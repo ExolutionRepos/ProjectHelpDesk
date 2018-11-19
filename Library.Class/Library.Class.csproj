@@ -126,6 +126,7 @@
     <Compile Include="Enum\EnumMarca.cs" />
     <Compile Include="Enum\EnumModelo.cs" />
     <Compile Include="Enum\EnumPerfil.cs" />
+    <Compile Include="Enum\EnumStatusChamado.cs" />
     <Compile Include="Enum\EnumStatusLogin.cs" />
     <Compile Include="Enum\EnumTipoUsuario.cs" />
     <Compile Include="Models\BaseConhecimento.cs" />
@@ -148,6 +149,7 @@
     </Compile>
     <Compile Include="Utils\ClearControl.cs" />
     <Compile Include="Utils\ConfigurarFonte.cs" />
+    <Compile Include="Utils\LoadCombBox.cs" />
     <Compile Include="Utils\StringExtension.cs" />
   </ItemGroup>
   <ItemGroup>

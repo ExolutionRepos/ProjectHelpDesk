@@ -2,6 +2,7 @@
 using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using static Library.Class.Enum.EnumMarca;
@@ -26,6 +27,9 @@ namespace Library.Class.Models
         public Marcas Marca { get; private set; }
 
         public Modelos Modelo { get; private set; }
+
+        public ICollection<Chamados> Chamado { get; private set; }
+
 
         public Produtos(DateTime ? datacompra, DateTime ? datafabricacao,string descricao, Marcas marca,
             Modelos modelo, string nome)
@@ -67,7 +71,7 @@ namespace Library.Class.Models
 
         protected Produtos()
         {
-
+            Chamado = new HashSet<Chamados>();
         }
     }
 }

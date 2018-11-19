@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using UI.Business.Interfaces.Repositories.Business;
+using static Library.Class.Enum.EnumStatusLogin;
 
 namespace UI.Desktop.Cadastros
 {
@@ -12,18 +13,27 @@ namespace UI.Desktop.Cadastros
     {
         private readonly ControlUsuario _RepositoryControlUsuario;
         private readonly ControlLogin _RepositoryControlLogin;
+        private readonly ControlPerfil _RepositoryControlPerfil;
 
         public frmLogin()
         {
             InitializeComponent();
             _RepositoryControlUsuario = new ControlUsuario();
             _RepositoryControlLogin = new ControlLogin();
+            _RepositoryControlPerfil = new ControlPerfil();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
             Pesquisar(textBox2.Text);
             Limpar();
+            
+            comboPerfil.CarregarCombo<Perfis>(
+              _RepositoryControlPerfil.PesquisarPerfil().ToList(),
+              "CodigoPerfil", "Descricao");
+            
+            //comboEnum
+            comboStatus.DataSource = Enum.GetValues(typeof(StatusLogin));
         }
 
         private void Pesquisar(string nome)
@@ -87,7 +97,8 @@ namespace UI.Desktop.Cadastros
 
                 textLogin.Text = logins.Login.ToString();
                 textSenha.Text = logins.Senha;
-                comboPerfil.SelectedItem = logins.Perfil.Descricao.ToString();
+                comboPerfil.SelectedIndex = (int)logins.Perfil.CodigoPerfil;
+
                 comboStatus.SelectedItem = logins.Status.ToString();
             }
             else
@@ -158,6 +169,11 @@ namespace UI.Desktop.Cadastros
         private void button1_Click(object sender, EventArgs e)
         {
             Pesquisar(textBox2.Text);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,13 +1,8 @@
 ﻿using Library.Class.Models;
 using Library.Class.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Business.Interfaces.Repositories.Business;
 
@@ -16,21 +11,27 @@ namespace UI.Desktop.Sistema
     public partial class frmConfiguracao : Form
     {
         private readonly ControlTipoUsuario _RepositoryControlUsuario;
+        private readonly ControlDepartamento _RepositoryControlDepartamento;
+        private readonly ControlPerfil _RepositoryControlPerfil;
+        private readonly ControlTipoChamado _RepositoryControlTipoChamado;
 
 
         public frmConfiguracao()
         {
             InitializeComponent();
             _RepositoryControlUsuario = new ControlTipoUsuario();
+            _RepositoryControlPerfil = new ControlPerfil();
+            _RepositoryControlDepartamento = new ControlDepartamento();
+            _RepositoryControlTipoChamado = new ControlTipoChamado();
         }
         
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-            Limpar();
-            Pesquisar(textBox2.Text);
+            LimparTipoUsuario();
+            PesquisarTipoUsuario(textBox2.Text);
         }
 
-        private void Pesquisar(string nome)
+        private void PesquisarTipoUsuario(string nome)
         {
             dataGridView1.AutoGenerateColumns = true;
 
@@ -50,18 +51,18 @@ namespace UI.Desktop.Sistema
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Pesquisar(textBox2.Text);
+            PesquisarTipoUsuario(textBox2.Text);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+            var campo = dataGridView1.CurrentRow.Cells["CODIGO"].Value.ToString();
 
             var DadosUsuario = _RepositoryControlUsuario.Pesquisar(Convert.ToInt32(campo));
-            CompletarCampos(DadosUsuario);
+            CompletarCamposTipoUsuario(DadosUsuario);
         }
 
-        private void CompletarCampos(TipoUsuarios tipousuarios)
+        private void CompletarCamposTipoUsuario(TipoUsuarios tipousuarios)
         {
             textTipo.Text = tipousuarios.Nome;
             textDescricao.Text = tipousuarios.Descricao;
@@ -72,7 +73,7 @@ namespace UI.Desktop.Sistema
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            Pesquisar(textBox2.Text);
+            PesquisarTipoUsuario(textBox2.Text);
         }
 
         private void toolStripButton17_Click(object sender, EventArgs e)
@@ -84,12 +85,12 @@ namespace UI.Desktop.Sistema
 
             if (retorno.Status)
             {
-                Pesquisar(textBox2.Text);
-                Limpar();
+                PesquisarTipoUsuario(textBox2.Text);
+                LimparTipoUsuario();
             }
         }
 
-        private void Limpar()
+        private void LimparTipoUsuario()
         {
             this.ClearControlAll();
             //errorProvider1.Clear();
@@ -101,7 +102,7 @@ namespace UI.Desktop.Sistema
 
         private void toolStripButton18_Click(object sender, EventArgs e)
         {
-            var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+            var campo = dataGridView1.CurrentRow.Cells["CODIGO"].Value.ToString();
 
             var retorno = _RepositoryControlUsuario.AlterarTipoUsuario(Convert.ToInt16(campo), textTipo.Text, textDescricao.Text);
             
@@ -109,14 +110,302 @@ namespace UI.Desktop.Sistema
 
             if (retorno.Status)
             {
-                Pesquisar(textBox2.Text);
-                Limpar();
+                PesquisarTipoUsuario(textBox2.Text);
+                LimparTipoUsuario();
             }
         }
 
         private void toolStripButton19_Click(object sender, EventArgs e)
         {
-            Limpar();
+            LimparTipoUsuario();
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            LimparDepartamento();
+            PesquisarDepartamentos(textBox4.Text);
+        }
+
+        private void PesquisarDepartamentos(string nome)
+        {
+            dataGridView2.AutoGenerateColumns = true;
+
+            var Data = _RepositoryControlDepartamento.PesquisarDepartamento("")
+                .Where(a => a.Nome.Contains(nome))
+                .Select(a => new
+                {
+                    Codigo = a.CodigoDepartamento,
+                    Tipo = a.Nome
+                }
+                    )
+                .ToList();
+
+            dataGridView2.DataSource = Data;
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            PesquisarDepartamentos(textBox4.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PesquisarDepartamentos(textBox4.Text);
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var campo = dataGridView2.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var DadosDepartamento = _RepositoryControlDepartamento.Pesquisar(Convert.ToInt32(campo));
+            CompletarCamposDepartamento(DadosDepartamento);
+        }
+
+        private void CompletarCamposDepartamento(Departamentos departamento)
+        {
+            textDepartamento.Text = departamento.Nome;
+            textDecricaoDepartamento.Text = departamento.Descricao;
+
+            toolStripButton10.Enabled = false;
+            toolStripButton11.Enabled = true;
+        }
+
+        private void LimparDepartamento()
+        {
+            this.ClearControlAll();
+            //errorProvider1.Clear();
+
+            toolStripButton10.Enabled = true;
+            toolStripButton11.Enabled = false;
+
+        }
+
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            var retorno = _RepositoryControlDepartamento.CadastrarDepartamento(textDepartamento.Text, textDecricaoDepartamento.Text);
+
+            label5.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarDepartamentos(textBox2.Text);
+                LimparDepartamento();
+            }
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            var campo = dataGridView2.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var retorno = _RepositoryControlDepartamento.AlterarDepartamento(Convert.ToInt16(campo), textDepartamento.Text, textDecricaoDepartamento.Text);
+
+            label5.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarDepartamentos(textBox2.Text);
+                LimparDepartamento();
+            }
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            LimparDepartamento();
+        }
+
+        private void tabPage3_Enter(object sender, EventArgs e)
+        {
+            LimparPerfil();
+            PesquisarPerfil(textBox5.Text);
+        }
+
+        private void PesquisarPerfil(string nome)
+        {
+            dataGridView3.AutoGenerateColumns = true;
+
+            var Data = _RepositoryControlPerfil.PesquisarPerfil("")
+                .Where(a => a.Nome.Contains(nome))
+                .Select(a => new
+                {
+                    Codigo = a.CodigoPerfil,
+                    Tipo = a.Nome
+                }
+                    )
+                .ToList();
+
+            dataGridView3.DataSource = Data;
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PesquisarPerfil(textBox5.Text);
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            PesquisarPerfil(textBox5.Text);
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var campo = dataGridView3.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var DadosPerfil = _RepositoryControlPerfil.Pesquisar(Convert.ToInt32(campo));
+            CompletarCamposPerfil(DadosPerfil);
+        }
+
+        private void CompletarCamposPerfil(Perfis perfil)
+        {
+            textPerfil.Text = perfil.Nome;
+            textDescricaoPerfil.Text = perfil.Descricao;
+
+            toolStripButton1.Enabled = false;
+            salvarToolStripButton1.Enabled = true;
+        }
+
+        private void LimparPerfil()
+        {
+            this.ClearControlAll();
+            //errorProvider1.Clear();
+
+            toolStripButton1.Enabled = true;
+            salvarToolStripButton1.Enabled = false;
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var retorno = _RepositoryControlPerfil.CadastrarPerfil(textPerfil.Text, textDescricaoPerfil.Text);
+
+            label6.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarPerfil(textBox5.Text);
+                LimparPerfil();
+            }
+        }
+
+        private void salvarToolStripButton1_Click(object sender, EventArgs e)
+        {
+            var campo = dataGridView3.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var retorno = _RepositoryControlPerfil.AlterarPerfil(Convert.ToInt16(campo), textPerfil.Text, textDescricaoPerfil.Text);
+
+            label6.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarPerfil(textBox5.Text);
+                LimparPerfil();
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            LimparPerfil();
+        }
+
+        private void tabPage4_Enter(object sender, EventArgs e)
+        {
+            LimparTipoChamado();
+            PesquisarTipoChamado(textBox6.Text);
+        }
+        
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            var retorno = _RepositoryControlTipoChamado.CadastrarTipoChamado(textTipoChamado.Text, textDescricaoTipoChamdo.Text, numericTipoChamado.Value.ToString());
+
+            label11.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarTipoChamado(textBox6.Text);
+                LimparTipoChamado();
+            }
+        }
+
+        private void LimparTipoChamado()
+        {
+            this.ClearControlAll();
+            //errorProvider1.Clear();
+
+            toolStripButton3.Enabled = true;
+            toolStripButton4.Enabled = false;
+
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            LimparTipoChamado();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PesquisarTipoChamado(textBox6.Text);
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            PesquisarTipoChamado(textBox6.Text);
+        }
+
+        private void PesquisarTipoChamado(string nome)
+        {
+            dataGridView4.AutoGenerateColumns = true;
+
+            var Data = _RepositoryControlTipoChamado.PesquisarTipoChamado("")
+                .Where(a => a.Nome.Contains(nome))
+                .Select(a => new
+                {
+                    Codigo = a.CodigoTipoChamado,
+                    Tipo = a.Nome
+                }
+                    )
+                .ToList();
+
+            dataGridView4.DataSource = Data;
+
+        }
+
+        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var campo = dataGridView4.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var DadosTipoChamado = _RepositoryControlTipoChamado.Pesquisar(Convert.ToInt32(campo));
+            CompletarCamposTipoChamado(DadosTipoChamado);
+        }
+
+        private void CompletarCamposTipoChamado(TipoChamados tipochamados)
+        {
+            textTipoChamado.Text = tipochamados.Nome;
+            textDescricaoTipoChamdo.Text = tipochamados.Descricao;
+            numericTipoChamado.Value = Convert.ToInt32(tipochamados.SLA);
+
+            toolStripButton3.Enabled = false;
+            toolStripButton4.Enabled = true;
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            var campo = dataGridView4.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var retorno = _RepositoryControlTipoChamado.AlterarPerfil(Convert.ToInt16(campo), textTipoChamado.Text, textDescricaoTipoChamdo.Text, numericTipoChamado.Value.ToString());
+
+            label11.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarTipoChamado(textBox6.Text);
+                LimparTipoChamado();
+            }
+        }
+
+        private void tabPage5_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

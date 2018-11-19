@@ -8,6 +8,7 @@ namespace Library.Class.Enum
 {
     public class EnumSexo
     {
+        
         public enum Sexo
         {
             Masculino = 1,
