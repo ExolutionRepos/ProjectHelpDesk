@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Library.Class.Enum.EnumStatusChamado;
 
 namespace UI.Desktop.Chamado
 {
@@ -25,35 +26,32 @@ namespace UI.Desktop.Chamado
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void contar(Control controle)
+        private void contar(Control controle, string nome)
         {
             var vazio = 0;
             var cheio = 0;
             var contador = 0;
 
-            var Lista = from n in controle.Controls.Cast<Control>()
-                                   orderby int.Parse(n.Tag.ToString())
-                                   select n;
-
             var Listar = controle.Controls.Cast<Control>()
+                .Where(y => y.Name.Contains(nome))
                 .OrderBy(y => StringExtension.ToInt32(y.TabIndex.ToString()))
                 .ToList();
-            
+
 
             foreach (Control item in Listar)
             {
                 if (item.GetType() == typeof(TableLayoutPanel))
                 {
-                    contar(item);
+                    contar(item, nome);
                     break;
                 }
 
                 if (item.GetType() == typeof(GroupBox))
                 {
-                    contar(item);
+                    contar(item, nome);
                     break;
                 }
 
@@ -104,6 +102,7 @@ namespace UI.Desktop.Chamado
             Button txt = new Button();
             txt.Top = top;
             txt.Left = 10;
+            txt.Width = 75;
             txt.Text = "Chamado: " + this.contador.ToString();
             txt.Name = "watts" + contador;
             txt.FlatStyle = FlatStyle.Flat;
@@ -111,15 +110,24 @@ namespace UI.Desktop.Chamado
 
             //Novo textBox Consumo
             Label lbl1 = new Label();
-            lbl1.Top = top + 25;
-            lbl1.Left = 10;
-            lbl1.Text = "Abertura: " + DateTime.Now.Date.ToShortDateString();
+            lbl1.Top = top + 5;
+            lbl1.Left = 105;
+            lbl1.Width = 50;
+            lbl1.Text = "Abertura: ";
             lbl1.Name = "abertura" + contador;
             panel.Controls.Add(lbl1);
 
             //Novo textBox Consumo
+            Label lbl12 = new Label();
+            lbl12.Top = top + 5;
+            lbl12.Left = 160;
+            lbl12.Text = DateTime.Now.Date.ToShortDateString().ToString();
+            lbl12.Name = "aberturaData" + contador;
+            panel.Controls.Add(lbl12);
+
+            //Novo textBox Consumo
             Label lbl2 = new Label();
-            lbl2.Top = top + 50;
+            lbl2.Top = top + 25;
             lbl2.Left = 10;
             lbl2.Text = "Categoria: " + "teste";
             lbl2.Name = "categoria" + contador;
@@ -127,27 +135,38 @@ namespace UI.Desktop.Chamado
 
             //Novo textBox Consumo
             Label lbl3 = new Label();
-            lbl3.Top = top + 55;
+            lbl3.Top = top + 50;
             lbl3.Left = 10;
-            lbl3.Text = "Descrição: " + "Vamos testar neh" + "/n kkkk testa";
+            lbl3.Width = 220;
+            lbl3.Text = "Descrição: " + "Vamos testar neh" + "kkkk testa";
             lbl3.Name = "descricao" + contador;
             panel.Controls.Add(lbl3);
 
             //Novo textBox Consumo
             Label lbl4 = new Label();
-            lbl4.Top = top + 70;
+            lbl4.Top = top + 75;
             lbl4.Left = 10;
+            lbl4.Width = 70;
             lbl4.Text = "SLA: " + "2 dias";
             lbl4.Name = "sla" + contador;
             panel.Controls.Add(lbl4);
 
             //Novo textBox Consumo
             Label lbl5 = new Label();
-            lbl5.Top = top + 70;
-            lbl5.Left = 50;
-            lbl5.Text = "Responsavel: " + "Rogerio ";
-            lbl5.Name = "Responsavel" + contador;
+            lbl5.Top = top + 75;
+            lbl5.Left = 105;
+            lbl5.Width = 120;
+            lbl5.Text = "Resp.: " + "Rogerio Diaz";
+            lbl5.Name = "responsavel" + contador;
             panel.Controls.Add(lbl5);
+
+            ////Novo textBox Consumo
+            //Label lbl5 = new Label();
+            //lbl5.Top = top + 70;
+            //lbl5.Left = 50;
+            //lbl5.Text = "Responsavel: " + "Rogerio ";
+            //lbl5.Name = "Responsavel" + contador;
+            //panel.Controls.Add(lbl5);
 
             controle.Controls.Add(panel);
             //Incrementa Contador
@@ -171,7 +190,11 @@ namespace UI.Desktop.Chamado
 
         private void frmDashBoard_Load(object sender, EventArgs e)
         {
-            contar(this);
+            foreach (var suit in Enum.GetValues(typeof(StatusChamado)))
+            {
+                contar(this, suit.ToString());
+            }
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -7,7 +7,7 @@
             PreChamado = 1,
             //DashBoard ------------------------------------
             Aberto = 2,
-            Atuando = 3,
+            Andamento = 3,
             Pendente = 4,
             Finalizado = 5,
             //----------------------------------------------

@@ -23,10 +23,9 @@ namespace Library.Class.Models
         [ForeignKey("CodigoTipoChamado")]
         public virtual TipoChamados TipoChamado { get; private set; }
 
-        public BaseConhecimento(int codigobaseconhecimento, int codigotipochamado, string descricao, string nome,
-            string palavrachave)
+        public BaseConhecimento( string descricao, string nome,string palavrachave)
         {
-            this.CodigoBaseConhecimento = codigobaseconhecimento;
+           
             this.Descricao = descricao;
             this.Nome = nome;
             this.PalavraChave = palavrachave;
@@ -34,13 +33,14 @@ namespace Library.Class.Models
             Validar();
         }
 
-        public BaseConhecimento AlterarBaseConhecimento(int codigobaseconhecimento, int codigotipochamado, string descricao, string nome,
-            string palavrachave)
+        public BaseConhecimento AlterarBaseConhecimento(string descricao, string nome,
+            string palavrachave, int codigotipochamado)
         {
-            this.CodigoBaseConhecimento = codigobaseconhecimento;
+            
             this.Descricao = descricao;
             this.Nome = nome;
             this.PalavraChave = palavrachave;
+            this.CodigoBaseConhecimento = codigotipochamado;
 
             Validar();
 

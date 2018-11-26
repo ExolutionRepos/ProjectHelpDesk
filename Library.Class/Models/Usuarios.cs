@@ -28,9 +28,9 @@ namespace Library.Class.Models
         public string Telefone { get; private set; }
 
         public string Celular { get; private set; }
-        
-        
-        [Required]         
+
+
+        [Required]
         public virtual Enderecos Endereco { get; private set; }
 
         public int? CodigoLogin { get; private set; }
@@ -44,10 +44,10 @@ namespace Library.Class.Models
         public int? CodigoDepartamento { get; private set; }
         [ForeignKey("CodigoDepartamento")]
         public virtual Departamentos Departamento { get; private set; }
-        
-        public ICollection<Chamados> Cliente { get; private set; }
 
-        public ICollection<Chamados> Funcionario { get; private set; }
+        //public ICollection<Chamados> Cliente { get; private set; }
+
+        //public ICollection<Chamados> Funcionario { get; private set; }
 
         public ICollection<ConfigFont> Fonte { get; private set; }
 
@@ -62,19 +62,19 @@ namespace Library.Class.Models
             this.Telefone = telefone;
             this.Celular = celular;
 
-            Cliente = new HashSet<Chamados>();
-            Funcionario = new HashSet<Chamados>();
+            //Cliente = new HashSet<Chamados>();
+            //Funcionario = new HashSet<Chamados>();
             Fonte = new HashSet<ConfigFont>();
 
             Validar();
         }
-        
+
         public void AlterarUsuarios(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular, Enderecos endereco
             , TipoUsuarios tipousuario, Departamentos departamentos
             )
         {
-            Cliente = new HashSet<Chamados>();
-            Funcionario = new HashSet<Chamados>();
+            //Cliente = new HashSet<Chamados>();
+            //Funcionario = new HashSet<Chamados>();
             Fonte = new HashSet<ConfigFont>();
 
             this.Nome = nome;
@@ -92,17 +92,17 @@ namespace Library.Class.Models
             this.CodigoDepartamento = departamentos.CodigoDepartamento;
 
             Validar();
-            
+
         }
 
         public void AlterarUsuarios(Logins login)
         {
-            Cliente = new HashSet<Chamados>();
-            Funcionario = new HashSet<Chamados>();
+            //    Cliente = new HashSet<Chamados>();
+            //    Funcionario = new HashSet<Chamados>();
             Fonte = new HashSet<ConfigFont>();
 
             this.CodigoLogin = login.CodigoLogin;
-            
+
             Validar();
 
         }
@@ -124,8 +124,8 @@ namespace Library.Class.Models
 
         public Usuarios()
         {
-            Cliente = new HashSet<Chamados>();
-            Funcionario = new HashSet<Chamados>();
+            //Cliente = new HashSet<Chamados>();
+            //Funcionario = new HashSet<Chamados>();
             Fonte = new HashSet<ConfigFont>();
         }
 

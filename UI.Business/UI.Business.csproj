@@ -57,6 +57,7 @@
     <Compile Include="Interfaces\Repositories\Business\ControlConfigFonte.cs" />
     <Compile Include="Interfaces\Repositories\Business\ControlDepartamento.cs" />
     <Compile Include="Interfaces\Repositories\Business\ControlLogin.cs" />
+    <Compile Include="Interfaces\Repositories\Business\ControlBaseConhecimento.cs" />
     <Compile Include="Interfaces\Repositories\Business\ControlPerfil.cs" />
     <Compile Include="Interfaces\Repositories\Business\ControlProduto.cs" />
     <Compile Include="Interfaces\Repositories\Business\ControlTipoChamado.cs" />

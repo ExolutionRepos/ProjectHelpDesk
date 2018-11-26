@@ -29,6 +29,7 @@ namespace UI.Desktop.Sistema
             _RepositoryControlDepartamento = new ControlDepartamento();
             _RepositoryControlTipoChamado = new ControlTipoChamado();
             _RepositoryControlProduto = new ControlProduto();
+            
         }
         
         private void tabPage1_Enter(object sender, EventArgs e)
@@ -351,7 +352,7 @@ namespace UI.Desktop.Sistema
         private void button6_Click(object sender, EventArgs e)
         {
             PesquisarTipoChamado(textBox6.Text);
-        }
+       } 
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
@@ -517,6 +518,21 @@ namespace UI.Desktop.Sistema
                 PesquisarProduto(textBox9.Text);
                 LimparProduto();
             }
+        }
+
+        private void groupBox11_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
