@@ -19,6 +19,8 @@ namespace Library.Class.Models
 
         public string PalavraChave { get; private set; }
 
+        public int CodigoTipoChamado { get; private set; }
+        [ForeignKey("CodigoTipoChamado")]
         public virtual TipoChamados TipoChamado { get; private set; }
 
         public BaseConhecimento(int codigobaseconhecimento, int codigotipochamado, string descricao, string nome,
@@ -29,6 +31,24 @@ namespace Library.Class.Models
             this.Nome = nome;
             this.PalavraChave = palavrachave;
 
+            Validar();
+        }
+
+        public BaseConhecimento AlterarBaseConhecimento(int codigobaseconhecimento, int codigotipochamado, string descricao, string nome,
+            string palavrachave)
+        {
+            this.CodigoBaseConhecimento = codigobaseconhecimento;
+            this.Descricao = descricao;
+            this.Nome = nome;
+            this.PalavraChave = palavrachave;
+
+            Validar();
+
+            return this;
+        }
+
+        private void Validar()
+        {
             new AddNotifications<BaseConhecimento>(this)
                 .IfNullOrEmpty(this.Descricao, Message.OBJETO_X0_E_OBRIGATORIO.ToFormat("Descricao"))
                 .IfNullOrEmpty(this.Nome, Message.OBJETO_X0_E_OBRIGATORIO.ToFormat("Nome"));

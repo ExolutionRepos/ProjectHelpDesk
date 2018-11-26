@@ -18,6 +18,12 @@ namespace Library.Class.Utils
                     item.Text = DateTime.Now.ToLongTimeString();
                 }
 
+                if (item.GetType() == typeof(NumericUpDown))
+                {
+                    NumericUpDown num = ((NumericUpDown)item);
+                    num.Value = 0;
+                }
+
                 if (item.GetType() == typeof(GroupBox))
                 {
                     ResetAll((GroupBox)item);
@@ -64,6 +70,11 @@ namespace Library.Class.Utils
                 if (ctrl is ListBox)
                 {
                     ((ListBox)ctrl).ClearSelected();
+                }
+
+                if (ctrl is NumericUpDown)
+                {
+                    ((NumericUpDown)ctrl).Value = 0;
                 }
 
                 if (ctrl is DateTimePicker)

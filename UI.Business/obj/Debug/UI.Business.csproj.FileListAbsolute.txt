@@ -87,3 +87,5 @@ C:\Backup\ProjectHelpDesk\UI.Business\bin\Debug\EntityFramework.SqlServer.xml
 C:\Backup\ProjectHelpDesk\UI.Business\obj\Debug\UI.Business.csprojResolveAssemblyReference.cache
 C:\Backup\ProjectHelpDesk\UI.Business\obj\Debug\UI.Business.dll
 C:\Backup\ProjectHelpDesk\UI.Business\obj\Debug\UI.Business.pdb
+C:\GSA\UNIP\ProjectHelpDesk\UI.Business\bin\Debug\Newtonsoft.Json.dll
+C:\GSA\UNIP\ProjectHelpDesk\UI.Business\bin\Debug\Newtonsoft.Json.xml

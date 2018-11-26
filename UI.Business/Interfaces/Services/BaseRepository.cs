@@ -38,6 +38,11 @@ namespace UI.Business.Interfaces.Services
             return _context.Set<T>().Find(id);
         }
 
+        public T FindMax()
+        {
+            return _context.Set<T>().OrderBy(y => y).First();
+        }
+
         public IQueryable<T> List()
         {
             var a = "";
@@ -65,7 +70,7 @@ namespace UI.Business.Interfaces.Services
             {
                 a = e.Message;
             }
-         
+
         }
 
         public void Remove(T item)
@@ -82,7 +87,7 @@ namespace UI.Business.Interfaces.Services
         {
             _context.Dispose();
         }
-        
+
     }
 
 }

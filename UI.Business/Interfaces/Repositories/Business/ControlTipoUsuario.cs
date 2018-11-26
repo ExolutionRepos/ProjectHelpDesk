@@ -63,7 +63,7 @@ namespace UI.Business.Interfaces.Repositories.Business
 
             if(DadosTipoUsuarios == null)
             {
-                return new BaseReturn("Tipo Usuario", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
+                return new BaseReturn("Tipo Usuario", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
             }
 
             DadosTipoUsuarios = DadosTipoUsuarios.AlterarTipoUsuarios(descricao, nome);

@@ -13,19 +13,22 @@ namespace Library.Class.Models
     {
         [Key]
         public int? CodigoDepartamento { get; private set; }
-        
+
         public string Descricao { get; private set; }
 
         public string Nome { get; private set; }
 
         public ICollection<Usuarios> Usuario { get; private set; }
 
+        public ICollection<Chamados> Chamado { get; private set; }
+
         public Departamentos(string descricao, string nome)
         {
             this.Descricao = descricao;
             this.Nome = nome;
 
-            Usuario = new HashSet<Usuarios>();
+            //Usuario = new HashSet<Usuarios>();
+            //Chamado = new HashSet<Chamados>();
 
             Validar();
 
@@ -51,6 +54,7 @@ namespace Library.Class.Models
 
         protected Departamentos()
         {
+            Chamado = new HashSet<Chamados>();
             Usuario = new HashSet<Usuarios>();
         }
     }

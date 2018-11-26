@@ -64,7 +64,7 @@ namespace UI.Business.Interfaces.Repositories.Business
 
             if (DadosTipoChamado == null)
             {
-                return new BaseReturn("Tipo Chamado", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
+                return new BaseReturn("Tipo Chamado", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
             }
 
             DadosTipoChamado = DadosTipoChamado.AlterarTipoChamados(descricao, nome, sla);

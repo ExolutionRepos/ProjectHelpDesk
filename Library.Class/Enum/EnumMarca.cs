@@ -4,7 +4,7 @@
     {
         public enum Marcas
         {
-            Marca1 = 1,
+            Samsung = 1,
             Marca2 = 2,
             Marca3 = 3
         }

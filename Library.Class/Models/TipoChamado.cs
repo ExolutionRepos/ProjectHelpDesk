@@ -32,7 +32,7 @@ namespace Library.Class.Models
             this.Nome = nome;
             this.SLA = sla;
 
-            Chamado = new HashSet<Chamados>();
+            //Chamado = new HashSet<Chamados>();
             BaseConhecimento = new HashSet<BaseConhecimento>();
 
             Validar();
@@ -44,7 +44,7 @@ namespace Library.Class.Models
             this.Nome = nome;
             this.SLA = sla;
 
-            Chamado = new HashSet<Chamados>();
+            //Chamado = new HashSet<Chamados>();
             BaseConhecimento = new HashSet<BaseConhecimento>();
 
             Validar();

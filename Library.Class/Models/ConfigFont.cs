@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using prmToolkit.NotificationPattern;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Class.Models
 {
     [Table("TBL_CONFIGURACAOFONTE")]
-    public class ConfigFont
+    public class ConfigFont : Notifiable
     {
         [Key]
         public int Codigo_ConfigFont { get; private set; }
@@ -15,25 +15,39 @@ namespace Library.Class.Models
 
         public float Tamanho { get; private set; }
 
-        public ICollection<Usuarios> Usuario { get; private set; }
-
-        protected ConfigFont()
-        {
-            Usuario = new HashSet<Usuarios>();
-        }
+        public int CodigoUsuario { get; private set; }
+        [ForeignKey("CodigoUsuario")]
+        public virtual Usuarios Usuario { get; private set; }
 
         public ConfigFont(string fonte, float tamanho)
         {
             this.Fonte = fonte;
             this.Tamanho = tamanho;
 
+            Validar();
         }
 
-        public void AlterarConfigFont(string fonte, float tamanho)
+
+        public ConfigFont AlterarConfigFont(string fonte, float tamanho)
         {
             this.Fonte = fonte;
             this.Tamanho = tamanho;
 
+            Validar();
+
+            return this;
         }
+
+        private void Validar()
+        {
+
+        }
+
+        protected ConfigFont()
+        {
+
+        }
+
+        
     }
 }

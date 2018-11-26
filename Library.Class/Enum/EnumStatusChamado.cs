@@ -5,12 +5,13 @@
         public enum StatusChamado
         {
             PreChamado = 1,
+            //DashBoard ------------------------------------
             Aberto = 2,
-            Analise = 3,
-            Atuando = 4,
-            Pendente = 5,
-            Finalizado = 6 ,
-            Cancelado = 7
+            Atuando = 3,
+            Pendente = 4,
+            Finalizado = 5,
+            //----------------------------------------------
+            Cancelado = 6
         }
     }
 }

@@ -65,7 +65,7 @@ namespace UI.Business.Interfaces.Repositories.Business
 
             if (DadosDepartamento == null)
             {
-                return new BaseReturn("Tipo Usuario", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
+                return new BaseReturn("Tipo Usuario", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
             }
 
             DadosDepartamento = DadosDepartamento.AlterarDepartamento(descricao, nome);

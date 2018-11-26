@@ -64,7 +64,7 @@ namespace UI.Business.Interfaces.Repositories.Business
 
             if (DadosPerfil == null)
             {
-                return new BaseReturn("Perfil", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, true);
+                return new BaseReturn("Perfil", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
             }
 
             DadosPerfil = DadosPerfil.AlterarPerfil(descricao, nome);

@@ -78,7 +78,7 @@ namespace UI.Desktop.Cadastros
             var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
 
             var DadosUsuario = _RepositoryControlUsuario.Pesquisar(Convert.ToInt32(campo));
-            CompletarCampos(DadosUsuario, _RepositoryControlLogin.Pesquisar(DadosUsuario.CodigoUsuario));
+            CompletarCampos(DadosUsuario, _RepositoryControlLogin.Pesquisar(StringExtension.ToInt32(DadosUsuario.CodigoLogin)));
         }
 
         private void CompletarCampos(Usuarios usuarios, Logins logins)
@@ -140,7 +140,9 @@ namespace UI.Desktop.Cadastros
         {
             var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
 
-            var retorno = _RepositoryControlLogin.CadastrarLogin(StringExtension.ToInt32(campo), textLogin.Text, textSenha.Text, textSenha.Text, (int)comboPerfil.SelectedIndex + 1);
+            var retorno = _RepositoryControlLogin.CadastrarLogin(StringExtension.ToInt32(campo), textLogin.Text, textSenha.Text, 
+                textSenha.Text,
+                (int)comboPerfil.SelectedIndex);
 
             lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
@@ -155,7 +157,8 @@ namespace UI.Desktop.Cadastros
         {
             var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
 
-            var retorno = _RepositoryControlLogin.AlterarLogin(StringExtension.ToInt32(campo), textLogin.Text, textSenha.Text, (int)comboPerfil.SelectedIndex + 1);
+            var retorno = _RepositoryControlLogin.AlterarLogin(StringExtension.ToInt32(campo), textLogin.Text, textSenha.Text,
+                (int)comboPerfil.SelectedIndex);
 
             lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 

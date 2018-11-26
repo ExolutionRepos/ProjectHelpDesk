@@ -13,7 +13,6 @@ namespace Library.Class.Models
     public class Usuarios : Notifiable
     {
         [Key]
-        //,Column("CodigoUsuario", TypeName = "int")
         public int CodigoUsuario { get; private set; }
 
         public string Nome { get; private set; }
@@ -42,16 +41,15 @@ namespace Library.Class.Models
         [ForeignKey("CodigoTipoUsuario")]
         public virtual TipoUsuarios Usuario { get; private set; }
 
-
         public int? CodigoDepartamento { get; private set; }
         [ForeignKey("CodigoDepartamento")]
         public virtual Departamentos Departamento { get; private set; }
         
-        public virtual ConfigFont Fonte { get; private set; }
-
         public ICollection<Chamados> Cliente { get; private set; }
 
         public ICollection<Chamados> Funcionario { get; private set; }
+
+        public ICollection<ConfigFont> Fonte { get; private set; }
 
         public Usuarios(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular)
         {
@@ -66,7 +64,8 @@ namespace Library.Class.Models
 
             Cliente = new HashSet<Chamados>();
             Funcionario = new HashSet<Chamados>();
-            
+            Fonte = new HashSet<ConfigFont>();
+
             Validar();
         }
         
@@ -76,6 +75,7 @@ namespace Library.Class.Models
         {
             Cliente = new HashSet<Chamados>();
             Funcionario = new HashSet<Chamados>();
+            Fonte = new HashSet<ConfigFont>();
 
             this.Nome = nome;
             this.DataNascimento = datanascimento;
@@ -99,6 +99,7 @@ namespace Library.Class.Models
         {
             Cliente = new HashSet<Chamados>();
             Funcionario = new HashSet<Chamados>();
+            Fonte = new HashSet<ConfigFont>();
 
             this.CodigoLogin = login.CodigoLogin;
             
@@ -125,6 +126,7 @@ namespace Library.Class.Models
         {
             Cliente = new HashSet<Chamados>();
             Funcionario = new HashSet<Chamados>();
+            Fonte = new HashSet<ConfigFont>();
         }
 
     }

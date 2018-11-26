@@ -1,10 +1,14 @@
-﻿using Library.Class.Models;
+﻿using Library.Class.Enum;
+using Library.Class.Models;
 using Library.Class.Utils;
 using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using UI.Business.Interfaces.Repositories.Business;
+using static Library.Class.Enum.EnumMarca;
+using static Library.Class.Enum.EnumModelo;
+using static Library.Class.Enum.EnumSexo;
 
 namespace UI.Desktop.Sistema
 {
@@ -14,6 +18,7 @@ namespace UI.Desktop.Sistema
         private readonly ControlDepartamento _RepositoryControlDepartamento;
         private readonly ControlPerfil _RepositoryControlPerfil;
         private readonly ControlTipoChamado _RepositoryControlTipoChamado;
+        private readonly ControlProduto _RepositoryControlProduto;
 
 
         public frmConfiguracao()
@@ -23,6 +28,7 @@ namespace UI.Desktop.Sistema
             _RepositoryControlPerfil = new ControlPerfil();
             _RepositoryControlDepartamento = new ControlDepartamento();
             _RepositoryControlTipoChamado = new ControlTipoChamado();
+            _RepositoryControlProduto = new ControlProduto();
         }
         
         private void tabPage1_Enter(object sender, EventArgs e)
@@ -382,6 +388,7 @@ namespace UI.Desktop.Sistema
         {
             textTipoChamado.Text = tipochamados.Nome;
             textDescricaoTipoChamdo.Text = tipochamados.Descricao;
+
             numericTipoChamado.Value = Convert.ToInt32(tipochamados.SLA);
 
             toolStripButton3.Enabled = false;
@@ -405,7 +412,111 @@ namespace UI.Desktop.Sistema
 
         private void tabPage5_Enter(object sender, EventArgs e)
         {
+            //comboEnum
+            comboMarca.DataSource = Enum.GetValues(typeof(EnumMarca.Marcas));
 
+            //comboEnum
+            comboModelo.DataSource = Enum.GetValues(typeof(EnumModelo.Modelos));
+
+            PesquisarProduto(textBox9.Text);
+            LimparProduto();
+        }
+
+        private void PesquisarProduto(string nome)
+        {
+            dataGridView5.AutoGenerateColumns = true;
+
+            var Data = _RepositoryControlProduto.PesquisarProduto("")
+                .Where(a => a.Nome.Contains(nome))
+                .Select(a => new
+                {
+                    Codigo = a.CodigoProduto,
+                    Tipo = a.Nome
+                }
+                    )
+                .ToList();
+
+            dataGridView5.DataSource = Data;
+
+        }
+
+        private void CompletarCamposProduto(Produtos produtos)
+        {
+            textProduto.Text = produtos.Nome;
+            textProdutoDecricao.Text = produtos.Descricao;
+
+            comboMarca.SelectedItem = produtos.Marca;
+            comboModelo.SelectedItem = produtos.Modelo;
+            
+            toolStripButton24.Enabled = false;
+            toolStripButton25.Enabled = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            PesquisarProduto(textBox9.Text);
+        }
+
+        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var campo = dataGridView5.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var DadosProduto = _RepositoryControlProduto.Pesquisar(Convert.ToInt32(campo));
+            CompletarCamposProduto(DadosProduto);
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            PesquisarProduto(textBox9.Text);
+        }
+
+        private void toolStripButton26_Click(object sender, EventArgs e)
+        {
+            LimparProduto();
+        }
+
+        private void LimparProduto()
+        {
+            this.ClearControlAll();
+            //errorProvider1.Clear();
+
+            toolStripButton24.Enabled = true;
+            toolStripButton25.Enabled = false;
+
+        }
+
+        private void toolStripButton25_Click(object sender, EventArgs e)
+        {
+            Marcas DadosMarcas = (Marcas)Enum.Parse(typeof(Marcas), comboMarca.SelectedItem.ToString());
+            Modelos DadosModelos = (Modelos)Enum.Parse(typeof(Modelos), comboModelo.SelectedItem.ToString());
+
+            var campo = dataGridView5.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var retorno = _RepositoryControlProduto.AlterarProduto(Convert.ToInt16(campo), textProduto.Text,textProdutoDecricao.Text, DadosMarcas,DadosModelos);
+
+            label17.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarProduto(textBox9.Text);
+                LimparProduto();
+            }
+        }
+
+        private void toolStripButton24_Click(object sender, EventArgs e)
+        {
+            Marcas DadosMarcas = (Marcas)Enum.Parse(typeof(Marcas), comboMarca.SelectedItem.ToString());
+            Modelos DadosModelos = (Modelos)Enum.Parse(typeof(Modelos), comboModelo.SelectedItem.ToString());
+
+            var retorno = _RepositoryControlProduto.CadastrarProduto(textProduto.Text, textProdutoDecricao.Text, DadosMarcas, DadosModelos);
+
+            label17.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarProduto(textBox9.Text);
+                LimparProduto();
+            }
         }
     }
 }

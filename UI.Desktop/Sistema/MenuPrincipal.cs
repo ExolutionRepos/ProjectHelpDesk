@@ -93,7 +93,7 @@ namespace UI.Desktop
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            AbrirForm(new Pre_Chamado());
+            AbrirForm(new frmChamado());
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)

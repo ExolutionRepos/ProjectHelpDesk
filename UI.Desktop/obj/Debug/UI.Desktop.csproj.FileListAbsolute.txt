@@ -93,3 +93,5 @@ C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResourc
 C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.exe
 C:\Backup\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.pdb
 C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\obj\Debug\UI.Desktop.Chamado.frmChamado.resources
+C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\bin\Debug\Newtonsoft.Json.dll
+C:\GSA\UNIP\ProjectHelpDesk\UI.Desktop\bin\Debug\Newtonsoft.Json.xml

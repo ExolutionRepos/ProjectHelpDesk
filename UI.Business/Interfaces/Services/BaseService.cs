@@ -19,6 +19,11 @@ namespace UI.Business.Interfaces.Services
             return _repository.Find(id);
         }
 
+        public T FindMax()
+        {
+            return _repository.FindMax();
+        }
+
         public IQueryable<T> List()
         {
             return _repository.List();

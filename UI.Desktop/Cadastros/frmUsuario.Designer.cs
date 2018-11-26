@@ -579,6 +579,7 @@
             // 
             // comboUF
             // 
+            this.comboUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboUF.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboUF.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboUF.FormattingEnabled = true;
@@ -656,19 +657,21 @@
             // 
             // comboTelUm
             // 
+            this.comboTelUm.Enabled = false;
             this.comboTelUm.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTelUm.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboTelUm.FormattingEnabled = true;
             this.comboTelUm.Items.AddRange(new object[] {
+            "Telefone Fixo",
             "Celular",
             "Fax",
-            "Telefone Comercial ",
-            "Telefone Fixo"});
+            "Telefone Comercial "});
             this.comboTelUm.Location = new System.Drawing.Point(106, 50);
             this.comboTelUm.Margin = new System.Windows.Forms.Padding(4);
             this.comboTelUm.Name = "comboTelUm";
             this.comboTelUm.Size = new System.Drawing.Size(272, 26);
             this.comboTelUm.TabIndex = 0;
+            this.comboTelUm.Text = "Telefone Fixo";
             // 
             // labelTelDois
             // 
@@ -702,6 +705,7 @@
             // 
             // comboTelDois
             // 
+            this.comboTelDois.Enabled = false;
             this.comboTelDois.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTelDois.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboTelDois.FormattingEnabled = true;
@@ -715,6 +719,7 @@
             this.comboTelDois.Name = "comboTelDois";
             this.comboTelDois.Size = new System.Drawing.Size(272, 26);
             this.comboTelDois.TabIndex = 2;
+            this.comboTelDois.Text = "Celular";
             // 
             // labelTitulo
             // 

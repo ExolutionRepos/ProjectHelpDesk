@@ -31,42 +31,48 @@ namespace Library.Class.Models
         public ICollection<Chamados> Chamado { get; private set; }
 
 
-        public Produtos(DateTime ? datacompra, DateTime ? datafabricacao,string descricao, Marcas marca,
+        public Produtos(
+            //DateTime ? datacompra, DateTime ? datafabricacao,
+            string descricao, Marcas marca,
             Modelos modelo, string nome)
         {
-            this.DataCompra = datacompra;
-            this.DataFabricacao = datafabricacao;
+            //this.DataCompra = datacompra;
+            //this.DataFabricacao = datafabricacao;
             this.Descricao = descricao;
             this.Marca = marca;
             this.Modelo = modelo;
             this.Nome = nome;
 
-            new AddNotifications<Produtos>(this)
-                .IfEnumInvalid(y => y.Marca, Message.X0_INVALIDA.ToFormat("Marca"))
-                .IfEnumInvalid(y => y.Modelo, Message.X0_INVALIDA.ToFormat("Modelo"))
-                .IfNotDate(y => y.DataFabricacao.ToString(), Message.X0_INVALIDA.ToFormat("Data de fabricação"))
-                .IfNotDate(y => y.DataCompra.ToString(), Message.X0_INVALIDA.ToFormat("Data de compra"));
+            Validar();
         }
 
-        public void AlterarProdutos(int codigoproduto, DateTime? datacompra, DateTime? datafabricacao, string descricao, Marcas marca,
+        private void Validar()
+        {
+            new AddNotifications<Produtos>(this)
+                .IfEnumInvalid(y => y.Marca, Message.X0_INVALIDA.ToFormat("Marca"))
+                .IfEnumInvalid(y => y.Modelo, Message.X0_INVALIDA.ToFormat("Modelo"))
+                //.IfNotDate(y => y.DataFabricacao.ToString(), Message.X0_INVALIDA.ToFormat("Data de fabricação"))
+                //.IfNotDate(y => y.DataCompra.ToString(), Message.X0_INVALIDA.ToFormat("Data de compra"))
+                ;
+        }
+
+        public Produtos AlterarProdutos(
+            //DateTime? datacompra, DateTime? datafabricacao, 
+            string descricao, Marcas marca,
             Modelos modelo, string nome)
         {
 
-            this.CodigoProduto = codigoproduto;
-            this.DataCompra = datacompra;
-            this.DataFabricacao = datafabricacao;
+            //this.CodigoProduto = codigoproduto;
+            //this.DataCompra = datacompra;
+            //this.DataFabricacao = datafabricacao;
             this.Descricao = descricao;
             this.Marca = marca;
             this.Modelo = modelo;
             this.Nome = nome;
 
-            new AddNotifications<Produtos>(this)
-                .IfEnumInvalid(y => y.Marca, Message.X0_INVALIDA.ToFormat("Marca"))
-                .IfEnumInvalid(y => y.Modelo, Message.X0_INVALIDA.ToFormat("Modelo"))
-                .IfNullOrEmpty(x => x.CodigoProduto.ToString(), Message.X0_NAO_INFORMADO.ToFormat("Celular"))
-                .IfNotDate(y => y.DataFabricacao.ToString(), Message.X0_INVALIDA.ToFormat("Data de fabricação"))
-                .IfNotDate(y => y.DataCompra.ToString(), Message.X0_INVALIDA.ToFormat("Data de compra"));
-            
+            Validar();
+
+            return this;
         }
 
         protected Produtos()

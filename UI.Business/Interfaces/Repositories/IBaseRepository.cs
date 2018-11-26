@@ -12,6 +12,7 @@ namespace UI.Business.Interfaces.Repositories
         //IQueryable<T> CONSULTARREGISTROS();
 
         T Find(int id);
+        T FindMax();
         IQueryable<T> List();
         void Add(T item);
         void Remove(T item);

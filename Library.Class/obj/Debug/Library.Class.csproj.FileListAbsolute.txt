@@ -63,3 +63,5 @@ C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.Resources.Messag
 C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.csproj.GenerateResource.Cache
 C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.dll
 C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.pdb
+C:\GSA\UNIP\ProjectHelpDesk\Library.Class\bin\Debug\Newtonsoft.Json.dll
+C:\GSA\UNIP\ProjectHelpDesk\Library.Class\bin\Debug\Newtonsoft.Json.xml

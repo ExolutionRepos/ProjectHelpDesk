@@ -165,7 +165,7 @@ namespace UI.Desktop
             textNome.Text = usuarios.Nome;
             textCPF.Text = usuarios.CPF;
             dateTimeNascimento.Value = usuarios.DataNascimento.Value;
-            comboSexo.SelectedItem = usuarios.Sexo.ToString();
+            comboSexo.SelectedItem = usuarios.Sexo;
 
             if (usuarios.Usuario != null)
             {
