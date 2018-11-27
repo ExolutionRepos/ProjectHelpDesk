@@ -147,11 +147,12 @@
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton30 = new System.Windows.Forms.ToolStripButton();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.toolStrip6 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton31 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton32 = new System.Windows.Forms.ToolStripButton();
@@ -162,15 +163,18 @@
             this.toolStripButton36 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton37 = new System.Windows.Forms.ToolStripButton();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.comboTipoChamado = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBasePalavra = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBaseNome = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBaseDescricao = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.comboAcao = new System.Windows.Forms.ComboBox();
+            this.button12 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -199,10 +203,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.toolStrip5.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.toolStrip6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.toolStrip6.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -730,13 +734,16 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(49, 379);
+            this.label6.Location = new System.Drawing.Point(41, 391);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 18);
             this.label6.TabIndex = 55;
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button12);
+            this.groupBox5.Controls.Add(this.comboAcao);
+            this.groupBox5.Controls.Add(this.label23);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.textDescricaoPerfil);
@@ -744,7 +751,7 @@
             this.groupBox5.Font = new System.Drawing.Font("Arial", 14F);
             this.groupBox5.Location = new System.Drawing.Point(19, 50);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(438, 311);
+            this.groupBox5.Size = new System.Drawing.Size(438, 322);
             this.groupBox5.TabIndex = 54;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dados";
@@ -1232,6 +1239,7 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Produtos";
             this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             this.tabPage5.Enter += new System.EventHandler(this.tabPage5_Enter);
             // 
             // label17
@@ -1504,6 +1512,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.label22);
             this.tabPage6.Controls.Add(this.groupBox12);
             this.tabPage6.Controls.Add(this.toolStrip6);
             this.tabPage6.Controls.Add(this.groupBox11);
@@ -1513,62 +1522,91 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Base Conhecimento";
             this.tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage6.Enter += new System.EventHandler(this.tabPage6_Enter);
             // 
-            // groupBox11
+            // label22
             // 
-            this.groupBox11.Controls.Add(this.comboBox1);
-            this.groupBox11.Controls.Add(this.label21);
-            this.groupBox11.Controls.Add(this.label20);
-            this.groupBox11.Controls.Add(this.textBox7);
-            this.groupBox11.Controls.Add(this.label18);
-            this.groupBox11.Controls.Add(this.textBox3);
-            this.groupBox11.Controls.Add(this.label19);
-            this.groupBox11.Controls.Add(this.textBox1);
-            this.groupBox11.Font = new System.Drawing.Font("Arial", 14F);
-            this.groupBox11.Location = new System.Drawing.Point(18, 30);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(441, 375);
-            this.groupBox11.TabIndex = 0;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Base de conhecimento";
-            this.groupBox11.Enter += new System.EventHandler(this.groupBox11_Enter);
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(36, 390);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(0, 18);
+            this.label22.TabIndex = 60;
             // 
-            // label18
+            // groupBox12
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(10, 93);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 22);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Descrição:";
+            this.groupBox12.Controls.Add(this.button10);
+            this.groupBox12.Controls.Add(this.button11);
+            this.groupBox12.Controls.Add(this.textBox8);
+            this.groupBox12.Controls.Add(this.dataGridView6);
+            this.groupBox12.Font = new System.Drawing.Font("Arial", 14F);
+            this.groupBox12.Location = new System.Drawing.Point(465, 30);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(319, 375);
+            this.groupBox12.TabIndex = 58;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Procurar";
             // 
-            // label19
+            // button10
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(10, 43);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(61, 22);
-            this.label19.TabIndex = 9;
-            this.label19.Text = "Nome";
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.Location = new System.Drawing.Point(273, 33);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(33, 26);
+            this.button10.TabIndex = 6;
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // textBox1
+            // button11
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(144, 93);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 75);
-            this.textBox1.TabIndex = 8;
+            this.button11.BackColor = System.Drawing.Color.Transparent;
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
+            this.button11.Location = new System.Drawing.Point(436, 40);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(33, 26);
+            this.button11.TabIndex = 3;
+            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button11.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // textBox8
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(144, 43);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(276, 26);
-            this.textBox3.TabIndex = 7;
+            this.textBox8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(18, 33);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(249, 26);
+            this.textBox8.TabIndex = 2;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView6.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView6.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView6.EnableHeadersVisualStyles = false;
+            this.dataGridView6.Font = new System.Drawing.Font("Arial", 11F);
+            this.dataGridView6.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView6.Location = new System.Drawing.Point(18, 65);
+            this.dataGridView6.MultiSelect = false;
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView6.Size = new System.Drawing.Size(288, 296);
+            this.dataGridView6.TabIndex = 1;
+            this.dataGridView6.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellClick);
             // 
             // toolStrip6
             // 
@@ -1597,6 +1635,7 @@
             this.toolStripButton31.Name = "toolStripButton31";
             this.toolStripButton31.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton31.Text = "&Salvar";
+            this.toolStripButton31.Click += new System.EventHandler(this.toolStripButton31_Click);
             // 
             // toolStripButton32
             // 
@@ -1606,6 +1645,7 @@
             this.toolStripButton32.Name = "toolStripButton32";
             this.toolStripButton32.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton32.Text = "&Alterar";
+            this.toolStripButton32.Click += new System.EventHandler(this.toolStripButton32_Click);
             // 
             // toolStripButton33
             // 
@@ -1615,6 +1655,7 @@
             this.toolStripButton33.Name = "toolStripButton33";
             this.toolStripButton33.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton33.Text = "&Excluir";
+            this.toolStripButton33.Click += new System.EventHandler(this.toolStripButton33_Click);
             // 
             // toolStripSeparator11
             // 
@@ -1662,6 +1703,42 @@
             this.toolStripButton37.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton37.Text = "&Ajuda";
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.comboTipoChamado);
+            this.groupBox11.Controls.Add(this.label21);
+            this.groupBox11.Controls.Add(this.label20);
+            this.groupBox11.Controls.Add(this.textBasePalavra);
+            this.groupBox11.Controls.Add(this.label18);
+            this.groupBox11.Controls.Add(this.textBaseNome);
+            this.groupBox11.Controls.Add(this.label19);
+            this.groupBox11.Controls.Add(this.textBaseDescricao);
+            this.groupBox11.Font = new System.Drawing.Font("Arial", 14F);
+            this.groupBox11.Location = new System.Drawing.Point(18, 30);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(441, 352);
+            this.groupBox11.TabIndex = 0;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Base de conhecimento";
+            this.groupBox11.Enter += new System.EventHandler(this.groupBox11_Enter);
+            // 
+            // comboTipoChamado
+            // 
+            this.comboTipoChamado.FormattingEnabled = true;
+            this.comboTipoChamado.Location = new System.Drawing.Point(144, 317);
+            this.comboTipoChamado.Name = "comboTipoChamado";
+            this.comboTipoChamado.Size = new System.Drawing.Size(270, 30);
+            this.comboTipoChamado.TabIndex = 14;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(10, 320);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(47, 22);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "Tipo";
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -1672,104 +1749,80 @@
             this.label20.Text = "Palavra chave";
             this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
-            // textBox7
+            // textBasePalavra
             // 
-            this.textBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(144, 191);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(276, 107);
-            this.textBox7.TabIndex = 11;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBasePalavra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBasePalavra.Location = new System.Drawing.Point(144, 191);
+            this.textBasePalavra.Margin = new System.Windows.Forms.Padding(4);
+            this.textBasePalavra.Multiline = true;
+            this.textBasePalavra.Name = "textBasePalavra";
+            this.textBasePalavra.Size = new System.Drawing.Size(276, 107);
+            this.textBasePalavra.TabIndex = 11;
+            this.textBasePalavra.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
-            // textBox8
+            // label18
             // 
-            this.textBox8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(18, 33);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(249, 26);
-            this.textBox8.TabIndex = 2;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(10, 93);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(101, 22);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Descrição:";
             // 
-            // dataGridView6
+            // textBaseNome
             // 
-            this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView6.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView6.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dataGridView6.EnableHeadersVisualStyles = false;
-            this.dataGridView6.Font = new System.Drawing.Font("Arial", 11F);
-            this.dataGridView6.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView6.Location = new System.Drawing.Point(18, 65);
-            this.dataGridView6.MultiSelect = false;
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView6.Size = new System.Drawing.Size(288, 296);
-            this.dataGridView6.TabIndex = 1;
+            this.textBaseNome.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBaseNome.Location = new System.Drawing.Point(83, 43);
+            this.textBaseNome.Margin = new System.Windows.Forms.Padding(4);
+            this.textBaseNome.Name = "textBaseNome";
+            this.textBaseNome.Size = new System.Drawing.Size(276, 26);
+            this.textBaseNome.TabIndex = 7;
             // 
-            // groupBox12
+            // label19
             // 
-            this.groupBox12.Controls.Add(this.button10);
-            this.groupBox12.Controls.Add(this.button11);
-            this.groupBox12.Controls.Add(this.textBox8);
-            this.groupBox12.Controls.Add(this.dataGridView6);
-            this.groupBox12.Font = new System.Drawing.Font("Arial", 14F);
-            this.groupBox12.Location = new System.Drawing.Point(465, 30);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(319, 375);
-            this.groupBox12.TabIndex = 58;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Procurar";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(10, 43);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(66, 22);
+            this.label19.TabIndex = 9;
+            this.label19.Text = "Nome:";
             // 
-            // button10
+            // textBaseDescricao
             // 
-            this.button10.BackColor = System.Drawing.Color.Transparent;
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.Location = new System.Drawing.Point(273, 33);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(33, 26);
-            this.button10.TabIndex = 6;
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = false;
+            this.textBaseDescricao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBaseDescricao.Location = new System.Drawing.Point(144, 93);
+            this.textBaseDescricao.Margin = new System.Windows.Forms.Padding(4);
+            this.textBaseDescricao.Multiline = true;
+            this.textBaseDescricao.Name = "textBaseDescricao";
+            this.textBaseDescricao.Size = new System.Drawing.Size(276, 75);
+            this.textBaseDescricao.TabIndex = 8;
             // 
-            // button11
+            // label23
             // 
-            this.button11.BackColor = System.Drawing.Color.Transparent;
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.Location = new System.Drawing.Point(436, 40);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(33, 26);
-            this.button11.TabIndex = 3;
-            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button11.UseVisualStyleBackColor = false;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 270);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(70, 22);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "Ações:";
             // 
-            // comboBox1
+            // comboAcao
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(144, 317);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(270, 30);
-            this.comboBox1.TabIndex = 14;
+            this.comboAcao.FormattingEnabled = true;
+            this.comboAcao.Location = new System.Drawing.Point(96, 267);
+            this.comboAcao.Name = "comboAcao";
+            this.comboAcao.Size = new System.Drawing.Size(229, 30);
+            this.comboAcao.TabIndex = 9;
             // 
-            // label21
+            // button12
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(10, 320);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(47, 22);
-            this.label21.TabIndex = 13;
-            this.label21.Text = "Tipo";
+            this.button12.BackColor = System.Drawing.Color.Blue;
+            this.button12.Location = new System.Drawing.Point(327, 255);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(13, 14);
+            this.button12.TabIndex = 10;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // frmConfiguracao
             // 
@@ -1781,6 +1834,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Configurações";
+            this.Load += new System.EventHandler(this.frmConfiguracao_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1830,13 +1884,13 @@
             this.toolStrip5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.toolStrip6.ResumeLayout(false);
-            this.toolStrip6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.toolStrip6.ResumeLayout(false);
+            this.toolStrip6.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1973,17 +2027,21 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripButton toolStripButton37;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBasePalavra;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBaseNome;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBaseDescricao;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboTipoChamado;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox comboAcao;
+        private System.Windows.Forms.Button button12;
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using UI.Business.Interfaces.Repositories.Business;
 using static Library.Class.Enum.EnumMarca;
 using static Library.Class.Enum.EnumModelo;
+using static Library.Class.Enum.EnumPerfil;
 using static Library.Class.Enum.EnumSexo;
 
 namespace UI.Desktop.Sistema
@@ -19,7 +20,8 @@ namespace UI.Desktop.Sistema
         private readonly ControlPerfil _RepositoryControlPerfil;
         private readonly ControlTipoChamado _RepositoryControlTipoChamado;
         private readonly ControlProduto _RepositoryControlProduto;
-
+        private readonly ControlBaseConhecimento _RepositoryControlBaseConhecimento;
+        private BaseConhecimento baseconhecimento = null;
 
         public frmConfiguracao()
         {
@@ -29,9 +31,24 @@ namespace UI.Desktop.Sistema
             _RepositoryControlDepartamento = new ControlDepartamento();
             _RepositoryControlTipoChamado = new ControlTipoChamado();
             _RepositoryControlProduto = new ControlProduto();
-            
+            _RepositoryControlBaseConhecimento = new ControlBaseConhecimento();
+
+
         }
-        
+
+        public frmConfiguracao(BaseConhecimento baseconhecimentoB)
+        {
+            InitializeComponent();
+            _RepositoryControlUsuario = new ControlTipoUsuario();
+            _RepositoryControlPerfil = new ControlPerfil();
+            _RepositoryControlDepartamento = new ControlDepartamento();
+            _RepositoryControlTipoChamado = new ControlTipoChamado();
+            _RepositoryControlProduto = new ControlProduto();
+            _RepositoryControlBaseConhecimento = new ControlBaseConhecimento();
+
+            baseconhecimento = baseconhecimentoB;
+        }
+
         private void tabPage1_Enter(object sender, EventArgs e)
         {
             LimparTipoUsuario();
@@ -49,11 +66,11 @@ namespace UI.Desktop.Sistema
                     Codigo = a.CodigoTipoUsuario,
                     Tipo = a.Nome
                 }
-                    )                
+                    )
                 .ToList();
 
             dataGridView1.DataSource = Data;
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -112,7 +129,7 @@ namespace UI.Desktop.Sistema
             var campo = dataGridView1.CurrentRow.Cells["CODIGO"].Value.ToString();
 
             var retorno = _RepositoryControlUsuario.AlterarTipoUsuario(Convert.ToInt16(campo), textTipo.Text, textDescricao.Text);
-            
+
             lblAtencao.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
             if (retorno.Status)
@@ -225,6 +242,8 @@ namespace UI.Desktop.Sistema
         {
             LimparPerfil();
             PesquisarPerfil(textBox5.Text);
+
+            comboAcao.DataSource = Enum.GetValues(typeof(TipoPerfils));
         }
 
         private void PesquisarPerfil(string nome)
@@ -284,7 +303,10 @@ namespace UI.Desktop.Sistema
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            var retorno = _RepositoryControlPerfil.CadastrarPerfil(textPerfil.Text, textDescricaoPerfil.Text);
+
+            TipoPerfils tipoperfils = (TipoPerfils)Enum.Parse(typeof(TipoPerfils), comboAcao.SelectedItem.ToString());
+
+            var retorno = _RepositoryControlPerfil.CadastrarPerfil(textPerfil.Text, textDescricaoPerfil.Text, tipoperfils);
 
             label6.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
@@ -298,8 +320,9 @@ namespace UI.Desktop.Sistema
         private void salvarToolStripButton1_Click(object sender, EventArgs e)
         {
             var campo = dataGridView3.CurrentRow.Cells["CODIGO"].Value.ToString();
+            TipoPerfils tipoperfils = (TipoPerfils)Enum.Parse(typeof(TipoPerfils), comboAcao.SelectedItem.ToString());
 
-            var retorno = _RepositoryControlPerfil.AlterarPerfil(Convert.ToInt16(campo), textPerfil.Text, textDescricaoPerfil.Text);
+            var retorno = _RepositoryControlPerfil.AlterarPerfil(Convert.ToInt16(campo), textPerfil.Text, textDescricaoPerfil.Text, tipoperfils);
 
             label6.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
@@ -320,7 +343,7 @@ namespace UI.Desktop.Sistema
             LimparTipoChamado();
             PesquisarTipoChamado(textBox6.Text);
         }
-        
+
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             var retorno = _RepositoryControlTipoChamado.CadastrarTipoChamado(textTipoChamado.Text, textDescricaoTipoChamdo.Text, numericTipoChamado.Value.ToString());
@@ -352,7 +375,7 @@ namespace UI.Desktop.Sistema
         private void button6_Click(object sender, EventArgs e)
         {
             PesquisarTipoChamado(textBox6.Text);
-       } 
+        }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
@@ -448,7 +471,7 @@ namespace UI.Desktop.Sistema
 
             comboMarca.SelectedItem = produtos.Marca;
             comboModelo.SelectedItem = produtos.Modelo;
-            
+
             toolStripButton24.Enabled = false;
             toolStripButton25.Enabled = true;
         }
@@ -493,7 +516,7 @@ namespace UI.Desktop.Sistema
 
             var campo = dataGridView5.CurrentRow.Cells["CODIGO"].Value.ToString();
 
-            var retorno = _RepositoryControlProduto.AlterarProduto(Convert.ToInt16(campo), textProduto.Text,textProdutoDecricao.Text, DadosMarcas,DadosModelos);
+            var retorno = _RepositoryControlProduto.AlterarProduto(Convert.ToInt16(campo), textProduto.Text, textProdutoDecricao.Text, DadosMarcas, DadosModelos);
 
             label17.Text = "• " + retorno.Propert + ": " + retorno.Message;
 
@@ -533,6 +556,140 @@ namespace UI.Desktop.Sistema
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PesquisarConhecimento(string nome)
+        {
+            dataGridView6.AutoGenerateColumns = true;
+
+            var Data = _RepositoryControlBaseConhecimento.PesquisarBaseConhecimento("")
+                .Where(a => a.Nome.Contains(nome))
+                .Select(a => new
+                {
+                    Codigo = a.CodigoBaseConhecimento,
+                    Tipo = a.Nome
+                }
+                    )
+                .ToList();
+
+            dataGridView6.DataSource = Data;
+
+        }
+
+        private void LimparConhecimento()
+        {
+            this.ClearControlAll();
+            //errorProvider1.Clear();
+
+            toolStripButton31.Enabled = true;
+            toolStripButton32.Enabled = false;
+
+        }
+
+        private void toolStripButton33_Click(object sender, EventArgs e)
+        {
+            LimparConhecimento();
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            PesquisarConhecimento(textBox8.Text);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            PesquisarConhecimento(textBox8.Text);
+        }
+
+        private void tabPage6_Enter(object sender, EventArgs e)
+        {
+            PesquisarConhecimento(textBox8.Text);
+
+            comboTipoChamado.CarregarCombo<TipoChamados>(
+            _RepositoryControlTipoChamado.PesquisarTipoChamado().ToList(),
+            "CodigoTipoChamado", "Nome");
+
+            LimparConhecimento();
+
+            if (baseconhecimento != null)
+                CompletarCamposConhecimento(baseconhecimento);
+        }
+
+        private void dataGridView6_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var campo = dataGridView6.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var DadosConhecimento = _RepositoryControlBaseConhecimento.Pesquisar(Convert.ToInt32(campo));
+            CompletarCamposConhecimento(DadosConhecimento);
+        }
+
+        private void CompletarCamposConhecimento(BaseConhecimento baseconhecimento)
+        {
+            textBaseNome.Text = baseconhecimento.Nome;
+            textBaseDescricao.Text = baseconhecimento.Descricao;
+            textBasePalavra.Text = baseconhecimento.PalavraChave;
+            comboTipoChamado.SelectedIndex = (int)baseconhecimento.TipoChamado.CodigoTipoChamado;
+
+            toolStripButton31.Enabled = false;
+            toolStripButton32.Enabled = true;
+        }
+
+        private void toolStripButton31_Click(object sender, EventArgs e)
+        {
+            var retorno = _RepositoryControlBaseConhecimento.CadastrarBaseConhecimento(textBaseDescricao.Text, textBaseNome.Text, textBasePalavra.Text,
+                (int)comboTipoChamado.SelectedIndex);
+
+            label22.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarConhecimento(textBox8.Text);
+                LimparConhecimento();
+            }
+        }
+
+        private void toolStripButton32_Click(object sender, EventArgs e)
+        {
+            var campo = dataGridView6.CurrentRow.Cells["CODIGO"].Value.ToString();
+
+            var retorno = _RepositoryControlBaseConhecimento.AlterarBaseConhecimento(Convert.ToInt16(campo), textBaseDescricao.Text, textBaseNome.Text, textBasePalavra.Text,
+                (int)comboTipoChamado.SelectedIndex);
+
+            label22.Text = "• " + retorno.Propert + ": " + retorno.Message;
+
+            if (retorno.Status)
+            {
+                PesquisarConhecimento(textBox8.Text);
+                LimparConhecimento();
+            }
+        }
+
+        private void frmConfiguracao_Load(object sender, EventArgs e)
+        {
+            if (baseconhecimento != null)
+            {
+                tabControl1.SelectedIndex = 5;
+                CompletarCamposConhecimento(baseconhecimento);
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("O tipo de perfil é pré definido:" +
+                "O acesso Chamado é igual a Chamado" +
+                "O acesso Usuario é igual a Chamado + Usuario" +
+                "O acesso Login é igual a Chamado + Usuario + Login" +
+                "O acesso Configuracao é igual a Chamado + Usuario + Login + Configuração" +
+                "O acesso Relatorio é igual a Chamado + Usuario + Login + Configuração + Relatorio",
+    "Perfil",
+   MessageBoxButtons.OK,
+   MessageBoxIcon.Question,
+   MessageBoxDefaultButton.Button2);
         }
     }
 }

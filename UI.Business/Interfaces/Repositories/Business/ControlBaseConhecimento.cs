@@ -37,7 +37,7 @@ namespace UI.Business.Interfaces.Repositories.Business
             return retorno;
         }
 
-        public BaseReturn CadastrarBaseConhecimento(string descricao, string nome, string palavrachave)
+        public BaseReturn CadastrarBaseConhecimento(string descricao, string nome, string palavrachave,int codigotipochamado)
         {
             var Dados = PesquisarBaseConhecimento()
               .Where(y => y.Nome == nome).FirstOrDefault();
@@ -55,7 +55,17 @@ namespace UI.Business.Interfaces.Repositories.Business
                 return new BaseReturn(baseconhecimento.Notifications.FirstOrDefault().Property, baseconhecimento.Notifications.FirstOrDefault().Message, false);
             }
 
-            _RepositoryBaseConhecimento.Add(baseconhecimento);
+            var DadosTipoChamado = _ReposistoryTipoChamado.Find(codigotipochamado);
+
+            if (DadosTipoChamado == null)
+            {
+                return new BaseReturn("Tipo Chamado", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
+            }
+
+            DadosTipoChamado.BaseConhecimento.Add(baseconhecimento);
+
+            //_RepositoryBaseConhecimento.Add(baseconhecimento);
+            _ReposistoryTipoChamado.Edit(DadosTipoChamado);
 
             return new BaseReturn("BaseConhecimento", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
         }

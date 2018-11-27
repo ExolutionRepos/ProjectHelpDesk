@@ -1,22 +1,31 @@
 ﻿using Library.Class.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Business.Interfaces.Repositories.Business;
+using static Library.Class.Enum.EnumChamado;
 using static Library.Class.Enum.EnumStatusChamado;
 
 namespace UI.Desktop.Chamado
 {
     public partial class frmDashBoard : Form
     {
+        private readonly ControlChamado _RepositoryControlChamado;
+
         public frmDashBoard()
         {
             InitializeComponent();
+            _RepositoryControlChamado = new ControlChamado();
+        }
+
+        public MenuPrincipal menuP;
+        public frmDashBoard(MenuPrincipal menu)
+        {
+            InitializeComponent();
+            _RepositoryControlChamado = new ControlChamado();
+            menuP = menu;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -29,29 +38,45 @@ namespace UI.Desktop.Chamado
 
         }
 
-        private void contar(Control controle, string nome)
+        private void buttonClick(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            menuP.AbrirForm(new frmChamado((int)btn.Tag, menuP));
+        }
+
+        private void contar(int codigo,Control controle, string nome, string codigochamado, DateTime dataabertura, string categoria, string descricao, string sla, string responsavel, ChamadoPrioridade statuschamado, bool listar = true)
         {
             var vazio = 0;
             var cheio = 0;
             var contador = 0;
 
-            var Listar = controle.Controls.Cast<Control>()
-                .Where(y => y.Name.Contains(nome))
-                .OrderBy(y => StringExtension.ToInt32(y.TabIndex.ToString()))
-                .ToList();
+            var Listar = controle.Controls.Cast<Control>();
 
+            if (listar)
+            {
+                Listar = Listar
+                    .Where(y => y.Name.Contains(nome))
+                    .OrderBy(y => StringExtension.ToInt32(y.TabIndex.ToString()))
+                    .ToList();
+            }
+            else
+            {
+                Listar = Listar
+                    .OrderBy(y => StringExtension.ToInt32(y.TabIndex.ToString()))
+                    .ToList();
+            }
 
             foreach (Control item in Listar)
             {
                 if (item.GetType() == typeof(TableLayoutPanel))
                 {
-                    contar(item, nome);
+                    contar(codigo,item, nome, codigochamado, dataabertura, categoria, descricao, sla, responsavel, statuschamado, false);
                     break;
                 }
 
                 if (item.GetType() == typeof(GroupBox))
                 {
-                    contar(item, nome);
+                    contar(codigo,item, nome, codigochamado, dataabertura, categoria, descricao, sla, responsavel, statuschamado);
                     break;
                 }
 
@@ -60,7 +85,8 @@ namespace UI.Desktop.Chamado
                     contador++;
                     if (((Panel)item).Controls.Count == 0)
                     {
-                        AddNewTextBox(item, contador);
+
+                        AddNewTextBox(codigo,item, contador, codigochamado, dataabertura, categoria, descricao, sla, responsavel, statuschamado);
                         break;
                     }
                     else
@@ -74,7 +100,7 @@ namespace UI.Desktop.Chamado
         }
         int contador = 1;
 
-        public void AddNewTextBox(Control controle, int contar)
+        public void AddNewTextBox(int codigo,Control controle, int contar, string codigochamado, DateTime dataabertura, string categoria, string descricao, string sla, string responsavel, ChamadoPrioridade statuschamado)
         {
             //Define posição top
             var top = contador * 5;
@@ -94,7 +120,26 @@ namespace UI.Desktop.Chamado
             picture.Height = 3;
             picture.Dock = DockStyle.Bottom;
             picture.Name = "picture" + contador;
-            picture.BackColor = Color.Red;
+
+            switch (statuschamado)
+            {
+                case ChamadoPrioridade.Baixa:
+                    picture.BackColor = Color.Green;
+                    break;
+
+                case ChamadoPrioridade.Media:
+                    picture.BackColor = Color.Yellow;
+                    break;
+
+                case ChamadoPrioridade.Alta:
+                    picture.BackColor = Color.Red;
+                    break;
+
+                default:
+                    picture.BackColor = Color.Transparent;
+                    break;
+            }
+
             picture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MouseDown);
             //Adiciona no Form
             panel.Controls.Add(picture);
@@ -102,15 +147,27 @@ namespace UI.Desktop.Chamado
             Button txt = new Button();
             txt.Top = top;
             txt.Left = 10;
-            txt.Width = 75;
-            txt.Text = "Chamado: " + this.contador.ToString();
+            txt.Width = 135;
+            txt.Text = "Chamado: " + codigochamado.ToString(); // chamado
             txt.Name = "watts" + contador;
             txt.FlatStyle = FlatStyle.Flat;
+            txt.Tag = codigo;
+            txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonClick);
             panel.Controls.Add(txt);
+
+            
+            //Novo textBox Consumo
+            Label lbl2 = new Label();
+            lbl2.Top = top + 25;
+            lbl2.Left = 10;
+            lbl2.Width = 40;
+            lbl2.Text = "Categoria: " + categoria.ToString();
+            lbl2.Name = "categoria" + contador; // categoria
+            panel.Controls.Add(lbl2);
 
             //Novo textBox Consumo
             Label lbl1 = new Label();
-            lbl1.Top = top + 5;
+            lbl1.Top = top + 25;
             lbl1.Left = 105;
             lbl1.Width = 50;
             lbl1.Text = "Abertura: ";
@@ -119,26 +176,19 @@ namespace UI.Desktop.Chamado
 
             //Novo textBox Consumo
             Label lbl12 = new Label();
-            lbl12.Top = top + 5;
+            lbl12.Top = top + 25;
             lbl12.Left = 160;
-            lbl12.Text = DateTime.Now.Date.ToShortDateString().ToString();
+            lbl12.Text = dataabertura.Date.ToShortDateString().ToString(); // dataAbertura
             lbl12.Name = "aberturaData" + contador;
             panel.Controls.Add(lbl12);
 
-            //Novo textBox Consumo
-            Label lbl2 = new Label();
-            lbl2.Top = top + 25;
-            lbl2.Left = 10;
-            lbl2.Text = "Categoria: " + "teste";
-            lbl2.Name = "categoria" + contador;
-            panel.Controls.Add(lbl2);
 
             //Novo textBox Consumo
             Label lbl3 = new Label();
             lbl3.Top = top + 50;
             lbl3.Left = 10;
             lbl3.Width = 220;
-            lbl3.Text = "Descrição: " + "Vamos testar neh" + "kkkk testa";
+            lbl3.Text = "Descrição: " + descricao.ToString();
             lbl3.Name = "descricao" + contador;
             panel.Controls.Add(lbl3);
 
@@ -147,7 +197,7 @@ namespace UI.Desktop.Chamado
             lbl4.Top = top + 75;
             lbl4.Left = 10;
             lbl4.Width = 70;
-            lbl4.Text = "SLA: " + "2 dias";
+            lbl4.Text = "SLA: " + sla.ToString() + "dias";
             lbl4.Name = "sla" + contador;
             panel.Controls.Add(lbl4);
 
@@ -156,7 +206,7 @@ namespace UI.Desktop.Chamado
             lbl5.Top = top + 75;
             lbl5.Left = 105;
             lbl5.Width = 120;
-            lbl5.Text = "Resp.: " + "Rogerio Diaz";
+            lbl5.Text = "Resp.: " + responsavel.ToString();
             lbl5.Name = "responsavel" + contador;
             panel.Controls.Add(lbl5);
 
@@ -190,9 +240,16 @@ namespace UI.Desktop.Chamado
 
         private void frmDashBoard_Load(object sender, EventArgs e)
         {
+
+
             foreach (var suit in Enum.GetValues(typeof(StatusChamado)))
             {
-                contar(this, suit.ToString());
+                StatusChamado statuschamado = (StatusChamado)Enum.Parse(typeof(StatusChamado), suit.ToString());
+                var lista = _RepositoryControlChamado.PesquisarChamadoStatusChamado(statuschamado).ToList();
+                foreach (var first in lista)
+                {
+                    contar(first.CodigoChamado, this, suit.ToString(), first.ToString(), first.DataInicio.Value, first.TipoChamado.Nome, first.Descricao, first.TipoChamado.SLA, first.Cliente.Nome,first.Prioridade);
+                }
             }
 
         }

@@ -4,8 +4,11 @@
     {
         public enum TipoPerfils
         {
-            Analista = 1,
-            Adiministrador = 2
+            Chamado = 1,
+            Usuario = 2,
+            Login = 3,
+            Configuracao = 4,
+            Relatorio = 5,
         }
     }
 }

@@ -77,6 +77,31 @@ namespace Library.Class.Models
             Validar();
         }
 
+        public Chamados Alterarchamado(string descricao, string observacao, StatusChamado status, ChamadoPrioridade prioridade,
+            int codigotipochamado,
+            int codigoproduto,
+            int codigousuario_cliente,
+            int? codigousuario_funcionario,
+            int? codigodepartamento, DateTime? datagarantia)
+        {
+            this.Descricao = descricao;
+            this.Observacao = observacao;
+            this.Status = status;
+            this.Prioridade = prioridade;
+
+            this.CodigoTipoChamado = codigotipochamado;
+            this.CodigoProduto = codigoproduto;
+            this.CodigoUsuario_Cliente = codigousuario_cliente;
+            this.CodigoUsuario_Funcionario = codigousuario_funcionario;
+            this.CodigoDepartamento = codigodepartamento;
+
+            this.DataGarantia = datagarantia;
+
+            Validar();
+
+            return this;
+        }
+
         private void Validar()
         {
             new AddNotifications<Chamados>(this)
@@ -86,7 +111,6 @@ namespace Library.Class.Models
         public Chamados AlterarStatusChamado(StatusChamado status)
         {
             this.Status = status;
-
             return this;
         }
 

@@ -30,7 +30,7 @@ namespace UI.Desktop.Cadastros
             
             comboPerfil.CarregarCombo<Perfis>(
               _RepositoryControlPerfil.PesquisarPerfil().ToList(),
-              "CodigoPerfil", "Descricao");
+              "CodigoPerfil", "Nome");
             
             //comboEnum
             comboStatus.DataSource = Enum.GetValues(typeof(StatusLogin));

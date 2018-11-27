@@ -28,102 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tableAtuando = new System.Windows.Forms.TableLayoutPanel();
+            this.groupAberto = new System.Windows.Forms.GroupBox();
             this.tableAberto = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupAndamento = new System.Windows.Forms.GroupBox();
+            this.tableAndamento = new System.Windows.Forms.TableLayoutPanel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.groupPendente = new System.Windows.Forms.GroupBox();
+            this.tablePendente = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupFinalizado = new System.Windows.Forms.GroupBox();
+            this.tableFinalizado = new System.Windows.Forms.TableLayoutPanel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.tableAtuando.SuspendLayout();
+            this.groupAberto.SuspendLayout();
             this.tableAberto.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.groupAndamento.SuspendLayout();
+            this.tableAndamento.SuspendLayout();
+            this.groupPendente.SuspendLayout();
+            this.tablePendente.SuspendLayout();
+            this.groupFinalizado.SuspendLayout();
+            this.tableFinalizado.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupAberto
             // 
-            this.groupBox1.Controls.Add(this.tableAberto);
-            this.groupBox1.Location = new System.Drawing.Point(26, -2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(252, 634);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tableAtuando);
-            this.groupBox2.Location = new System.Drawing.Point(290, -2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(252, 634);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox3.Location = new System.Drawing.Point(557, -2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(252, 634);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox4.Location = new System.Drawing.Point(828, -2);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(252, 634);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            // 
-            // tableAtuando
-            // 
-            this.tableAtuando.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.tableAtuando.ColumnCount = 1;
-            this.tableAtuando.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableAtuando.Controls.Add(this.panel10, 0, 4);
-            this.tableAtuando.Controls.Add(this.panel9, 0, 3);
-            this.tableAtuando.Controls.Add(this.panel8, 0, 2);
-            this.tableAtuando.Controls.Add(this.panel6, 0, 1);
-            this.tableAtuando.Controls.Add(this.panel4, 0, 0);
-            this.tableAtuando.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableAtuando.Location = new System.Drawing.Point(3, 16);
-            this.tableAtuando.Name = "tableAtuando";
-            this.tableAtuando.RowCount = 5;
-            this.tableAtuando.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableAtuando.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableAtuando.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableAtuando.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableAtuando.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableAtuando.Size = new System.Drawing.Size(246, 615);
-            this.tableAtuando.TabIndex = 1;
+            this.groupAberto.Controls.Add(this.tableAberto);
+            this.groupAberto.Location = new System.Drawing.Point(26, -2);
+            this.groupAberto.Name = "groupAberto";
+            this.groupAberto.Size = new System.Drawing.Size(252, 634);
+            this.groupAberto.TabIndex = 0;
+            this.groupAberto.TabStop = false;
             // 
             // tableAberto
             // 
@@ -147,26 +97,13 @@
             this.tableAberto.Size = new System.Drawing.Size(246, 615);
             this.tableAberto.TabIndex = 0;
             // 
-            // panel1
+            // panel11
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(234, 114);
-            this.panel1.TabIndex = 0;
-            this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
-            this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.ControlaEfeito);
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(6, 129);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(234, 114);
-            this.panel2.TabIndex = 1;
-            this.panel2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
-            this.panel2.DragEnter += new System.Windows.Forms.DragEventHandler(this.ControlaEfeito);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(6, 498);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(234, 114);
+            this.panel11.TabIndex = 4;
             // 
             // panel3
             // 
@@ -178,6 +115,27 @@
             this.panel3.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
             this.panel3.DragEnter += new System.Windows.Forms.DragEventHandler(this.ControlaEfeito);
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(6, 129);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(234, 114);
+            this.panel2.TabIndex = 1;
+            this.panel2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
+            this.panel2.DragEnter += new System.Windows.Forms.DragEventHandler(this.ControlaEfeito);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(234, 114);
+            this.panel1.TabIndex = 0;
+            this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
+            this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.ControlaEfeito);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -185,6 +143,70 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(234, 114);
             this.flowLayoutPanel1.TabIndex = 3;
+            // 
+            // groupAndamento
+            // 
+            this.groupAndamento.Controls.Add(this.tableAndamento);
+            this.groupAndamento.Location = new System.Drawing.Point(290, -2);
+            this.groupAndamento.Name = "groupAndamento";
+            this.groupAndamento.Size = new System.Drawing.Size(252, 634);
+            this.groupAndamento.TabIndex = 1;
+            this.groupAndamento.TabStop = false;
+            this.groupAndamento.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // tableAndamento
+            // 
+            this.tableAndamento.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableAndamento.ColumnCount = 1;
+            this.tableAndamento.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableAndamento.Controls.Add(this.panel10, 0, 4);
+            this.tableAndamento.Controls.Add(this.panel9, 0, 3);
+            this.tableAndamento.Controls.Add(this.panel8, 0, 2);
+            this.tableAndamento.Controls.Add(this.panel6, 0, 1);
+            this.tableAndamento.Controls.Add(this.panel4, 0, 0);
+            this.tableAndamento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableAndamento.Location = new System.Drawing.Point(3, 16);
+            this.tableAndamento.Name = "tableAndamento";
+            this.tableAndamento.RowCount = 5;
+            this.tableAndamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableAndamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableAndamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableAndamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableAndamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableAndamento.Size = new System.Drawing.Size(246, 615);
+            this.tableAndamento.TabIndex = 1;
+            // 
+            // panel10
+            // 
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(6, 498);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(234, 114);
+            this.panel10.TabIndex = 5;
+            // 
+            // panel9
+            // 
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(6, 375);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(234, 114);
+            this.panel9.TabIndex = 4;
+            // 
+            // panel8
+            // 
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(6, 252);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(234, 114);
+            this.panel8.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(6, 129);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(234, 114);
+            this.panel6.TabIndex = 2;
             // 
             // panel4
             // 
@@ -195,68 +217,37 @@
             this.panel4.TabIndex = 1;
             this.panel4.Tag = "0";
             // 
-            // panel6
+            // groupPendente
             // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(6, 129);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(234, 114);
-            this.panel6.TabIndex = 2;
+            this.groupPendente.Controls.Add(this.tablePendente);
+            this.groupPendente.Location = new System.Drawing.Point(557, -2);
+            this.groupPendente.Name = "groupPendente";
+            this.groupPendente.Size = new System.Drawing.Size(252, 634);
+            this.groupPendente.TabIndex = 2;
+            this.groupPendente.TabStop = false;
             // 
-            // panel8
+            // tablePendente
             // 
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(6, 252);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(234, 114);
-            this.panel8.TabIndex = 3;
-            // 
-            // panel9
-            // 
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(6, 375);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(234, 114);
-            this.panel9.TabIndex = 4;
-            // 
-            // panel10
-            // 
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(6, 498);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(234, 114);
-            this.panel10.TabIndex = 5;
-            // 
-            // panel11
-            // 
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(6, 498);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(234, 114);
-            this.panel11.TabIndex = 4;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel12, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel13, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel14, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(246, 615);
-            this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tablePendente.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tablePendente.ColumnCount = 1;
+            this.tablePendente.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tablePendente.Controls.Add(this.panel5, 0, 4);
+            this.tablePendente.Controls.Add(this.panel7, 0, 3);
+            this.tablePendente.Controls.Add(this.panel12, 0, 2);
+            this.tablePendente.Controls.Add(this.panel13, 0, 1);
+            this.tablePendente.Controls.Add(this.panel14, 0, 0);
+            this.tablePendente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePendente.Location = new System.Drawing.Point(3, 16);
+            this.tablePendente.Name = "tablePendente";
+            this.tablePendente.RowCount = 5;
+            this.tablePendente.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tablePendente.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tablePendente.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tablePendente.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tablePendente.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tablePendente.Size = new System.Drawing.Size(246, 615);
+            this.tablePendente.TabIndex = 2;
+            this.tablePendente.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panel5
             // 
@@ -298,27 +289,36 @@
             this.panel14.Size = new System.Drawing.Size(234, 114);
             this.panel14.TabIndex = 1;
             // 
-            // tableLayoutPanel2
+            // groupFinalizado
             // 
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.panel15, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.panel16, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.panel17, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.panel18, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.panel19, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(246, 615);
-            this.tableLayoutPanel2.TabIndex = 2;
+            this.groupFinalizado.Controls.Add(this.tableFinalizado);
+            this.groupFinalizado.Location = new System.Drawing.Point(828, -2);
+            this.groupFinalizado.Name = "groupFinalizado";
+            this.groupFinalizado.Size = new System.Drawing.Size(252, 634);
+            this.groupFinalizado.TabIndex = 4;
+            this.groupFinalizado.TabStop = false;
+            // 
+            // tableFinalizado
+            // 
+            this.tableFinalizado.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableFinalizado.ColumnCount = 1;
+            this.tableFinalizado.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableFinalizado.Controls.Add(this.panel15, 0, 4);
+            this.tableFinalizado.Controls.Add(this.panel16, 0, 3);
+            this.tableFinalizado.Controls.Add(this.panel17, 0, 2);
+            this.tableFinalizado.Controls.Add(this.panel18, 0, 1);
+            this.tableFinalizado.Controls.Add(this.panel19, 0, 0);
+            this.tableFinalizado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableFinalizado.Location = new System.Drawing.Point(3, 16);
+            this.tableFinalizado.Name = "tableFinalizado";
+            this.tableFinalizado.RowCount = 5;
+            this.tableFinalizado.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableFinalizado.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableFinalizado.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableFinalizado.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableFinalizado.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableFinalizado.Size = new System.Drawing.Size(246, 615);
+            this.tableFinalizado.TabIndex = 2;
             // 
             // panel15
             // 
@@ -365,33 +365,33 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 635);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupFinalizado);
+            this.Controls.Add(this.groupPendente);
+            this.Controls.Add(this.groupAndamento);
+            this.Controls.Add(this.groupAberto);
             this.Name = "frmDashBoard";
             this.Tag = "0";
             this.Text = "frmDashBoard";
             this.Load += new System.EventHandler(this.frmDashBoard_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.tableAtuando.ResumeLayout(false);
+            this.groupAberto.ResumeLayout(false);
             this.tableAberto.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupAndamento.ResumeLayout(false);
+            this.tableAndamento.ResumeLayout(false);
+            this.groupPendente.ResumeLayout(false);
+            this.tablePendente.ResumeLayout(false);
+            this.groupFinalizado.ResumeLayout(false);
+            this.tableFinalizado.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupAberto;
+        private System.Windows.Forms.GroupBox groupAndamento;
+        private System.Windows.Forms.GroupBox groupPendente;
+        private System.Windows.Forms.GroupBox groupFinalizado;
         private System.Windows.Forms.TableLayoutPanel tableAberto;
-        private System.Windows.Forms.TableLayoutPanel tableAtuando;
+        private System.Windows.Forms.TableLayoutPanel tableAndamento;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
@@ -402,13 +402,13 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tablePendente;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableFinalizado;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;

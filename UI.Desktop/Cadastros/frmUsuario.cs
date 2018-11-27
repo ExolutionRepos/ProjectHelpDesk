@@ -39,13 +39,16 @@ namespace UI.Desktop
             _RepositoryControlDepartamento = new ControlDepartamento();
             _RepositoryControlTipoUsuario = new ControlTipoUsuario();
 
-            //Configurando o tamanho da fonte
-            this.ConfigurarTamanhoFonte(new ConfigFont("Arial", 14F));
+            if (id != 0)
+            {
+                //Configurando o tamanho da fonte
+                this.ConfigurarTamanhoFonte(new ConfigFont("Arial", 14F));
+                
+                CompletarCampos(_RepositoryControlUsuario.Pesquisar(id));
 
-            CompletarCampos(_RepositoryControlUsuario.Pesquisar(id));
-
-            toolStripButton1.Enabled = true;
-            salvarToolStripButton1.Enabled = false;
+                toolStripButton1.Enabled = true;
+                salvarToolStripButton1.Enabled = false;
+            }
         }
 
         private void ValidatingTextBox(object sender, CancelEventArgs e)
@@ -86,7 +89,7 @@ namespace UI.Desktop
                 _RepositoryControlTipoUsuario.PesquisarTipoUsuario().ToList(),
                 "CodigoTipoUsuario", "Descricao");
 
-            
+
             comboSexo.DataSource = Enum.GetValues(typeof(Sexo));
         }
 

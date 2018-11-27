@@ -39,6 +39,14 @@ namespace UI.Business.Interfaces.Repositories.Business
             return retorno;
         }
 
+        public IQueryable<Chamados> PesquisarChamadoStatusChamado(StatusChamado statuschamado)
+        {
+            var retorno = _RepositoryChamado.List()
+                .Where(query => query.Status == statuschamado);
+
+            return retorno;
+        }
+
         public IQueryable<Chamados> PesquisarChamado(StatusChamado statuschamado)
         {
             var retorno = _RepositoryChamado.List()
@@ -83,11 +91,13 @@ namespace UI.Business.Interfaces.Repositories.Business
             int codigoproduto,
             int codigocliente,
             int codigofuncionario,
-            int? codigodepartamento)
+            int? codigodepartamento,
+            DateTime datagarantia)
         {
-            Chamados DadosChamados = new Chamados(descricao, observacao, status, prioridade,
-                codigotipochamado, codigoproduto, codigocliente, codigofuncionario, null, null);
+            if(descricao == null || observacao == null)
+                return new BaseReturn("Descricão", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
 
+          
             TipoChamados DadosTipoChamado = _RepositoryTipoChamado.Find(codigotipochamado);
 
             if (DadosTipoChamado == null)
@@ -95,9 +105,6 @@ namespace UI.Business.Interfaces.Repositories.Business
                 return new BaseReturn("Tipo Chamado", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
             }
 
-            DadosTipoChamado.Chamado.Add(DadosChamados);
-            //Adicionar
-            _RepositoryTipoChamado.AddNotSave(DadosTipoChamado);
 
             Produtos DadosProduto = _RepositoryProduto.Find(codigoproduto);
 
@@ -106,12 +113,86 @@ namespace UI.Business.Interfaces.Repositories.Business
                 return new BaseReturn("Produto", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
             }
 
+
+
+            Usuarios DadosCliente =_RepositoryUsuario.Find(codigocliente);
+
+            if (DadosCliente == null)
+            {
+                return new BaseReturn("Cliente", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
+            }
+
+
+
+            Usuarios DadosFuncionario = _RepositoryUsuario.Find(codigofuncionario);
+
+            if (DadosFuncionario == null)
+            {
+                return new BaseReturn("Funcionario", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
+            }
+
+
+
+            Departamentos DadosDepartamento = _RepositoryDepartamento.Find(Convert.ToInt32(codigodepartamento));
+            
+            if (DadosDepartamento.IsInvalid())
+            {
+                return new BaseReturn(DadosDepartamento.Notifications.FirstOrDefault().Property, DadosDepartamento.Notifications.FirstOrDefault().Message, false);
+            }
+
+            Chamados DadosChamados = new Chamados(descricao, observacao, status, prioridade,
+              codigotipochamado, codigoproduto, codigocliente, codigofuncionario, codigodepartamento, datagarantia);
+
+            DadosTipoChamado.Chamado.Add(DadosChamados);
+            
+            DadosProduto.Chamado.Add(DadosChamados);
+            
+            DadosDepartamento.Chamado.Add(DadosChamados);
+
+            _RepositoryDepartamento.Edit(DadosDepartamento);
+
+
+            return new BaseReturn("Chamado", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
+
+        }
+
+        public BaseReturn AlterarChamado(int codigochamado, string descricao, string observacao, StatusChamado status, ChamadoPrioridade prioridade,
+           int codigotipochamado,
+           int codigoproduto,
+           int codigocliente,
+           int codigofuncionario,
+           int? codigodepartamento,
+           DateTime datagarantia)
+        {
+            if (descricao == null || observacao == null)
+                return new BaseReturn("Descricão", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
+
+
+            TipoChamados DadosTipoChamado = _RepositoryTipoChamado.Find(codigotipochamado);
+
+            if (DadosTipoChamado == null)
+            {
+                return new BaseReturn("Tipo Chamado", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
+            }
+
+
+            Produtos DadosProduto = _RepositoryProduto.Find(codigoproduto);
+
+            if (DadosProduto == null)
+            {
+                return new BaseReturn("Produto", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
+            }
+
+
+
             Usuarios DadosCliente = _RepositoryUsuario.Find(codigocliente);
 
             if (DadosCliente == null)
             {
                 return new BaseReturn("Cliente", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
             }
+
+
 
             Usuarios DadosFuncionario = _RepositoryUsuario.Find(codigofuncionario);
 
@@ -122,19 +203,35 @@ namespace UI.Business.Interfaces.Repositories.Business
 
             Departamentos DadosDepartamento = _RepositoryDepartamento.Find(Convert.ToInt32(codigodepartamento));
 
-
-            //Chamados DadosChamados = new Chamados(descricao, observacao, status, prioridade,
-            //    codigotipochamado, codigoproduto, codigocliente, codigofuncionario, null);
-
-            if (DadosChamados.IsInvalid())
+            if (DadosDepartamento.IsInvalid())
             {
-                return new BaseReturn(DadosChamados.Notifications.FirstOrDefault().Property, DadosChamados.Notifications.FirstOrDefault().Message, false);
+                return new BaseReturn(DadosDepartamento.Notifications.FirstOrDefault().Property, DadosDepartamento.Notifications.FirstOrDefault().Message, false);
             }
 
-            _RepositoryChamado.Add(DadosChamados);
+            Chamados DadosChamados = _RepositoryChamado.Find(codigochamado).Alterarchamado(descricao, observacao, status, prioridade,
+              codigotipochamado, codigoproduto, codigocliente, codigofuncionario, codigodepartamento, datagarantia);
+
+            _RepositoryChamado.Edit(DadosChamados);
+
+            return new BaseReturn("Chamado", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
+        }
 
 
-            return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
+
+        public BaseReturn AlterarStatus(int codigochamado, StatusChamado status)
+        {
+            Chamados DadosChamados = Pesquisar(codigochamado);
+
+            if(DadosChamados == null)
+            {
+                return new BaseReturn("Chamado ", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
+            }
+
+            DadosChamados = DadosChamados.AlterarStatusChamado(status);
+
+            _RepositoryChamado.Edit(DadosChamados);
+
+            return new BaseReturn("Chamado", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
 
         }
 

@@ -1,4 +1,5 @@
-﻿using Library.Class.Utils;
+﻿using Library.Class.Models;
+using Library.Class.Utils;
 using System;
 using System.Windows.Forms;
 using UI.Business.Interfaces.Repositories.Business;
@@ -58,10 +59,11 @@ namespace UI.Desktop
             }
         }
 
-        private void AbrirForm(int? tag, string perfil, string nome)
+        private void AbrirForm(int? tag, string perfil, string nome, Perfis tipoperfil = null)
         {
             this.Hide();
-            MenuPrincipal menuPrincipal = new MenuPrincipal();
+
+            MenuPrincipal menuPrincipal = new MenuPrincipal(tipoperfil);
             menuPrincipal.toolStripMenuItem2.Tag = tag;
             menuPrincipal.toolStripStatusLabel3.Text = nome;
             menuPrincipal.toolStripStatusLabel4.Text = perfil;

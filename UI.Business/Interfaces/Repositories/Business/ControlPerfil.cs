@@ -2,6 +2,7 @@
 using prmToolkit.NotificationPattern.Extensions;
 using System.Linq;
 using UI.Business.Interfaces.Services;
+using static Library.Class.Enum.EnumPerfil;
 
 namespace UI.Business.Interfaces.Repositories.Business
 {
@@ -35,7 +36,7 @@ namespace UI.Business.Interfaces.Repositories.Business
             return retorno;
         }
 
-        public BaseReturn CadastrarPerfil(string nome, string descricao)
+        public BaseReturn CadastrarPerfil(string nome, string descricao, TipoPerfils tipoperfil)
         {
             var Dados = PesquisarPerfil()
               .Where(y => y.Nome == nome).FirstOrDefault();
@@ -46,7 +47,7 @@ namespace UI.Business.Interfaces.Repositories.Business
             }
 
 
-            Perfis DadosPerfil = new Perfis(descricao, nome);
+            Perfis DadosPerfil = new Perfis(descricao, nome, tipoperfil);
 
             if (DadosPerfil.IsInvalid())
             {
@@ -58,7 +59,7 @@ namespace UI.Business.Interfaces.Repositories.Business
             return new BaseReturn("Perfil", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
         }
 
-        public BaseReturn AlterarPerfil(int codigotipo, string nome, string descricao)
+        public BaseReturn AlterarPerfil(int codigotipo, string nome, string descricao, TipoPerfils tipoperfil)
         {
             var DadosPerfil = Pesquisar(codigotipo);
 
@@ -67,7 +68,7 @@ namespace UI.Business.Interfaces.Repositories.Business
                 return new BaseReturn("Perfil", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
             }
 
-            DadosPerfil = DadosPerfil.AlterarPerfil(descricao, nome);
+            DadosPerfil = DadosPerfil.AlterarPerfil(descricao, nome, tipoperfil);
 
             if (DadosPerfil.IsInvalid())
             {

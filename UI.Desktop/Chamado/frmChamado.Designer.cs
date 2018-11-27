@@ -45,7 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextobs = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -77,10 +77,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.labelDataNascimento = new System.Windows.Forms.Label();
             this.dateGarantia = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonAtual = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -126,6 +129,7 @@
             this.salvarToolStripButton1.Name = "salvarToolStripButton1";
             this.salvarToolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.salvarToolStripButton1.Text = "&Alterar";
+            this.salvarToolStripButton1.Click += new System.EventHandler(this.salvarToolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -210,7 +214,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 20.25F);
             this.groupBox2.Location = new System.Drawing.Point(777, 416);
             this.groupBox2.Name = "groupBox2";
@@ -219,16 +223,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sugestão";
             // 
-            // listView1
+            // dataGridView2
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.Control;
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(3, 35);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(465, 164);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.Font = new System.Drawing.Font("Arial", 11F);
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 35);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(465, 164);
+            this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // groupBox3
             // 
@@ -274,6 +287,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(415, 286);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -328,23 +342,24 @@
             // 
             this.buttonStatus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStatus1.Font = new System.Drawing.Font("Arial", 10F);
-            this.buttonStatus1.Location = new System.Drawing.Point(491, 59);
+            this.buttonStatus1.Location = new System.Drawing.Point(491, 77);
             this.buttonStatus1.Name = "buttonStatus1";
             this.buttonStatus1.Size = new System.Drawing.Size(135, 26);
             this.buttonStatus1.TabIndex = 55;
-            this.buttonStatus1.Text = "Aberto";
             this.buttonStatus1.UseVisualStyleBackColor = true;
+            this.buttonStatus1.Click += new System.EventHandler(this.buttonStatus1_Click);
             // 
             // buttonStatus2
             // 
             this.buttonStatus2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStatus2.Font = new System.Drawing.Font("Arial", 10F);
-            this.buttonStatus2.Location = new System.Drawing.Point(632, 59);
+            this.buttonStatus2.Location = new System.Drawing.Point(632, 77);
             this.buttonStatus2.Name = "buttonStatus2";
             this.buttonStatus2.Size = new System.Drawing.Size(135, 26);
             this.buttonStatus2.TabIndex = 56;
-            this.buttonStatus2.Text = "Andamento";
+            this.buttonStatus2.Text = "Pré-Chamado";
             this.buttonStatus2.UseVisualStyleBackColor = true;
+            this.buttonStatus2.Click += new System.EventHandler(this.buttonStatus2_Click);
             // 
             // buttonDepartamento
             // 
@@ -356,7 +371,6 @@
             this.buttonDepartamento.TabIndex = 57;
             this.buttonDepartamento.Text = "Departamento";
             this.buttonDepartamento.UseVisualStyleBackColor = true;
-            this.buttonDepartamento.Visible = false;
             // 
             // label2
             // 
@@ -450,73 +464,18 @@
             this.comboTipochamado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTipochamado.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboTipochamado.FormattingEnabled = true;
-            this.comboTipochamado.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AM",
-            "AP",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MG",
-            "MS",
-            "MT",
-            "PA",
-            "PB",
-            "PE",
-            "PI",
-            "PR",
-            "RJ",
-            "RN",
-            "RO",
-            "RR",
-            "RS",
-            "SC",
-            "SE",
-            "SP",
-            "TO"});
             this.comboTipochamado.Location = new System.Drawing.Point(671, 232);
             this.comboTipochamado.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipochamado.Name = "comboTipochamado";
             this.comboTipochamado.Size = new System.Drawing.Size(142, 26);
             this.comboTipochamado.TabIndex = 64;
+            this.comboTipochamado.SelectedIndexChanged += new System.EventHandler(this.comboTipochamado_SelectedIndexChanged);
             // 
             // comboCliente
             // 
             this.comboCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboCliente.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboCliente.FormattingEnabled = true;
-            this.comboCliente.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AM",
-            "AP",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MG",
-            "MS",
-            "MT",
-            "PA",
-            "PB",
-            "PE",
-            "PI",
-            "PR",
-            "RJ",
-            "RN",
-            "RO",
-            "RR",
-            "RS",
-            "SC",
-            "SE",
-            "SP",
-            "TO"});
             this.comboCliente.Location = new System.Drawing.Point(272, 136);
             this.comboCliente.Margin = new System.Windows.Forms.Padding(4);
             this.comboCliente.Name = "comboCliente";
@@ -528,35 +487,7 @@
             this.comboFuncionario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboFuncionario.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboFuncionario.FormattingEnabled = true;
-            this.comboFuncionario.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AM",
-            "AP",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MG",
-            "MS",
-            "MT",
-            "PA",
-            "PB",
-            "PE",
-            "PI",
-            "PR",
-            "RJ",
-            "RN",
-            "RO",
-            "RR",
-            "RS",
-            "SC",
-            "SE",
-            "SP",
-            "TO"});
-            this.comboFuncionario.Location = new System.Drawing.Point(12, 236);
+            this.comboFuncionario.Location = new System.Drawing.Point(11, 255);
             this.comboFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.comboFuncionario.Name = "comboFuncionario";
             this.comboFuncionario.Size = new System.Drawing.Size(170, 26);
@@ -589,73 +520,18 @@
             this.comboPrioridade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboPrioridade.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboPrioridade.FormattingEnabled = true;
-            this.comboPrioridade.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AM",
-            "AP",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MG",
-            "MS",
-            "MT",
-            "PA",
-            "PB",
-            "PE",
-            "PI",
-            "PR",
-            "RJ",
-            "RN",
-            "RO",
-            "RR",
-            "RS",
-            "SC",
-            "SE",
-            "SP",
-            "TO"});
             this.comboPrioridade.Location = new System.Drawing.Point(379, 261);
             this.comboPrioridade.Margin = new System.Windows.Forms.Padding(4);
             this.comboPrioridade.Name = "comboPrioridade";
             this.comboPrioridade.Size = new System.Drawing.Size(119, 26);
             this.comboPrioridade.TabIndex = 72;
+            this.comboPrioridade.SelectedIndexChanged += new System.EventHandler(this.comboPrioridade_SelectedIndexChanged);
             // 
             // comboProduto
             // 
             this.comboProduto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboProduto.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboProduto.FormattingEnabled = true;
-            this.comboProduto.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AM",
-            "AP",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MG",
-            "MS",
-            "MT",
-            "PA",
-            "PB",
-            "PE",
-            "PI",
-            "PR",
-            "RJ",
-            "RN",
-            "RO",
-            "RR",
-            "RS",
-            "SC",
-            "SE",
-            "SP",
-            "TO"});
             this.comboProduto.Location = new System.Drawing.Point(272, 180);
             this.comboProduto.Margin = new System.Windows.Forms.Padding(4);
             this.comboProduto.Name = "comboProduto";
@@ -680,39 +556,12 @@
             this.comboDepartamento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboDepartamento.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboDepartamento.FormattingEnabled = true;
-            this.comboDepartamento.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AM",
-            "AP",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MG",
-            "MS",
-            "MT",
-            "PA",
-            "PB",
-            "PE",
-            "PI",
-            "PR",
-            "RJ",
-            "RN",
-            "RO",
-            "RR",
-            "RS",
-            "SC",
-            "SE",
-            "SP",
-            "TO"});
             this.comboDepartamento.Location = new System.Drawing.Point(218, 261);
             this.comboDepartamento.Margin = new System.Windows.Forms.Padding(4);
             this.comboDepartamento.Name = "comboDepartamento";
             this.comboDepartamento.Size = new System.Drawing.Size(133, 26);
             this.comboDepartamento.TabIndex = 75;
+            this.comboDepartamento.SelectedIndexChanged += new System.EventHandler(this.comboDepartamento_SelectedIndexChanged);
             // 
             // lblAtencao
             // 
@@ -736,6 +585,7 @@
             this.labelPreviData.TabIndex = 78;
             this.labelPreviData.Text = "11/11/2018";
             this.labelPreviData.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelPreviData.Click += new System.EventHandler(this.labelPreviData_Click);
             // 
             // label7
             // 
@@ -774,11 +624,37 @@
             this.dateGarantia.Size = new System.Drawing.Size(117, 26);
             this.dateGarantia.TabIndex = 79;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(52, 235);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 18);
+            this.label6.TabIndex = 81;
+            this.label6.Text = "Funcionario";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // buttonAtual
+            // 
+            this.buttonAtual.Enabled = false;
+            this.buttonAtual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtual.Font = new System.Drawing.Font("Arial", 10F);
+            this.buttonAtual.Location = new System.Drawing.Point(559, 37);
+            this.buttonAtual.Name = "buttonAtual";
+            this.buttonAtual.Size = new System.Drawing.Size(135, 26);
+            this.buttonAtual.TabIndex = 82;
+            this.buttonAtual.UseVisualStyleBackColor = true;
+            // 
             // frmChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1286, 635);
+            this.Controls.Add(this.buttonAtual);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.labelDataNascimento);
             this.Controls.Add(this.dateGarantia);
             this.Controls.Add(this.labelPreviData);
@@ -817,6 +693,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -865,7 +742,6 @@
         private System.Windows.Forms.ComboBox comboCliente;
         private System.Windows.Forms.Label labelUF;
         private System.Windows.Forms.ComboBox comboTipochamado;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RichTextBox richTextDescricao;
         private System.Windows.Forms.ComboBox comboPrioridade;
@@ -877,5 +753,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelDataNascimento;
         private System.Windows.Forms.DateTimePicker dateGarantia;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button buttonAtual;
     }
 }

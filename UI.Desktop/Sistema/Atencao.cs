@@ -1,9 +1,11 @@
 ﻿using Library.Class.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using UI.Business.Interfaces.Repositories.Business;
+using UI.Desktop.Chamado;
 using static Library.Class.Enum.EnumSexo;
 using static Library.Class.Enum.EnumStatusChamado;
 
@@ -18,6 +20,15 @@ namespace UI.Desktop
             InitializeComponent();
             _RepositoryChamado = new ControlChamado();
         }
+
+        public Atencao(MenuPrincipal menu)
+        {
+            InitializeComponent();
+            _RepositoryChamado = new ControlChamado();
+            menuP = menu;
+        }
+
+        
 
         private void Atencao_Load(object sender, EventArgs e)
         {
@@ -35,7 +46,9 @@ namespace UI.Desktop
             listView1.FullRowSelect = true;
 
 
-            List<Chamados> clientes = _RepositoryChamado.PesquisarChamado().ToList<Chamados>();
+            List<Chamados> clientes = _RepositoryChamado.PesquisarChamado()
+                .Where(y => y.Status == StatusChamado.PreChamado)
+                .ToList<Chamados>();
 
             Int32 itemAtual = 0;
             foreach (var cliente in clientes)
@@ -45,6 +58,15 @@ namespace UI.Desktop
 
                 itemAtual += 1;
             }
+        }
+        public MenuPrincipal menuP;
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.listView1.SelectedItems.Count == 0)
+                return;
+            
+            menuP.AbrirForm(new frmChamado(Library.Class.Utils.StringExtension.ToInt32(listView1.SelectedItems[0].Text.ToString()), menuP));
         }
     }
 }

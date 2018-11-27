@@ -9,7 +9,7 @@ namespace Library.Class.Utils
         {
             foreach (Control item in Control.Controls)
             {
-                if ((item.GetType() == typeof(TextBox))||  (item.GetType() == typeof(ComboBox)))
+                if ((item.GetType() == typeof(TextBox)) || (item.GetType() == typeof(ComboBox)))
                 {
                     item.Text = string.Empty;
                 }
@@ -27,6 +27,17 @@ namespace Library.Class.Utils
                 if (item.GetType() == typeof(GroupBox))
                 {
                     ResetAll((GroupBox)item);
+                }
+
+                if (item.GetType() == typeof(RichTextBox))
+                {
+                    item.Text = "";
+                }
+
+                if (item.GetType() == typeof(DateTimePicker))
+                {
+                    ((DateTimePicker)item).Format = DateTimePickerFormat.Custom;
+                    ((DateTimePicker)item).CustomFormat = null;
                 }
 
                 if (item.GetType() == typeof(TabControl))
@@ -79,7 +90,14 @@ namespace Library.Class.Utils
 
                 if (ctrl is DateTimePicker)
                 {
-                    ((DateTimePicker)ctrl).Text = DateTime.Now.ToLongTimeString();
+                    //((DateTimePicker)ctrl).Text = DateTime.Now.ToLongTimeString();
+                    ((DateTimePicker)ctrl).Format = DateTimePickerFormat.Custom;
+                    ((DateTimePicker)ctrl).CustomFormat = null;
+                }
+
+                if (ctrl is RichTextBox)
+                {
+                    ((RichTextBox)ctrl).Text = "";
                 }
             }
         }

@@ -21,20 +21,24 @@ namespace Library.Class.Models
 
         public ICollection<Logins> Login { get; private set; }
 
-        public Perfis(string descricao, string nome)
+        public TipoPerfils TipoPerfil { get; private set; }
+
+        public Perfis(string descricao, string nome, TipoPerfils tipoperfil)
         {
             this.Descricao = descricao;
             this.Nome = nome;
+            this.TipoPerfil = tipoperfil;
 
             Validar();
 
             Login = new HashSet<Logins>();
         }
 
-        public Perfis AlterarPerfil(string descricao, string nome)
+        public Perfis AlterarPerfil(string descricao, string nome, TipoPerfils tipoperfil)
         {
             this.Descricao = descricao;
             this.Nome = nome;
+            this.TipoPerfil = tipoperfil;
 
             Login = new HashSet<Logins>();
 
