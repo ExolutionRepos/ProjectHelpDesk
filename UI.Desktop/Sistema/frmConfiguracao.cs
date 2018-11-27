@@ -680,11 +680,11 @@ namespace UI.Desktop.Sistema
 
         private void button12_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("O tipo de perfil é pré definido:" +
-                "O acesso Chamado é igual a Chamado" +
-                "O acesso Usuario é igual a Chamado + Usuario" +
-                "O acesso Login é igual a Chamado + Usuario + Login" +
-                "O acesso Configuracao é igual a Chamado + Usuario + Login + Configuração" +
+            MessageBox.Show("O tipo de perfil é pré definido: \n " +
+                "O acesso Chamado é igual a Chamado \n " +
+                "O acesso Usuario é igual a Chamado + Usuario \n " +
+                "O acesso Login é igual a Chamado + Usuario + Login \n " +
+                "O acesso Configuracao é igual a Chamado + Usuario + Login + Configuração \n " +
                 "O acesso Relatorio é igual a Chamado + Usuario + Login + Configuração + Relatorio",
     "Perfil",
    MessageBoxButtons.OK,

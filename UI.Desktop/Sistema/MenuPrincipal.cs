@@ -12,6 +12,7 @@ using UI.Business.Interfaces.Repositories.Business;
 using UI.Desktop.Cadastros;
 using UI.Desktop.Chamado;
 using UI.Desktop.Sistema;
+using static Library.Class.Enum.EnumStatusChamado;
 
 namespace UI.Desktop
 {
@@ -149,7 +150,9 @@ namespace UI.Desktop
             toolStripStatusLabel1.Text = dt.ToLongDateString();
             toolStripStatusLabel2.Text = dt.ToLongTimeString();
 
-            var clientes = _RepositoryChamado.PesquisarChamado().FirstOrDefault();
+            var clientes = _RepositoryChamado.PesquisarChamado()
+                 .Where(y => y.Status == StatusChamado.PreChamado)
+                .FirstOrDefault();
 
             if (clientes != null)
             {

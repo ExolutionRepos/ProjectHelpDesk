@@ -77,6 +77,9 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.comboAcao = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textDescricaoPerfil = new System.Windows.Forms.TextBox();
@@ -172,9 +175,6 @@
             this.textBaseNome = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.textBaseDescricao = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.comboAcao = new System.Windows.Forms.ComboBox();
-            this.button12 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -756,6 +756,33 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dados";
             // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.Blue;
+            this.button12.Location = new System.Drawing.Point(327, 255);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(13, 14);
+            this.button12.TabIndex = 10;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // comboAcao
+            // 
+            this.comboAcao.FormattingEnabled = true;
+            this.comboAcao.Location = new System.Drawing.Point(96, 267);
+            this.comboAcao.Name = "comboAcao";
+            this.comboAcao.Size = new System.Drawing.Size(229, 30);
+            this.comboAcao.TabIndex = 9;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 270);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(70, 22);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "Ações:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -1006,7 +1033,7 @@
             // numericTipoChamado
             // 
             this.numericTipoChamado.InterceptArrowKeys = false;
-            this.numericTipoChamado.Location = new System.Drawing.Point(151, 267);
+            this.numericTipoChamado.Location = new System.Drawing.Point(64, 267);
             this.numericTipoChamado.Name = "numericTipoChamado";
             this.numericTipoChamado.Size = new System.Drawing.Size(71, 29);
             this.numericTipoChamado.TabIndex = 9;
@@ -1016,9 +1043,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 269);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(139, 22);
+            this.label12.Size = new System.Drawing.Size(52, 22);
             this.label12.TabIndex = 8;
-            this.label12.Text = "Tipo Chamado:";
+            this.label12.Text = "SLA:";
             // 
             // label9
             // 
@@ -1796,33 +1823,6 @@
             this.textBaseDescricao.Name = "textBaseDescricao";
             this.textBaseDescricao.Size = new System.Drawing.Size(276, 75);
             this.textBaseDescricao.TabIndex = 8;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 270);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(70, 22);
-            this.label23.TabIndex = 8;
-            this.label23.Text = "Ações:";
-            // 
-            // comboAcao
-            // 
-            this.comboAcao.FormattingEnabled = true;
-            this.comboAcao.Location = new System.Drawing.Point(96, 267);
-            this.comboAcao.Name = "comboAcao";
-            this.comboAcao.Size = new System.Drawing.Size(229, 30);
-            this.comboAcao.TabIndex = 9;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.Blue;
-            this.button12.Location = new System.Drawing.Point(327, 255);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(13, 14);
-            this.button12.TabIndex = 10;
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // frmConfiguracao
             // 

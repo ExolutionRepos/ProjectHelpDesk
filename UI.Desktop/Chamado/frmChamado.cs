@@ -296,6 +296,9 @@ namespace UI.Desktop.Chamado
             labelPreviData.Text = chamados.DataInicio.Value.AddDays(Convert.ToInt32(chamados.TipoChamado.SLA)).ToShortDateString().ToString();
 
             PesquisarConhecimento(richTextDescricao.Text, chamados.TipoChamado);
+
+            toolStripButton1.Enabled = false;
+            salvarToolStripButton1.Enabled = true;
         }
 
         private void CarregarStatusChamado(Chamados chamados)
@@ -319,6 +322,14 @@ namespace UI.Desktop.Chamado
 
             if ((int)val - 1 == contarenum.Min())
                 buttonStatus1.Enabled = false;
+            else
+                buttonStatus1.Enabled = true;
+
+            if ((int)val - 1 < contarenum.Min())
+            {
+                buttonStatus1.Enabled = false;
+                buttonStatus1.Text = statuschamado.ToString();
+            }
             else
                 buttonStatus1.Enabled = true;
 
@@ -400,24 +411,24 @@ namespace UI.Desktop.Chamado
 
         private void comboPrioridade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboPrioridade.SelectedItem)
-            {
-                case ChamadoPrioridade.Baixa:
-                    picturePrioridade.BackColor = Color.Green;
-                    break;
+            //switch (comboPrioridade.SelectedItem.ToString())
+            //{
+            //    case ChamadoPrioridade.Baixa:
+            //        picturePrioridade.BackColor = Color.Green;
+            //        break;
 
-                case ChamadoPrioridade.Media:
-                    picturePrioridade.BackColor = Color.Yellow;
-                    break;
+            //    case ChamadoPrioridade.Media:
+            //        picturePrioridade.BackColor = Color.Yellow;
+            //        break;
 
-                case ChamadoPrioridade.Alta:
-                    picturePrioridade.BackColor = Color.Red;
-                    break;
+            //    case ChamadoPrioridade.Alta:
+            //        picturePrioridade.BackColor = Color.Red;
+            //        break;
 
-                default:
-                    picturePrioridade.BackColor = Color.Transparent;
-                    break;
-            }
+            //    default:
+            //        picturePrioridade.BackColor = Color.Transparent;
+            //        break;
+            //}
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -463,7 +474,7 @@ namespace UI.Desktop.Chamado
 
         private void salvarToolStripButton1_Click(object sender, EventArgs e)
         {
-            StatusChamado statuschamado = (StatusChamado)Enum.Parse(typeof(StatusChamado), "PreChamado");
+            StatusChamado statuschamado = (StatusChamado)Enum.Parse(typeof(StatusChamado), buttonAtual.Text);
 
             ChamadoPrioridade chamadoprioridade = (ChamadoPrioridade)Enum.Parse(typeof(ChamadoPrioridade), comboPrioridade.SelectedItem.ToString());
 

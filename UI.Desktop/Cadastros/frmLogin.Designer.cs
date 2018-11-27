@@ -172,7 +172,7 @@
             this.textEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(489, 26);
-            this.textEmail.TabIndex = 34;
+            this.textEmail.TabIndex = 3;
             // 
             // labelEmail
             // 
@@ -206,7 +206,7 @@
             this.textCPF.Margin = new System.Windows.Forms.Padding(4);
             this.textCPF.Name = "textCPF";
             this.textCPF.Size = new System.Drawing.Size(165, 26);
-            this.textCPF.TabIndex = 5;
+            this.textCPF.TabIndex = 2;
             // 
             // textNome
             // 
@@ -216,7 +216,7 @@
             this.textNome.Margin = new System.Windows.Forms.Padding(4);
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(390, 26);
-            this.textNome.TabIndex = 0;
+            this.textNome.TabIndex = 1;
             // 
             // labelNome
             // 
@@ -273,7 +273,7 @@
             this.comboStatus.Margin = new System.Windows.Forms.Padding(4);
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(195, 26);
-            this.comboStatus.TabIndex = 9;
+            this.comboStatus.TabIndex = 7;
             // 
             // label3
             // 
@@ -299,7 +299,7 @@
             this.comboPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.comboPerfil.Name = "comboPerfil";
             this.comboPerfil.Size = new System.Drawing.Size(195, 26);
-            this.comboPerfil.TabIndex = 7;
+            this.comboPerfil.TabIndex = 5;
             // 
             // textSenha
             // 
@@ -309,7 +309,7 @@
             this.textSenha.Name = "textSenha";
             this.textSenha.PasswordChar = '•';
             this.textSenha.Size = new System.Drawing.Size(219, 26);
-            this.textSenha.TabIndex = 5;
+            this.textSenha.TabIndex = 6;
             this.textSenha.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingTextBox);
             // 
             // label2
@@ -331,7 +331,7 @@
             this.textLogin.Margin = new System.Windows.Forms.Padding(4);
             this.textLogin.Name = "textLogin";
             this.textLogin.Size = new System.Drawing.Size(340, 26);
-            this.textLogin.TabIndex = 3;
+            this.textLogin.TabIndex = 4;
             this.textLogin.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingTextBox);
             // 
             // label1

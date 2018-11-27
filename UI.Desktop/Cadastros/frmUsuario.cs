@@ -83,11 +83,11 @@ namespace UI.Desktop
 
             comboDepartamento.CarregarCombo<Departamentos>(
                 _RepositoryControlDepartamento.PesquisarDepartamento().ToList(),
-                "CodigoDepartamento", "Descricao");
+                "CodigoDepartamento", "Nome");
 
             comboTipo.CarregarCombo<TipoUsuarios>(
                 _RepositoryControlTipoUsuario.PesquisarTipoUsuario().ToList(),
-                "CodigoTipoUsuario", "Descricao");
+                "CodigoTipoUsuario", "Nome");
 
 
             comboSexo.DataSource = Enum.GetValues(typeof(Sexo));

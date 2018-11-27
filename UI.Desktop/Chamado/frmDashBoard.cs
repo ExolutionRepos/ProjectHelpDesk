@@ -281,5 +281,10 @@ namespace UI.Desktop.Chamado
             Panel panel = sender as Panel;
             panel.Controls.Add((Panel)e.Data.GetData(typeof(Panel)));
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

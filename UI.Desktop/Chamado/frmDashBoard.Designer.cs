@@ -56,6 +56,10 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupAberto.SuspendLayout();
             this.tableAberto.SuspendLayout();
             this.groupAndamento.SuspendLayout();
@@ -68,10 +72,11 @@
             // 
             // groupAberto
             // 
+            this.groupAberto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupAberto.Controls.Add(this.tableAberto);
-            this.groupAberto.Location = new System.Drawing.Point(26, -2);
+            this.groupAberto.Location = new System.Drawing.Point(26, 75);
             this.groupAberto.Name = "groupAberto";
-            this.groupAberto.Size = new System.Drawing.Size(252, 634);
+            this.groupAberto.Size = new System.Drawing.Size(252, 557);
             this.groupAberto.TabIndex = 0;
             this.groupAberto.TabStop = false;
             // 
@@ -94,7 +99,7 @@
             this.tableAberto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableAberto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableAberto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableAberto.Size = new System.Drawing.Size(246, 615);
+            this.tableAberto.Size = new System.Drawing.Size(246, 538);
             this.tableAberto.TabIndex = 0;
             // 
             // panel11
@@ -146,10 +151,11 @@
             // 
             // groupAndamento
             // 
+            this.groupAndamento.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupAndamento.Controls.Add(this.tableAndamento);
-            this.groupAndamento.Location = new System.Drawing.Point(290, -2);
+            this.groupAndamento.Location = new System.Drawing.Point(290, 75);
             this.groupAndamento.Name = "groupAndamento";
-            this.groupAndamento.Size = new System.Drawing.Size(252, 634);
+            this.groupAndamento.Size = new System.Drawing.Size(252, 557);
             this.groupAndamento.TabIndex = 1;
             this.groupAndamento.TabStop = false;
             this.groupAndamento.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -173,7 +179,7 @@
             this.tableAndamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableAndamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableAndamento.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableAndamento.Size = new System.Drawing.Size(246, 615);
+            this.tableAndamento.Size = new System.Drawing.Size(246, 538);
             this.tableAndamento.TabIndex = 1;
             // 
             // panel10
@@ -219,10 +225,11 @@
             // 
             // groupPendente
             // 
+            this.groupPendente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupPendente.Controls.Add(this.tablePendente);
-            this.groupPendente.Location = new System.Drawing.Point(557, -2);
+            this.groupPendente.Location = new System.Drawing.Point(557, 75);
             this.groupPendente.Name = "groupPendente";
-            this.groupPendente.Size = new System.Drawing.Size(252, 634);
+            this.groupPendente.Size = new System.Drawing.Size(252, 557);
             this.groupPendente.TabIndex = 2;
             this.groupPendente.TabStop = false;
             // 
@@ -245,7 +252,7 @@
             this.tablePendente.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tablePendente.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tablePendente.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tablePendente.Size = new System.Drawing.Size(246, 615);
+            this.tablePendente.Size = new System.Drawing.Size(246, 538);
             this.tablePendente.TabIndex = 2;
             this.tablePendente.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -291,10 +298,11 @@
             // 
             // groupFinalizado
             // 
+            this.groupFinalizado.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupFinalizado.Controls.Add(this.tableFinalizado);
-            this.groupFinalizado.Location = new System.Drawing.Point(828, -2);
+            this.groupFinalizado.Location = new System.Drawing.Point(828, 75);
             this.groupFinalizado.Name = "groupFinalizado";
-            this.groupFinalizado.Size = new System.Drawing.Size(252, 634);
+            this.groupFinalizado.Size = new System.Drawing.Size(252, 557);
             this.groupFinalizado.TabIndex = 4;
             this.groupFinalizado.TabStop = false;
             // 
@@ -317,7 +325,7 @@
             this.tableFinalizado.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableFinalizado.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableFinalizado.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableFinalizado.Size = new System.Drawing.Size(246, 615);
+            this.tableFinalizado.Size = new System.Drawing.Size(246, 538);
             this.tableFinalizado.TabIndex = 2;
             // 
             // panel15
@@ -360,11 +368,56 @@
             this.panel19.Size = new System.Drawing.Size(234, 114);
             this.panel19.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 31);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Aberto";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(296, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 31);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Andamento";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(574, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 31);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Pendente";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(849, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 31);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Finalizado";
+            // 
             // frmDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 635);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupFinalizado);
             this.Controls.Add(this.groupPendente);
             this.Controls.Add(this.groupAndamento);
@@ -382,6 +435,7 @@
             this.groupFinalizado.ResumeLayout(false);
             this.tableFinalizado.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -414,5 +468,9 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -468,7 +468,7 @@
             this.comboTipochamado.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipochamado.Name = "comboTipochamado";
             this.comboTipochamado.Size = new System.Drawing.Size(142, 26);
-            this.comboTipochamado.TabIndex = 64;
+            this.comboTipochamado.TabIndex = 3;
             this.comboTipochamado.SelectedIndexChanged += new System.EventHandler(this.comboTipochamado_SelectedIndexChanged);
             // 
             // comboCliente
@@ -480,7 +480,7 @@
             this.comboCliente.Margin = new System.Windows.Forms.Padding(4);
             this.comboCliente.Name = "comboCliente";
             this.comboCliente.Size = new System.Drawing.Size(180, 26);
-            this.comboCliente.TabIndex = 67;
+            this.comboCliente.TabIndex = 1;
             // 
             // comboFuncionario
             // 
@@ -491,7 +491,7 @@
             this.comboFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.comboFuncionario.Name = "comboFuncionario";
             this.comboFuncionario.Size = new System.Drawing.Size(170, 26);
-            this.comboFuncionario.TabIndex = 69;
+            this.comboFuncionario.TabIndex = 4;
             // 
             // richTextDescricao
             // 
@@ -500,7 +500,7 @@
             this.richTextDescricao.Location = new System.Drawing.Point(3, 35);
             this.richTextDescricao.Name = "richTextDescricao";
             this.richTextDescricao.Size = new System.Drawing.Size(778, 49);
-            this.richTextDescricao.TabIndex = 70;
+            this.richTextDescricao.TabIndex = 7;
             this.richTextDescricao.Text = "";
             this.richTextDescricao.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
@@ -524,7 +524,7 @@
             this.comboPrioridade.Margin = new System.Windows.Forms.Padding(4);
             this.comboPrioridade.Name = "comboPrioridade";
             this.comboPrioridade.Size = new System.Drawing.Size(119, 26);
-            this.comboPrioridade.TabIndex = 72;
+            this.comboPrioridade.TabIndex = 6;
             this.comboPrioridade.SelectedIndexChanged += new System.EventHandler(this.comboPrioridade_SelectedIndexChanged);
             // 
             // comboProduto
@@ -536,7 +536,7 @@
             this.comboProduto.Margin = new System.Windows.Forms.Padding(4);
             this.comboProduto.Name = "comboProduto";
             this.comboProduto.Size = new System.Drawing.Size(280, 26);
-            this.comboProduto.TabIndex = 74;
+            this.comboProduto.TabIndex = 2;
             // 
             // label5
             // 
@@ -560,7 +560,7 @@
             this.comboDepartamento.Margin = new System.Windows.Forms.Padding(4);
             this.comboDepartamento.Name = "comboDepartamento";
             this.comboDepartamento.Size = new System.Drawing.Size(133, 26);
-            this.comboDepartamento.TabIndex = 75;
+            this.comboDepartamento.TabIndex = 5;
             this.comboDepartamento.SelectedIndexChanged += new System.EventHandler(this.comboDepartamento_SelectedIndexChanged);
             // 
             // lblAtencao
