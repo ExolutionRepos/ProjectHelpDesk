@@ -25,7 +25,7 @@ namespace UI.Business.Interfaces.Repositories.Business
         }
 
         public BaseReturn CadastrarUsuario(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular
-            , string rua, string bairro, string cep, string cidade, int numero, string uf
+            , string rua, string bairro, string cep, string cidade, int numero, string uf, string complemento
             , int codigotipousuario,int codigodepartamento)
         {
             if (PesquisarUsuario().Where(y => y.CPF == cpf).FirstOrDefault() != null)
@@ -41,7 +41,7 @@ namespace UI.Business.Interfaces.Repositories.Business
             }
 
             // Cadastro de endereço
-            Enderecos DadosEndereco = new Enderecos(rua, bairro, cep, cidade, numero, uf);
+            Enderecos DadosEndereco = new Enderecos(rua, bairro, cep, cidade, numero, uf, complemento);
 
             if (DadosEndereco.IsInvalid())
             {
@@ -60,28 +60,15 @@ namespace UI.Business.Interfaces.Repositories.Business
             //Adicionar
             _RepositoryTipoUsuario.Edit(TipoUsuario);
 
-            //Departamentos DadosDepartamentos = _RepositoryDepartamento.Find(codigodepartamento);
+            Library.Class.Utils.ExtensionEmail.EnviarEmail("Caro "+ DadosUsuarios.Nome.ToString() + " \n \n Obrigado por entrar em contato. \n Usuario cadastrado.", DadosUsuarios.Email);
 
-            //if (DadosDepartamentos == null)
-            //{
-            //    return new BaseReturn("Departamento", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
-            //}
-
-            //DadosDepartamentos.Usuario.Add(DadosUsuarios);
-
-            //_RepositoryDepartamento.Edit(DadosDepartamentos);
-
-
-            return AlterarUsuario(DadosUsuarios.CodigoUsuario, nome, datanascimento, email, cpf, sexo, telefone, celular, rua, bairro, cep, cidade, numero, uf, codigotipousuario, codigodepartamento);
-
-
-            //return new BaseReturn("Usuario", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
-
+            return AlterarUsuario(DadosUsuarios.CodigoUsuario, nome, datanascimento, email, cpf, sexo, telefone, celular, rua, bairro, cep, cidade, numero, uf, complemento, codigotipousuario, codigodepartamento);
+            
         }
 
 
         public BaseReturn AlterarUsuario(int CodigoUsuario, string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular
-            , string rua, string bairro, string cep, string cidade, int? numero, string uf
+            , string rua, string bairro, string cep, string cidade, int? numero, string uf, string complemento
             , int codigotipousuario, int codigodepartamento)
         {
 
@@ -92,7 +79,7 @@ namespace UI.Business.Interfaces.Repositories.Business
                 return new BaseReturn("Usuario", Library.Class.Resources.Message.DADOS_NAO_ENCONTRADOS, false);
             }
 
-            Enderecos DadosEnderecos = DadosUsuarios.Endereco.AlterarEnderecos(rua, bairro, cep, cidade, numero, uf, DadosUsuarios);
+            Enderecos DadosEnderecos = DadosUsuarios.Endereco.AlterarEnderecos(rua, bairro, cep, cidade, numero, uf,  DadosUsuarios, complemento);
 
             if (DadosEnderecos.IsInvalid())
             {

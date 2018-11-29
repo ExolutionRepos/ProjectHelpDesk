@@ -49,6 +49,7 @@
             this.label1.Size = new System.Drawing.Size(66, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario:";
+            this.label1.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // label2
             // 
@@ -59,6 +60,7 @@
             this.label2.Size = new System.Drawing.Size(53, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Senha";
+            this.label2.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // textLogin
             // 
@@ -86,6 +88,7 @@
             this.button1.Text = "Logar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.ButtonLeave);
             // 
             // pictureBox1
             // 
@@ -105,6 +108,7 @@
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.btnSair.MouseLeave += new System.EventHandler(this.ButtonLeave);
             // 
             // lblAtencao
             // 

@@ -17,7 +17,7 @@ namespace Library.Class.Utils
                 }
                 else
                 {
-                    //ctrl.Font = new System.Drawing.Font(Fonte.Fonte, Fonte.Tamanho + 1);
+                    ctrl.Font = new System.Drawing.Font(Fonte.Fonte, Fonte.Tamanho + 1);
                 }
             }
 

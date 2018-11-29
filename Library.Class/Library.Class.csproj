@@ -115,6 +115,8 @@
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -155,6 +157,8 @@
     </Compile>
     <Compile Include="Utils\ClearControl.cs" />
     <Compile Include="Utils\ConfigurarFonte.cs" />
+    <Compile Include="Utils\ExtensionEmail.cs" />
+    <Compile Include="Utils\ExtensionSpeech.cs" />
     <Compile Include="Utils\LoadCombBox.cs" />
     <Compile Include="Utils\StringExtension.cs" />
   </ItemGroup>

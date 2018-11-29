@@ -28,8 +28,7 @@ namespace Library.Class.Models
         public string Telefone { get; private set; }
 
         public string Celular { get; private set; }
-
-
+        
         [Required]
         public virtual Enderecos Endereco { get; private set; }
 
@@ -44,11 +43,7 @@ namespace Library.Class.Models
         public int? CodigoDepartamento { get; private set; }
         [ForeignKey("CodigoDepartamento")]
         public virtual Departamentos Departamento { get; private set; }
-
-        //public ICollection<Chamados> Cliente { get; private set; }
-
-        //public ICollection<Chamados> Funcionario { get; private set; }
-
+        
         public ICollection<ConfigFont> Fonte { get; private set; }
 
         public Usuarios(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular)
@@ -61,7 +56,7 @@ namespace Library.Class.Models
             this.Sexo = sexo;
             this.Telefone = telefone;
             this.Celular = celular;
-
+            
             //Cliente = new HashSet<Chamados>();
             //Funcionario = new HashSet<Chamados>();
             Fonte = new HashSet<ConfigFont>();
@@ -83,7 +78,7 @@ namespace Library.Class.Models
             this.CPF = cpf;
             this.Sexo = sexo;
             this.Telefone = telefone;
-            this.Celular = celular;
+            this.Celular = celular;            
 
             this.Endereco = endereco;
 

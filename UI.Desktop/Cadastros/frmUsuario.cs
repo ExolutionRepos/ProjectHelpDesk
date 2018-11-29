@@ -19,17 +19,19 @@ namespace UI.Desktop
         private readonly ControlUsuario _RepositoryControlUsuario;
         private readonly ControlDepartamento _RepositoryControlDepartamento;
         private readonly ControlTipoUsuario _RepositoryControlTipoUsuario;
+        private readonly ControlConfigFonte _RepositoryControlConfigFonte;
 
-        public frmUsuario()
+        public frmUsuario(MenuPrincipal menu)
         {
             InitializeComponent();
             _RepositoryControlUsuario = new ControlUsuario();
             _RepositoryControlDepartamento = new ControlDepartamento();
             _RepositoryControlTipoUsuario = new ControlTipoUsuario();
+            _RepositoryControlConfigFonte = new ControlConfigFonte();
 
             //Configurando o tamanho da fonte
-            this.ConfigurarTamanhoFonte(new ConfigFont("Arial", 14F));
-
+            // new ConfigFont("Arial", 14F))
+            this.ConfigurarTamanhoFonte(_RepositoryControlConfigFonte.Pesquisar((int)menu.toolStripMenuItem2.Tag));
         }
 
         public frmUsuario(int id)
@@ -38,11 +40,14 @@ namespace UI.Desktop
             _RepositoryControlUsuario = new ControlUsuario();
             _RepositoryControlDepartamento = new ControlDepartamento();
             _RepositoryControlTipoUsuario = new ControlTipoUsuario();
+            _RepositoryControlConfigFonte = new ControlConfigFonte();
+
 
             if (id != 0)
             {
                 //Configurando o tamanho da fonte
-                this.ConfigurarTamanhoFonte(new ConfigFont("Arial", 14F));
+                // new ConfigFont("Arial", 14F))
+                this.ConfigurarTamanhoFonte(_RepositoryControlConfigFonte.Pesquisar(id));
                 
                 CompletarCampos(_RepositoryControlUsuario.Pesquisar(id));
 
@@ -184,9 +189,14 @@ namespace UI.Desktop
             textCEP.Text = usuarios.Endereco.CEP;
             textBairro.Text = usuarios.Endereco.Bairro;
             textCidade.Text = usuarios.Endereco.Cidade;
-            comboUF.SelectedItem = usuarios.Endereco.UF;
-            textN.Text = usuarios.Endereco.Numero.ToString();
 
+            if (usuarios.Departamento != null)
+            {
+                comboUF.SelectedItem = usuarios.Endereco.UF.ToString();
+            }
+            
+
+            textN.Text = usuarios.Endereco.Numero.ToString();
             textEmail.Text = usuarios.Email;
             textTelUm.Text = usuarios.Telefone;
             textTelDois.Text = usuarios.Celular;
@@ -231,7 +241,7 @@ namespace UI.Desktop
                 Sexo DadosSexo = (Sexo)Enum.Parse(typeof(Sexo), comboSexo.SelectedItem.ToString());
 
                 var retorno = _RepositoryControlUsuario.CadastrarUsuario(textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
-                    textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
+                    textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),textComplemento.Text,
                     (int)comboTipo.SelectedIndex,
                     (int)comboDepartamento.SelectedIndex);
 
@@ -262,7 +272,7 @@ namespace UI.Desktop
                 var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
 
                 var retorno = _RepositoryControlUsuario.AlterarUsuario(Convert.ToInt32(campo), textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
-                    textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
+                    textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(), textComplemento.Text,
                     (int)comboTipo.SelectedIndex + 1,
                     (int)comboDepartamento.SelectedIndex + 1);
 
@@ -293,7 +303,7 @@ namespace UI.Desktop
                 var campo = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
 
                 var retorno = _RepositoryControlUsuario.AlterarUsuario(Convert.ToInt32(campo), textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
-                    textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
+                    textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, Convert.ToInt32(textN.Text), comboUF.SelectedText.ToString(), textComplemento.Text,
                 (int)comboTipo.SelectedIndex,
                 (int)comboDepartamento.SelectedIndex);
 
@@ -322,7 +332,7 @@ namespace UI.Desktop
                 Sexo DadosSexo = (Sexo)Enum.Parse(typeof(Sexo), comboSexo.SelectedItem.ToString());
 
                 var retorno = _RepositoryControlUsuario.CadastrarUsuario(textNome.Text, dateTimeNascimento.Value, textEmail.Text, textCPF.Text, DadosSexo, textTelUm.Text, textTelDois.Text,
-                    textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, StringExtension.ToInt32(textN.Text), comboUF.SelectedText.ToString(),
+                    textRua.Text, textBairro.Text, textCEP.Text, textCidade.Text, StringExtension.ToInt32(textN.Text), comboUF.SelectedText.ToString(), textComplemento.Text,
                     (int)comboTipo.SelectedIndex,
                     (int)comboDepartamento.SelectedIndex);
 

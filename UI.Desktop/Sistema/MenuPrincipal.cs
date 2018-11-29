@@ -178,7 +178,7 @@ namespace UI.Desktop
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            AbrirForm(new frmUsuario());
+            AbrirForm(new frmUsuario(this));
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)

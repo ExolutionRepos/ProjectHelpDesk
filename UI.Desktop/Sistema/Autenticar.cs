@@ -2,11 +2,12 @@
 using Library.Class.Utils;
 using System;
 using System.Windows.Forms;
+using UI.Business.Interfaces.Repositories;
 using UI.Business.Interfaces.Repositories.Business;
 
 namespace UI.Desktop
 {
-    public partial class Autenticar : Form
+    public partial class Autenticar : Form, ISpeech
     {
         private readonly ControlConfigFonte _RepositoryControlConfigFonte;
         private readonly ControlUsuario _RepositoryControlUsuario;
@@ -22,9 +23,10 @@ namespace UI.Desktop
 
         private void Autenticar_Load(object sender, EventArgs e)
         {
-            var Result = _RepositoryControlConfigFonte.Pesquisar(3);
-            if (Result != null)
-                this.ConfigurarTamanhoFonte(Result);
+            
+        //    var Result = _RepositoryControlConfigFonte.Pesquisar(3);
+        //    if (Result != null)
+        //        this.ConfigurarTamanhoFonte(Result);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,6 +84,18 @@ namespace UI.Desktop
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public void LabelLeave(object sender, EventArgs e)
+        {
+            Label dina = (Label)sender;
+            ExtensionSpeech.speech(dina.Text);
+        }
+
+        public void ButtonLeave(object sender, EventArgs e)
+        {
+            Button dina = (Button)sender;
+            ExtensionSpeech.speech(dina.Text);
         }
     }
 }

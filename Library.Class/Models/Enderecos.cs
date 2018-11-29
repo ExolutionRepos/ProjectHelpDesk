@@ -22,14 +22,14 @@ namespace Library.Class.Models
 
         public string UF { get; private set; }
 
-        //public string Complemento { get; private set; }
+        public string Complemento { get; private set; }
 
         public int? Numero { get; private set; }
 
         public ICollection<Usuarios> Usuario { get; private set; }
         
         public Enderecos(string rua, string bairro, string cep, string cidade, int? numero, string uf
-            //, string complemento
+            , string complemento
             )
         {
             this.Rua = rua;
@@ -38,14 +38,14 @@ namespace Library.Class.Models
             this.Cidade = cidade;
             this.Numero = numero;
             this.UF = uf;
-            //this.Complemento = complemento;
+            this.Complemento = complemento;
 
             Usuario = new HashSet<Usuarios>();
             Validar();
         }
 
         public Enderecos AlterarEnderecos(string rua, string bairro, string cep, string cidade, int? numero, string uf, Usuarios usuario
-           //, string complemento
+           , string complemento
            )
         {
             Usuario = new HashSet<Usuarios>();
@@ -56,7 +56,7 @@ namespace Library.Class.Models
             this.Cidade = cidade;
             this.Numero = numero;
             this.UF = uf;
-            //this.Complemento = complemento;
+            this.Complemento = complemento;
 
             this.Usuario.Add(usuario);
             

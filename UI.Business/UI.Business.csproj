@@ -66,6 +66,7 @@
     <Compile Include="Interfaces\Repositories\IBaseRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBaseService.cs" />
     <Compile Include="Interfaces\Repositories\IMetodos.cs" />
+    <Compile Include="Interfaces\Repositories\ISpeech.cs" />
     <Compile Include="Interfaces\Repositories\IUnitOfWork.cs" />
     <Compile Include="Interfaces\Services\BaseRepository.cs" />
     <Compile Include="Interfaces\Services\BaseReturn.cs" />
