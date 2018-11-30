@@ -1,8 +1,24 @@
-﻿@model UI.Web.Models.Usuario
+﻿@model Library.Class.Models.Usuarios
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>@Model.nome</h3>
+<h3>@Model.Nome</h3>
+
+@*@Model.Usuario*@
+
+@using (Html.BeginForm("suaAction", "Home"))
+{
+    @Html.TextBoxFor(model => model.Nome)
+    //(model => model.ListarDadosCarreira_Descricao)
+    //@Html.TextBoxFor(model => model.ListarDadosCarreira_Resultado)
+    //@Html.TextBoxFor(model => model.ListarDadosCarreira_Total)                
+    <input type="submit" value="enviar" />
+}
+
+@Html.TextBox
+
+
+
 

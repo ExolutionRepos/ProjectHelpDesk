@@ -63,6 +63,7 @@ C:\Backup\ProjectHelpDesk\Library.Class\bin\Debug\EntityFramework.SqlServer.xml
 C:\Backup\ProjectHelpDesk\Library.Class\bin\Debug\Newtonsoft.Json.xml
 C:\Backup\ProjectHelpDesk\Library.Class\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Backup\ProjectHelpDesk\Library.Class\bin\Debug\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.csprojResolveAssemblyReference.cache
 C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.Resources.Message.resources
 C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.csproj.GenerateResource.Cache
 C:\Backup\ProjectHelpDesk\Library.Class\obj\Debug\Library.Class.dll

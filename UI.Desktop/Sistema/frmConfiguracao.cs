@@ -5,6 +5,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using UI.Business.Interfaces.Repositories;
 using UI.Business.Interfaces.Repositories.Business;
 using static Library.Class.Enum.EnumMarca;
 using static Library.Class.Enum.EnumModelo;
@@ -13,7 +14,7 @@ using static Library.Class.Enum.EnumSexo;
 
 namespace UI.Desktop.Sistema
 {
-    public partial class frmConfiguracao : Form
+    public partial class frmConfiguracao : Form, ISpeech
     {
         private readonly ControlTipoUsuario _RepositoryControlUsuario;
         private readonly ControlDepartamento _RepositoryControlDepartamento;
@@ -690,6 +691,33 @@ namespace UI.Desktop.Sistema
    MessageBoxButtons.OK,
    MessageBoxIcon.Question,
    MessageBoxDefaultButton.Button2);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        public void LabelLeave(object sender, EventArgs e)
+        {
+            Label dina = (Label)sender;
+            ExtensionSpeech.speech(dina.Text);
+        }
+
+        public void ButtonLeave(object sender, EventArgs e)
+        {
+            Button dina = (Button)sender;
+            ExtensionSpeech.speech(dina.Text);
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

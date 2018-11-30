@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfigFonte));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,11 +44,10 @@
             this.colarToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ajudaToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lblAtencao = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,6 +63,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fonte";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Arial", 12F);
+            this.numericUpDown1.Location = new System.Drawing.Point(135, 137);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(71, 26);
+            this.numericUpDown1.TabIndex = 71;
             // 
             // label2
             // 
@@ -76,6 +85,7 @@
             this.label2.TabIndex = 70;
             this.label2.Text = "Tamanho:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // comboBox1
             // 
@@ -101,6 +111,7 @@
             this.label1.TabIndex = 68;
             this.label1.Text = "Fonte:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // toolStrip1
             // 
@@ -196,14 +207,6 @@
             this.ajudaToolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.ajudaToolStripButton1.Text = "&Ajuda";
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Arial", 12F);
-            this.numericUpDown1.Location = new System.Drawing.Point(135, 137);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(71, 26);
-            this.numericUpDown1.TabIndex = 71;
-            // 
             // lblAtencao
             // 
             this.lblAtencao.AutoSize = true;
@@ -228,9 +231,9 @@
             this.Load += new System.EventHandler(this.frmConfigFonte_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

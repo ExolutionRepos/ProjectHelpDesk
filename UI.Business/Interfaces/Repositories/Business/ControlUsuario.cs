@@ -60,7 +60,7 @@ namespace UI.Business.Interfaces.Repositories.Business
             //Adicionar
             _RepositoryTipoUsuario.Edit(TipoUsuario);
 
-            Library.Class.Utils.ExtensionEmail.EnviarEmail("Caro "+ DadosUsuarios.Nome.ToString() + " \n \n Obrigado por entrar em contato. \n Usuario cadastrado.", DadosUsuarios.Email);
+            //Library.Class.Utils.ExtensionEmail.EnviarEmail("Caro "+ DadosUsuarios.Nome.ToString() + " \n \n Obrigado por entrar em contato. \n Usuario cadastrado.", DadosUsuarios.Email);
 
             return AlterarUsuario(DadosUsuarios.CodigoUsuario, nome, datanascimento, email, cpf, sexo, telefone, celular, rua, bairro, cep, cidade, numero, uf, complemento, codigotipousuario, codigodepartamento);
             

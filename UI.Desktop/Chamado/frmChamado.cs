@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using UI.Business.Interfaces.Repositories;
 using UI.Business.Interfaces.Repositories.Business;
 using UI.Desktop.Sistema;
 using static Library.Class.Enum.EnumChamado;
@@ -12,7 +13,7 @@ using static Library.Class.Enum.EnumStatusChamado;
 
 namespace UI.Desktop.Chamado
 {
-    public partial class frmChamado : Form
+    public partial class frmChamado : Form, ISpeech
     {
 
         private readonly ControlChamado _RepositoryControlChamado;
@@ -490,6 +491,18 @@ namespace UI.Desktop.Chamado
                 Pesquisar(textBox2.Text);
                 Limpar();
             }
+        }
+
+        public void LabelLeave(object sender, EventArgs e)
+        {
+            Label dina = (Label)sender;
+            ExtensionSpeech.speech(dina.Text);
+        }
+
+        public void ButtonLeave(object sender, EventArgs e)
+        {
+            Button dina = (Button)sender;
+            ExtensionSpeech.speech(dina.Text);
         }
     }
 }

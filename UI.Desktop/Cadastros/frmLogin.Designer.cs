@@ -185,6 +185,7 @@
             this.labelEmail.Size = new System.Drawing.Size(57, 18);
             this.labelEmail.TabIndex = 35;
             this.labelEmail.Text = "E-mail:";
+            this.labelEmail.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // labelCPF
             // 
@@ -197,6 +198,7 @@
             this.labelCPF.Size = new System.Drawing.Size(45, 18);
             this.labelCPF.TabIndex = 6;
             this.labelCPF.Text = "CPF:";
+            this.labelCPF.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // textCPF
             // 
@@ -229,6 +231,7 @@
             this.labelNome.Size = new System.Drawing.Size(54, 18);
             this.labelNome.TabIndex = 2;
             this.labelNome.Text = "Nome:";
+            this.labelNome.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // groupBox2
             // 
@@ -260,6 +263,7 @@
             this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 10;
             this.label4.Text = "Status:";
+            this.label4.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // comboStatus
             // 
@@ -286,6 +290,7 @@
             this.label3.Size = new System.Drawing.Size(48, 18);
             this.label3.TabIndex = 8;
             this.label3.Text = "Perfil:";
+            this.label3.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // comboPerfil
             // 
@@ -323,6 +328,7 @@
             this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "Senha:";
+            this.label2.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // textLogin
             // 
@@ -345,6 +351,7 @@
             this.label1.Size = new System.Drawing.Size(66, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Usuario:";
+            this.label1.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // toolStrip1
             // 

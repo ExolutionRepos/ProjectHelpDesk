@@ -262,6 +262,7 @@
             this.groupBox2.TabIndex = 49;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label2
             // 
@@ -271,6 +272,7 @@
             this.label2.Size = new System.Drawing.Size(101, 22);
             this.label2.TabIndex = 6;
             this.label2.Text = "Descrição:";
+            this.label2.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // label1
             // 
@@ -280,6 +282,7 @@
             this.label1.Size = new System.Drawing.Size(52, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tipo:";
+            this.label1.Leave += new System.EventHandler(this.LabelLeave);
             // 
             // textDescricao
             // 
@@ -289,7 +292,7 @@
             this.textDescricao.Multiline = true;
             this.textDescricao.Name = "textDescricao";
             this.textDescricao.Size = new System.Drawing.Size(302, 98);
-            this.textDescricao.TabIndex = 4;
+            this.textDescricao.TabIndex = 1;
             // 
             // textTipo
             // 
@@ -298,7 +301,7 @@
             this.textTipo.Margin = new System.Windows.Forms.Padding(4);
             this.textTipo.Name = "textTipo";
             this.textTipo.Size = new System.Drawing.Size(249, 26);
-            this.textTipo.TabIndex = 3;
+            this.textTipo.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -352,7 +355,7 @@
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(249, 26);
-            this.textBox2.TabIndex = 2;
+            this.textBox2.TabIndex = 0;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dataGridView1
@@ -482,6 +485,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Departamento";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
             // label5
@@ -534,7 +538,7 @@
             this.textDecricaoDepartamento.Multiline = true;
             this.textDecricaoDepartamento.Name = "textDecricaoDepartamento";
             this.textDecricaoDepartamento.Size = new System.Drawing.Size(302, 98);
-            this.textDecricaoDepartamento.TabIndex = 4;
+            this.textDecricaoDepartamento.TabIndex = 1;
             // 
             // textDepartamento
             // 
@@ -543,7 +547,7 @@
             this.textDepartamento.Margin = new System.Windows.Forms.Padding(4);
             this.textDepartamento.Name = "textDepartamento";
             this.textDepartamento.Size = new System.Drawing.Size(253, 26);
-            this.textDepartamento.TabIndex = 3;
+            this.textDepartamento.TabIndex = 0;
             // 
             // groupBox4
             // 
@@ -597,7 +601,7 @@
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(249, 26);
-            this.textBox4.TabIndex = 2;
+            this.textBox4.TabIndex = 0;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // dataGridView2
@@ -727,6 +731,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Perfil";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
             // label6
@@ -772,7 +777,7 @@
             this.comboAcao.Location = new System.Drawing.Point(96, 267);
             this.comboAcao.Name = "comboAcao";
             this.comboAcao.Size = new System.Drawing.Size(229, 30);
-            this.comboAcao.TabIndex = 9;
+            this.comboAcao.TabIndex = 2;
             // 
             // label23
             // 
@@ -809,7 +814,7 @@
             this.textDescricaoPerfil.Multiline = true;
             this.textDescricaoPerfil.Name = "textDescricaoPerfil";
             this.textDescricaoPerfil.Size = new System.Drawing.Size(302, 98);
-            this.textDescricaoPerfil.TabIndex = 4;
+            this.textDescricaoPerfil.TabIndex = 1;
             // 
             // textPerfil
             // 
@@ -818,7 +823,7 @@
             this.textPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.textPerfil.Name = "textPerfil";
             this.textPerfil.Size = new System.Drawing.Size(253, 26);
-            this.textPerfil.TabIndex = 3;
+            this.textPerfil.TabIndex = 0;
             // 
             // groupBox6
             // 
@@ -872,7 +877,7 @@
             this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(249, 26);
-            this.textBox5.TabIndex = 2;
+            this.textBox5.TabIndex = 0;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // dataGridView3
@@ -1036,7 +1041,7 @@
             this.numericTipoChamado.Location = new System.Drawing.Point(64, 267);
             this.numericTipoChamado.Name = "numericTipoChamado";
             this.numericTipoChamado.Size = new System.Drawing.Size(71, 29);
-            this.numericTipoChamado.TabIndex = 9;
+            this.numericTipoChamado.TabIndex = 2;
             // 
             // label12
             // 
@@ -1073,7 +1078,7 @@
             this.textDescricaoTipoChamdo.Multiline = true;
             this.textDescricaoTipoChamdo.Name = "textDescricaoTipoChamdo";
             this.textDescricaoTipoChamdo.Size = new System.Drawing.Size(302, 98);
-            this.textDescricaoTipoChamdo.TabIndex = 4;
+            this.textDescricaoTipoChamdo.TabIndex = 1;
             // 
             // textTipoChamado
             // 
@@ -1082,7 +1087,7 @@
             this.textTipoChamado.Margin = new System.Windows.Forms.Padding(4);
             this.textTipoChamado.Name = "textTipoChamado";
             this.textTipoChamado.Size = new System.Drawing.Size(253, 26);
-            this.textTipoChamado.TabIndex = 3;
+            this.textTipoChamado.TabIndex = 0;
             // 
             // groupBox8
             // 
@@ -1136,7 +1141,7 @@
             this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(249, 26);
-            this.textBox6.TabIndex = 2;
+            this.textBox6.TabIndex = 0;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // dataGridView4
@@ -1303,7 +1308,7 @@
             this.comboModelo.Location = new System.Drawing.Point(95, 290);
             this.comboModelo.Name = "comboModelo";
             this.comboModelo.Size = new System.Drawing.Size(253, 30);
-            this.comboModelo.TabIndex = 11;
+            this.comboModelo.TabIndex = 3;
             // 
             // comboMarca
             // 
@@ -1311,7 +1316,7 @@
             this.comboMarca.Location = new System.Drawing.Point(78, 244);
             this.comboMarca.Name = "comboMarca";
             this.comboMarca.Size = new System.Drawing.Size(247, 30);
-            this.comboMarca.TabIndex = 10;
+            this.comboMarca.TabIndex = 2;
             // 
             // label16
             // 
@@ -1357,7 +1362,7 @@
             this.textProdutoDecricao.Multiline = true;
             this.textProdutoDecricao.Name = "textProdutoDecricao";
             this.textProdutoDecricao.Size = new System.Drawing.Size(302, 75);
-            this.textProdutoDecricao.TabIndex = 4;
+            this.textProdutoDecricao.TabIndex = 1;
             // 
             // textProduto
             // 
@@ -1366,7 +1371,7 @@
             this.textProduto.Margin = new System.Windows.Forms.Padding(4);
             this.textProduto.Name = "textProduto";
             this.textProduto.Size = new System.Drawing.Size(253, 26);
-            this.textProduto.TabIndex = 3;
+            this.textProduto.TabIndex = 0;
             // 
             // groupBox10
             // 
@@ -1420,7 +1425,7 @@
             this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(249, 26);
-            this.textBox9.TabIndex = 2;
+            this.textBox9.TabIndex = 0;
             this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // dataGridView5
@@ -1613,7 +1618,7 @@
             this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(249, 26);
-            this.textBox8.TabIndex = 2;
+            this.textBox8.TabIndex = 0;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // dataGridView6
@@ -1755,7 +1760,7 @@
             this.comboTipoChamado.Location = new System.Drawing.Point(144, 317);
             this.comboTipoChamado.Name = "comboTipoChamado";
             this.comboTipoChamado.Size = new System.Drawing.Size(270, 30);
-            this.comboTipoChamado.TabIndex = 14;
+            this.comboTipoChamado.TabIndex = 3;
             // 
             // label21
             // 
@@ -1784,7 +1789,7 @@
             this.textBasePalavra.Multiline = true;
             this.textBasePalavra.Name = "textBasePalavra";
             this.textBasePalavra.Size = new System.Drawing.Size(276, 107);
-            this.textBasePalavra.TabIndex = 11;
+            this.textBasePalavra.TabIndex = 2;
             this.textBasePalavra.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label18
@@ -1803,7 +1808,7 @@
             this.textBaseNome.Margin = new System.Windows.Forms.Padding(4);
             this.textBaseNome.Name = "textBaseNome";
             this.textBaseNome.Size = new System.Drawing.Size(276, 26);
-            this.textBaseNome.TabIndex = 7;
+            this.textBaseNome.TabIndex = 0;
             // 
             // label19
             // 
@@ -1822,7 +1827,7 @@
             this.textBaseDescricao.Multiline = true;
             this.textBaseDescricao.Name = "textBaseDescricao";
             this.textBaseDescricao.Size = new System.Drawing.Size(276, 75);
-            this.textBaseDescricao.TabIndex = 8;
+            this.textBaseDescricao.TabIndex = 1;
             // 
             // frmConfiguracao
             // 

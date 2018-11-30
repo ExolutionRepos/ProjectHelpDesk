@@ -19,7 +19,7 @@ namespace Library.Class.Utils
             }
             //synthesizer.SelectVoice(z);
             //synthesizer.Speak("Eu acho que ja consegui");   // Asynchronous
-            synthesizer.Speak(args);
+            synthesizer.SpeakAsync(args);
             //synthesizer.SpeakAsync("Então" + args); // here args = pran
         }
     }

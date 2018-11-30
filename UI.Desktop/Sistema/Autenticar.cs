@@ -41,7 +41,7 @@ namespace UI.Desktop
                 {
                     var usuario = _RepositoryControlUsuario.PesquisarUsuario(retorno);
 
-                    AbrirForm(usuario.CodigoUsuario, retorno.Perfil.Descricao, usuario.Nome);
+                    AbrirForm(usuario.CodigoUsuario, retorno.Perfil.Descricao, usuario.Nome, retorno.Perfil);
 
                     this.ClearControlAll();
                 }
@@ -86,13 +86,13 @@ namespace UI.Desktop
             Close();
         }
 
-        public void LabelLeave(object sender, EventArgs e)
+        public async void LabelLeave(object sender, EventArgs e)
         {
             Label dina = (Label)sender;
             ExtensionSpeech.speech(dina.Text);
         }
 
-        public void ButtonLeave(object sender, EventArgs e)
+        public async void ButtonLeave(object sender, EventArgs e)
         {
             Button dina = (Button)sender;
             ExtensionSpeech.speech(dina.Text);

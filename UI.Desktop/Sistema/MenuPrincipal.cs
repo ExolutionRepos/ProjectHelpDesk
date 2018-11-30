@@ -35,6 +35,7 @@ namespace UI.Desktop
             form.Location = new Point(370, 180);
             form.Show();
 
+
             if (perfil != null)
                 Perfil(perfil);
 

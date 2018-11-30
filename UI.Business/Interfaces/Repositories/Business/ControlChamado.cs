@@ -151,7 +151,7 @@ namespace UI.Business.Interfaces.Repositories.Business
 
             _RepositoryDepartamento.Edit(DadosDepartamento);
 
-            Library.Class.Utils.ExtensionEmail.EnviarEmail("Caro " + _RepositoryUsuario.Find(DadosChamados.CodigoUsuario_Cliente).Nome + " \n \n Obrigado por entrar em contato. \n Chamado cadastrado." + " \n \n O " + DadosChamados.Produto.Nome + " , foi informado que " + DadosChamados.Descricao + " com a observação de " + DadosChamados.Observacao.ToString() + " .", _RepositoryUsuario.Find(DadosChamados.CodigoUsuario_Cliente).Email);
+            //Library.Class.Utils.ExtensionEmail.EnviarEmail("Caro " + _RepositoryUsuario.Find(DadosChamados.CodigoUsuario_Cliente).Nome + " \n \n Obrigado por entrar em contato. \n Chamado cadastrado." + " \n \n O " + DadosChamados.Produto.Nome + " , foi informado que " + DadosChamados.Descricao + " com a observação de " + DadosChamados.Observacao.ToString() + " .", _RepositoryUsuario.Find(DadosChamados.CodigoUsuario_Cliente).Email);
 
             return new BaseReturn("Chamado", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
 
@@ -232,7 +232,7 @@ namespace UI.Business.Interfaces.Repositories.Business
 
             _RepositoryChamado.Edit(DadosChamados);
 
-            Library.Class.Utils.ExtensionEmail.EnviarEmail("Caro " + _RepositoryUsuario.Find(DadosChamados.CodigoUsuario_Cliente).Nome + " \n \n O status do seu chamado foi atualizado, " + DadosChamados.Status.ToString() + " \n \n O " + DadosChamados.Produto.Nome + " , foi informado que " + DadosChamados.Descricao + " com a observação de " + DadosChamados.Observacao.ToString() + " .", _RepositoryUsuario.Find(DadosChamados.CodigoUsuario_Cliente).Email.ToString());
+            //Library.Class.Utils.ExtensionEmail.EnviarEmail("Caro " + _RepositoryUsuario.Find(DadosChamados.CodigoUsuario_Cliente).Nome + " \n \n O status do seu chamado foi atualizado, " + DadosChamados.Status.ToString() + " \n \n O " + DadosChamados.Produto.Nome + " , foi informado que " + DadosChamados.Descricao + " com a observação de " + DadosChamados.Observacao.ToString() + " .", _RepositoryUsuario.Find(DadosChamados.CodigoUsuario_Cliente).Email.ToString());
 
             return new BaseReturn("Chamado", Library.Class.Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO, true);
 

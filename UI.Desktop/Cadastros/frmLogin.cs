@@ -4,12 +4,13 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using UI.Business.Interfaces.Repositories;
 using UI.Business.Interfaces.Repositories.Business;
 using static Library.Class.Enum.EnumStatusLogin;
 
 namespace UI.Desktop.Cadastros
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : Form, ISpeech
     {
         private readonly ControlUsuario _RepositoryControlUsuario;
         private readonly ControlLogin _RepositoryControlLogin;
@@ -177,6 +178,18 @@ namespace UI.Desktop.Cadastros
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        public void LabelLeave(object sender, EventArgs e)
+        {
+            Label dina = (Label)sender;
+            ExtensionSpeech.speech(dina.Text);
+        }
+
+        public void ButtonLeave(object sender, EventArgs e)
+        {
+            Button dina = (Button)sender;
+            ExtensionSpeech.speech(dina.Text);
         }
     }
 }

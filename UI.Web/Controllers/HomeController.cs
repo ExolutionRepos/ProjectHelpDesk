@@ -17,6 +17,13 @@ namespace UI.Web.Controllers
             _RepositoryUsuario = new BaseService<Usuarios>();
         }
 
+        [HttpPost]
+        public ActionResult suaAction(Library.Class.Models.Usuarios usuarios)
+        {
+
+            return null;
+        }
+
         public ActionResult Index()
         {
             

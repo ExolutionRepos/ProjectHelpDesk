@@ -247,11 +247,12 @@
             this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(94, 30);
-            this.btnCadastrar.TabIndex = 2;
+            this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Visible = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar.Leave += new System.EventHandler(this.ButtonLeave);
             // 
             // btnLimpar
             // 
@@ -266,6 +267,7 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Visible = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            this.btnLimpar.Leave += new System.EventHandler(this.ButtonLeave);
             // 
             // labelRua
             // 
@@ -278,6 +280,7 @@
             this.labelRua.Size = new System.Drawing.Size(93, 18);
             this.labelRua.TabIndex = 13;
             this.labelRua.Text = "Logradouro:";
+            this.labelRua.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // labelCEP
             // 
@@ -290,6 +293,7 @@
             this.labelCEP.Size = new System.Drawing.Size(46, 18);
             this.labelCEP.TabIndex = 17;
             this.labelCEP.Text = "CEP:";
+            this.labelCEP.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // labelComplemento
             // 
@@ -302,6 +306,7 @@
             this.labelComplemento.Size = new System.Drawing.Size(110, 18);
             this.labelComplemento.TabIndex = 39;
             this.labelComplemento.Text = "Complemento:";
+            this.labelComplemento.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // labelBairro
             // 
@@ -314,6 +319,7 @@
             this.labelBairro.Size = new System.Drawing.Size(55, 18);
             this.labelBairro.TabIndex = 21;
             this.labelBairro.Text = "Bairro:";
+            this.labelBairro.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // labelCidade
             // 
@@ -326,6 +332,7 @@
             this.labelCidade.Size = new System.Drawing.Size(64, 18);
             this.labelCidade.TabIndex = 23;
             this.labelCidade.Text = "Cidade:";
+            this.labelCidade.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // labelN
             // 
@@ -338,6 +345,7 @@
             this.labelN.Size = new System.Drawing.Size(29, 18);
             this.labelN.TabIndex = 15;
             this.labelN.Text = "N°:";
+            this.labelN.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // groupBox1
             // 
@@ -429,6 +437,7 @@
             this.label2.Size = new System.Drawing.Size(120, 18);
             this.label2.TabIndex = 14;
             this.label2.Text = "Departamentos:";
+            this.label2.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // comboDepartamento
             // 
@@ -442,7 +451,7 @@
             this.comboDepartamento.Margin = new System.Windows.Forms.Padding(4);
             this.comboDepartamento.Name = "comboDepartamento";
             this.comboDepartamento.Size = new System.Drawing.Size(167, 26);
-            this.comboDepartamento.TabIndex = 13;
+            this.comboDepartamento.TabIndex = 5;
             // 
             // label1
             // 
@@ -455,6 +464,7 @@
             this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 12;
             this.label1.Text = "Tipo Usúario:";
+            this.label1.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // comboTipo
             // 
@@ -481,6 +491,7 @@
             this.labelNome.Size = new System.Drawing.Size(54, 18);
             this.labelNome.TabIndex = 2;
             this.labelNome.Text = "Nome:";
+            this.labelNome.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // labelCPF
             // 
@@ -493,6 +504,7 @@
             this.labelCPF.Size = new System.Drawing.Size(45, 18);
             this.labelCPF.TabIndex = 4;
             this.labelCPF.Text = "CPF:";
+            this.labelCPF.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // labelDataNascimento
             // 
@@ -505,6 +517,7 @@
             this.labelDataNascimento.Size = new System.Drawing.Size(155, 18);
             this.labelDataNascimento.TabIndex = 8;
             this.labelDataNascimento.Text = "Data de Nascimento:";
+            this.labelDataNascimento.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // dateTimeNascimento
             // 
@@ -529,6 +542,7 @@
             this.labelSexo.Size = new System.Drawing.Size(48, 18);
             this.labelSexo.TabIndex = 10;
             this.labelSexo.Text = "Sexo:";
+            this.labelSexo.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // comboSexo
             // 
@@ -552,6 +566,7 @@
             this.labelUF.Size = new System.Drawing.Size(33, 18);
             this.labelUF.TabIndex = 25;
             this.labelUF.Text = "UF:";
+            this.labelUF.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // groupBox2
             // 
@@ -628,6 +643,7 @@
             this.labelEmail.Size = new System.Drawing.Size(57, 18);
             this.labelEmail.TabIndex = 33;
             this.labelEmail.Text = "E-mail:";
+            this.labelEmail.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // button1
             // 
@@ -642,6 +658,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Leave += new System.EventHandler(this.ButtonLeave);
             // 
             // labelTelUm
             // 
@@ -654,6 +671,7 @@
             this.labelTelUm.Size = new System.Drawing.Size(83, 18);
             this.labelTelUm.TabIndex = 28;
             this.labelTelUm.Text = "Telefone 1:";
+            this.labelTelUm.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // comboTelUm
             // 
@@ -684,6 +702,7 @@
             this.labelTelDois.Size = new System.Drawing.Size(83, 18);
             this.labelTelDois.TabIndex = 30;
             this.labelTelDois.Text = "Telefone 2:";
+            this.labelTelDois.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // groupBox3
             // 
@@ -913,6 +932,7 @@
             this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.Usuario_Load);
+            this.Leave += new System.EventHandler(this.ButtonLeave);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

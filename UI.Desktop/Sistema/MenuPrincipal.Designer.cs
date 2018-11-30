@@ -88,19 +88,19 @@
             // fonteToolStripMenuItem
             // 
             this.fonteToolStripMenuItem.Name = "fonteToolStripMenuItem";
-            this.fonteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fonteToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.fonteToolStripMenuItem.Text = "&Fonte";
             this.fonteToolStripMenuItem.Click += new System.EventHandler(this.fonteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
             // 
             // configurarToolStripMenuItem
             // 
             this.configurarToolStripMenuItem.Name = "configurarToolStripMenuItem";
-            this.configurarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configurarToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.configurarToolStripMenuItem.Text = "Configurar&";
             this.configurarToolStripMenuItem.Click += new System.EventHandler(this.configurarToolStripMenuItem_Click);
             // 
@@ -141,7 +141,7 @@
             this.toolStripRelatorio});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(110, 668);
+            this.toolStrip1.Size = new System.Drawing.Size(114, 668);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -151,7 +151,7 @@
             this.toolStripUsuario.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripUsuario.Name = "toolStripUsuario";
-            this.toolStripUsuario.Size = new System.Drawing.Size(107, 124);
+            this.toolStripUsuario.Size = new System.Drawing.Size(109, 126);
             this.toolStripUsuario.Text = "Usuarios";
             this.toolStripUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripUsuario.Click += new System.EventHandler(this.toolStripButton4_Click);
@@ -162,7 +162,7 @@
             this.toolStripChamado.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripChamado.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripChamado.Name = "toolStripChamado";
-            this.toolStripChamado.Size = new System.Drawing.Size(107, 124);
+            this.toolStripChamado.Size = new System.Drawing.Size(111, 125);
             this.toolStripChamado.Text = "Chamados";
             this.toolStripChamado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripChamado.Click += new System.EventHandler(this.toolStripButton2_Click);
@@ -173,7 +173,7 @@
             this.toolStripChamadoDashBoard.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripChamadoDashBoard.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripChamadoDashBoard.Name = "toolStripChamadoDashBoard";
-            this.toolStripChamadoDashBoard.Size = new System.Drawing.Size(107, 124);
+            this.toolStripChamadoDashBoard.Size = new System.Drawing.Size(111, 118);
             this.toolStripChamadoDashBoard.Text = "DashBoard";
             this.toolStripChamadoDashBoard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripChamadoDashBoard.Click += new System.EventHandler(this.toolStripButton5_Click);
@@ -184,7 +184,7 @@
             this.toolStripLogin.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripLogin.Name = "toolStripLogin";
-            this.toolStripLogin.Size = new System.Drawing.Size(107, 124);
+            this.toolStripLogin.Size = new System.Drawing.Size(111, 128);
             this.toolStripLogin.Text = "Login";
             this.toolStripLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripLogin.Click += new System.EventHandler(this.toolStripButton3_Click);
@@ -195,7 +195,7 @@
             this.toolStripRelatorio.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripRelatorio.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRelatorio.Name = "toolStripRelatorio";
-            this.toolStripRelatorio.Size = new System.Drawing.Size(107, 124);
+            this.toolStripRelatorio.Size = new System.Drawing.Size(111, 113);
             this.toolStripRelatorio.Text = "Relatorio";
             this.toolStripRelatorio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripRelatorio.Click += new System.EventHandler(this.toolStripButton1_Click);
@@ -209,9 +209,9 @@
             this.toolStripStatusLabel4,
             this.toolStripStatusLabel5,
             this.prechamado});
-            this.statusStrip1.Location = new System.Drawing.Point(110, 670);
+            this.statusStrip1.Location = new System.Drawing.Point(114, 670);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1252, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1248, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);

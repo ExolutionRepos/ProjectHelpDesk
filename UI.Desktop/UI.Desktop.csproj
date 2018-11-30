@@ -174,17 +174,11 @@
     <Compile Include="Chamado\frmDashBoard.Designer.cs">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chamado\frmPreChamado.cs">
+    <Compile Include="Sistema\Relatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chamado\frmPreChamado.Designer.cs">
-      <DependentUpon>frmPreChamado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sistema\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sistema\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Sistema\Relatorio.Designer.cs">
+      <DependentUpon>Relatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Sistema\frmConfigFonte.cs">
       <SubType>Form</SubType>
@@ -227,8 +221,8 @@
     <EmbeddedResource Include="Cadastros\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Sistema\Relatorio.resx">
+      <DependentUpon>Relatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>

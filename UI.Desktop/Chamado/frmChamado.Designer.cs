@@ -314,6 +314,7 @@
             this.labelChamado.TabIndex = 11;
             this.labelChamado.Text = "Chamado:";
             this.labelChamado.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelChamado.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // label1
             // 
@@ -327,6 +328,7 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "Cliente:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // pictureBox1
             // 
@@ -384,6 +386,7 @@
             this.label2.TabIndex = 58;
             this.label2.Text = "Prioridade:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // picturePrioridade
             // 
@@ -406,6 +409,7 @@
             this.label3.TabIndex = 60;
             this.label3.Text = "Início:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // label4
             // 
@@ -419,6 +423,7 @@
             this.label4.TabIndex = 61;
             this.label4.Text = "Entrega:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // DataEntrega
             // 
@@ -432,6 +437,7 @@
             this.DataEntrega.TabIndex = 62;
             this.DataEntrega.Text = "11/11/2018";
             this.DataEntrega.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.DataEntrega.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // DataInicio
             // 
@@ -445,6 +451,7 @@
             this.DataInicio.TabIndex = 63;
             this.DataInicio.Text = "11/11/2018";
             this.DataInicio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.DataInicio.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // labelUF
             // 
@@ -457,6 +464,7 @@
             this.labelUF.Size = new System.Drawing.Size(133, 18);
             this.labelUF.TabIndex = 66;
             this.labelUF.Text = "Tipo de chamado:";
+            this.labelUF.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // comboTipochamado
             // 
@@ -468,7 +476,7 @@
             this.comboTipochamado.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipochamado.Name = "comboTipochamado";
             this.comboTipochamado.Size = new System.Drawing.Size(142, 26);
-            this.comboTipochamado.TabIndex = 3;
+            this.comboTipochamado.TabIndex = 2;
             this.comboTipochamado.SelectedIndexChanged += new System.EventHandler(this.comboTipochamado_SelectedIndexChanged);
             // 
             // comboCliente
@@ -480,7 +488,7 @@
             this.comboCliente.Margin = new System.Windows.Forms.Padding(4);
             this.comboCliente.Name = "comboCliente";
             this.comboCliente.Size = new System.Drawing.Size(180, 26);
-            this.comboCliente.TabIndex = 1;
+            this.comboCliente.TabIndex = 0;
             // 
             // comboFuncionario
             // 
@@ -491,7 +499,7 @@
             this.comboFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.comboFuncionario.Name = "comboFuncionario";
             this.comboFuncionario.Size = new System.Drawing.Size(170, 26);
-            this.comboFuncionario.TabIndex = 4;
+            this.comboFuncionario.TabIndex = 3;
             // 
             // richTextDescricao
             // 
@@ -500,7 +508,7 @@
             this.richTextDescricao.Location = new System.Drawing.Point(3, 35);
             this.richTextDescricao.Name = "richTextDescricao";
             this.richTextDescricao.Size = new System.Drawing.Size(778, 49);
-            this.richTextDescricao.TabIndex = 7;
+            this.richTextDescricao.TabIndex = 0;
             this.richTextDescricao.Text = "";
             this.richTextDescricao.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
@@ -524,7 +532,7 @@
             this.comboPrioridade.Margin = new System.Windows.Forms.Padding(4);
             this.comboPrioridade.Name = "comboPrioridade";
             this.comboPrioridade.Size = new System.Drawing.Size(119, 26);
-            this.comboPrioridade.TabIndex = 6;
+            this.comboPrioridade.TabIndex = 5;
             this.comboPrioridade.SelectedIndexChanged += new System.EventHandler(this.comboPrioridade_SelectedIndexChanged);
             // 
             // comboProduto
@@ -536,7 +544,7 @@
             this.comboProduto.Margin = new System.Windows.Forms.Padding(4);
             this.comboProduto.Name = "comboProduto";
             this.comboProduto.Size = new System.Drawing.Size(280, 26);
-            this.comboProduto.TabIndex = 2;
+            this.comboProduto.TabIndex = 1;
             // 
             // label5
             // 
@@ -550,6 +558,7 @@
             this.label5.TabIndex = 73;
             this.label5.Text = "Produto:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // comboDepartamento
             // 
@@ -560,7 +569,7 @@
             this.comboDepartamento.Margin = new System.Windows.Forms.Padding(4);
             this.comboDepartamento.Name = "comboDepartamento";
             this.comboDepartamento.Size = new System.Drawing.Size(133, 26);
-            this.comboDepartamento.TabIndex = 5;
+            this.comboDepartamento.TabIndex = 4;
             this.comboDepartamento.SelectedIndexChanged += new System.EventHandler(this.comboDepartamento_SelectedIndexChanged);
             // 
             // lblAtencao
@@ -586,6 +595,7 @@
             this.labelPreviData.Text = "11/11/2018";
             this.labelPreviData.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelPreviData.Click += new System.EventHandler(this.labelPreviData_Click);
+            this.labelPreviData.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // label7
             // 
@@ -599,6 +609,7 @@
             this.label7.TabIndex = 77;
             this.label7.Text = "Previsão Entrega:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label7.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // labelDataNascimento
             // 
@@ -611,6 +622,7 @@
             this.labelDataNascimento.Size = new System.Drawing.Size(124, 18);
             this.labelDataNascimento.TabIndex = 80;
             this.labelDataNascimento.Text = "Data de Garatia:";
+            this.labelDataNascimento.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // dateGarantia
             // 
@@ -622,7 +634,7 @@
             this.dateGarantia.MaxDate = new System.DateTime(2018, 12, 31, 0, 0, 0, 0);
             this.dateGarantia.Name = "dateGarantia";
             this.dateGarantia.Size = new System.Drawing.Size(117, 26);
-            this.dateGarantia.TabIndex = 79;
+            this.dateGarantia.TabIndex = 6;
             // 
             // label6
             // 
@@ -636,6 +648,7 @@
             this.label6.TabIndex = 81;
             this.label6.Text = "Funcionario";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label6.MouseLeave += new System.EventHandler(this.LabelLeave);
             // 
             // buttonAtual
             // 
