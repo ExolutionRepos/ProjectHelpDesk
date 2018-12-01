@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Pre_Chamado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="color:black">
+    <h2>Pré Chamado</h2>
+
+    <br />
+    <h3>Abra um pré chamado e um de nossos atendentes entrará em contato com você</h3>
+    <br />
+    <h3>Para abrir um pré chamado preencha os campos a seguir:</h3>
+    <br />
+    <h4>
+        Nome Completo: <input type="text" name="Nome" size="30" />
+        CPF: <input type="number" name="CPF" size="20" />
+    </h4>
+    <h4>
+        Equipamento: <input type="text" name="Equip" size="30" />
+        Data de Aquisição: <input type="date" name="date" size="30" />
+    </h4>
+    <h4>
+        Nos fale um pouco mais sobre seu problema:
+        @*<input type="tel" name="problema" />*@
+    </h4>
+<textarea rows="10" cols="40" maxlength="500"></textarea>
+
+    <div align="right">
+        <button><a href="/Windows/Conclusao">Concluir</a></button>
+        <button><a href="/Windows/Pre_Chamado">Cancelar</a></button>
+    </div>
+</div>

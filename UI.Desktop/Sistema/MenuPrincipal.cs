@@ -39,7 +39,7 @@ namespace UI.Desktop
             if (perfil != null)
                 Perfil(perfil);
 
-            
+
         }
 
         public MenuPrincipal(int codigochamado)
@@ -106,11 +106,11 @@ namespace UI.Desktop
 
             }
 
-            
+
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-
+            AbrirForm(new Form1());
         }
 
         public void AbrirForm(Form form)

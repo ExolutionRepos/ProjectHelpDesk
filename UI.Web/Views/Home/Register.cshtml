@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="color:black">
+    <h2>Registre-se</h2>
+
+    <h3>Dados pessoais:</h3>
+    <br />
+    <form>
+        <div>
+            <h4>
+                Nome: <input type="text" name="Nome" size="60" />&ensp;
+                CPF: <input type="number" name="CPF" size="20" maxlength="11" />&ensp;
+                RG: <input type="number" name="RG" size="20" maxlength="9" />
+            </h4>
+
+            <h4>
+                Data de Nascimento: <input type="date" name="Nascimento" size="60" />
+                Sexo: <select size="1" name="Sexo">
+                    <option value="verdade"></option>
+                    <option value="verdade">Feminino</option>
+                    <option value="verdade">Masculino</option>
+                </select>
+            </h4>
+
+
+            <h4>
+                Telefone: <input type="number" name="Tel1" size="20" />&emsp;
+                Telefone 2: <input type="number" name="Tel2" size="20" />
+            </h4>
+
+            <h4>
+                E-mail: <input type="email" name="e-mail" size="500" />
+            </h4>
+
+            <br />
+
+            <h3>Dados para conta:</h3>
+            <h4>Escolha um usuário válido:</h4> <br />
+            <h4>Usuário: <br /> <input type="text" name="usuario" size="30" /></h4>
+            <h4>Senha:<h5>(Escolha uma senha de 8 dígitos)</h5> <input type="password" name="senha" id="senha" size="30" /></h4>
+            <h4>Confirme sua senha:<h5>(Repita a senha anterior)</h5> <input type="password" name="conf-senha" id="conf-senha" size="30" /></h4>
+            <button><a href="/Windows/Principal">Confirmar</a></button>
+    </form>
+
+
+    <br /><br />
+    @*Tentativa de fazer um login com validação de senha
+        Isso ainda deve ser testado masi algumas vezes
+        Estou mantendo os dois para ir testando e chegar num ponto em que todos concordem
+
+        Este código abaixo foi pego na Internet só estou usando como base e teste
+        Após conseguir os resultados esperados irei aplicar no nosso!!!*@
+    <head>
+        <title>Validade Senha</title>
+        <script>
+            function validarSenha() {
+                senha1 = document.f1.senha1.value
+                senha2 = document.f1.senha2.value
+
+                if (senha1 == senha2)
+                    alert("SENHAS IGUAIS")
+                else
+                    alert("SENHAS DIFERENTES")
+            }
+        </script>
+    </head>
+
+    <body>
+
+        VALIDAR SENHA
+        <br>
+        <br>
+        <form action="" name="f1">
+            Senha: <input type="password" name="senha1" size="20">
+            <br>
+            Confirmar Senha: <input type="password" name="senha2" size="20">
+            <br>
+            <input type="button" value="Validar" onClick="validarSenha()">
+            @*<button><a href="" onclick="validarSenha()">Validar</a></button>*@
+            <button><a href="/Windows/Principal" style="color:black">Confirmar</a></button>
+        </form>
+
+    </body>
+</div>

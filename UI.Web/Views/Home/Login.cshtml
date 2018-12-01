@@ -1,24 +1,22 @@
-﻿@model Library.Class.Models.Usuarios
+﻿@model UI.Web.Models.Usuario
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@*<h3>@Model.nome</h3>*@
+<div style="color:black">
+    <h2>Login</h2>
 
-<h3>@Model.Nome</h3>
+    <br />
+    <form>
+        <div>
+            <h4>
+                Usuário:&ensp; <input type="text" name="Usuário" size="60" />
+            </h4>
+            <h4>Senha:&emsp; <input type="password" name="Senha" size="60" /></h4>
+            <button><a href="/Windows/Principal">Entrar</a></button>
+        </div>
 
-@*@Model.Usuario*@
-
-@using (Html.BeginForm("suaAction", "Home"))
-{
-    @Html.TextBoxFor(model => model.Nome)
-    //(model => model.ListarDadosCarreira_Descricao)
-    //@Html.TextBoxFor(model => model.ListarDadosCarreira_Resultado)
-    //@Html.TextBoxFor(model => model.ListarDadosCarreira_Total)                
-    <input type="submit" value="enviar" />
-}
-
-@Html.TextBox
-
-
-
-
+        <h5>Ainda não tem cadastro?&ensp;<a href="/Home/Register" id="click">Cadastrar</a></h5>
+    </form>
+</div>
