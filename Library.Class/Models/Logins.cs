@@ -83,7 +83,7 @@ namespace Library.Class.Models
             Validar();
         }
 
-        protected Logins()
+        public Logins()
         {
             Usuario = new HashSet<Usuarios>();
         }

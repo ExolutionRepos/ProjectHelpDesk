@@ -26,8 +26,17 @@ namespace UI.Web.Controllers
 
         public ActionResult Index()
         {
-            
-            return View(_RepositoryUsuario.List().Where(a => a.Nome == "Rogério Guimarae Da ilva Júnior"));
+            return RedirectToAction("Login");
+            //return View();
+            //_RepositoryUsuario.List().Where(a => a.Nome == "Rogério Guimarae Da ilva Júnior")
+        }
+
+        public ActionResult Registro(string _usuario)
+        {
+            if (ModelState.IsValid)
+            {
+            }
+            return View(_usuario);
         }
 
         public ActionResult About()
@@ -49,8 +58,25 @@ namespace UI.Web.Controllers
 
             ViewBag.Message = "Login.";
 
-            return View();
+            return View(_RepositoryUsuario.List().ToList());
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(Usuarios u)
+        {
+            // esta action trata o post (login)
+            if (ModelState.IsValid) //verifica se é válido
+            {
+
+
+            }
+            return View(_RepositoryUsuario.List().FirstOrDefault<Usuarios>());
+        }
+
+
+
+
 
         public ActionResult View1()
         {
@@ -58,5 +84,21 @@ namespace UI.Web.Controllers
 
             return View();
         }
+
+        public ActionResult Register()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Registrar(Usuarios usuarios)
+        {
+
+            //usuarios
+            return View();
+        }
+
+
     }
 }
