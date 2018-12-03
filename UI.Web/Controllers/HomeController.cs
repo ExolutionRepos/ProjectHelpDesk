@@ -58,7 +58,7 @@ namespace UI.Web.Controllers
 
             ViewBag.Message = "Login.";
 
-            return View(_RepositoryUsuario.List().ToList());
+            return View();
         }
 
         [HttpPost]

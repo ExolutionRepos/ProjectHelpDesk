@@ -1,30 +1,93 @@
-﻿@model IEnumerable<Library.Class.Models.Usuarios>
+﻿@model Library.Class.Models.Logins
 
 @{
     ViewBag.Title = "View";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>View</h2>
 
 
-<table class="table">
-<tr>
-    <th>@Html.DisplayNameFor(model => model.Nome)</th>
-    <th></th>
-</tr>
-@foreach (var item in Model)
-{
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.Nome)</td>
-    </tr>
-}
-</table>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content">
+            <h2 class="m-t-none">Login de usuário</h2>
 
-<div>
-    @Html.ActionLink("Cadastre-se", "Register")
+
+            <div class="tabs-container">
+
+
+                <div class="tabs-container">
+
+
+                    <div class="tab-content ">
+                        <div id="tab-1" class="tab-pane active">
+                            <div class="panel-body">
+
+                                <form id="formDocumentos" action="@Url.Action("action", "controller")" method="post">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                <label id="lblLogin">Nome de usuário</label>
+                                                @Html.TextBox("usuario", null, new { @class = "form-control", @id = "txtUsuario" })<br />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                <label id="lblSenha">Senha</label>
+                                                @Html.TextBox("senha", null, new { @class = "form-control", @id = "txtSenha" })<br />
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                <input type="button" id="btnLogar" value="Logar usuário" class="btn btn-primary" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-} 
+
+
+
+
+
+
+
+
+@*XXXXXXXXXXXXXXXXXXXXXXX EXEMPLO XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*@
+@*<h2>View</h2>
+
+
+    <table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Nome)</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+        </tr>
+    }
+    </table>
+
+    <div>
+        @Html.ActionLink("Cadastre-se", "Register")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@ 
