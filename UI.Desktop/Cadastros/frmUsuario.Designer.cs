@@ -932,7 +932,6 @@
             this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.Usuario_Load);
-            this.Leave += new System.EventHandler(this.ButtonLeave);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

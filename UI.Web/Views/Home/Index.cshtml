@@ -1,42 +1,86 @@
-﻿@{
+﻿@model Library.Class.Models.Usuarios
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <b-container fluid class="p-4 bg-dark">
-        <b-row>
-            <b-col>
-                <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Thumbnail" />
-            </b-col>
-            <b-col>
-                <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=58" alt="Thumbnail" />
-            </b-col>
-            <b-col>
-                <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=59" alt="Thumbnail" />
-            </b-col>
-        </b-row>
-    </b-container>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="container">
+    <div class="row">
+        @*<h2>HelpDesk DeskTop</h2>*@
+    </div>
+    <div class='row'>
+        <div class='col-md-11'>
+            <div class="carousel slide media-carousel" id="media">
+                <div class="carousel-inner">
+                    <div class="item  active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="thumbnail" href="#"><img alt="" src="http://localhost/UI.Web/Content/Image/img1.png"></a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="thumbnail" href="#"><img alt="" src="http://localhost/UI.Web/Content/Image/img2.png"></a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+                <a data-slide="next" href="#media" class="right carousel-control">›</a>
+            </div>
+        </div>
+    </div>
 </div>
+<br /><br />
+<br /><br />
+<div class="row background">
+    <div class="col-md-4">
+        <h2>Bem vindo!</h2>
+        <p> Bem vindo ao sistem de chamados Help Desk. </p>
+        <p> Para acessar seus chamdados, utilize o login no menu acima </p>
 
-<div class="row">
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+    </div>
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Historio de chamados</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Pesquise seus chamados pelo número, através da caixa texto.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p></p>
+        <p></p>
+        <p>Todos os chamdados possuem um prazo de atendimento que você encontrará com a sigla SLA (Service Level Agreement) ou ANS (Acordo de Nível de Serviço). Explore e verifique o prazo dos seus atendimentos.</p>
+
+        <p><a class="btn btn-default" href="~/Windows/Chamado">Chamados &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Suporte</h2>
+        <p>Nesse sitema de suporte, os analistas são treinados para resolver o seu problema no menor tempo possível. Sempre será um prazer atender você..</p>
+        <p><a class="btn btn-default" href="~/Windows/Contact">Suporte &raquo;</a></p>
     </div>
 </div>

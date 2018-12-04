@@ -10,7 +10,7 @@
     <h3>Indique seu equipamento e responda abaixo as perguntas para resolver seus problemas:</h3>
     <br />
     <h4>
-        Equipamento: <input type="text" name="Equip." /> 
+        Equipamento: <input type="text" name="Equip." />
         Problema: @*<input type="text" name="Marca" size="60" />*@
         <select>
             <option value="Selecione">Selecione:</option>
@@ -42,46 +42,53 @@
             border-color: #0094ff;
         }
     </style>
-    <div id="div1" />
-    <h4>Seu equipamento se encontra ligado em uma tomada de energia?</h4>
-    <h4>
-        Sim&ensp;<input type="radio" name="Alt" />&emsp;
-        Não&ensp;<input type="radio" name="Alt" />
-    </h4>
+
+    <div id="div1" disabled="true">
+        <h4>Seu equipamento se encontra ligado em uma tomada de energia?</h4>
+        <h4>
+            Sim&ensp;<input type="radio" name="Alt" />&emsp;
+            Não&ensp;<input type="radio" name="Alt" />
+        </h4>
     </div>
     <br />
 
 
-    <div id="div1" />
-    <h4>Seu equipamento não liga? Tente retirar da tomada, espere alguns segundo e coloque novamente.</h4>
-    <h4>
-        Sim&ensp;<input type="radio" name="Alt" />&emsp;
-        Não&ensp;<input type="radio" name="Alt" />
-    </h4>
+    <div id="div1">
+        <h4>Seu equipamento não liga? Tente retirar da tomada, espere alguns segundo e coloque novamente.</h4>
+        <h4>
+            Sim&ensp;<input type="radio" name="Alt" />&emsp;
+            Não&ensp;<input type="radio" name="Alt" />
+        </h4>
     </div>
     <br />
 
-    <div id="div1" />
-    <h4>Seu sistema operacional está sendo iniciado?</h4>
-    <h4>
-        Sim&ensp;<input type="radio" name="Alt" />&emsp;
-        Não&ensp;<input type="radio" name="Alt" />
-    </h4>
+    <div id="div1">
+        <h4>Seu sistema operacional está sendo iniciado?</h4>
+        <h4>
+            Sim&ensp;<input type="radio" name="Alt" />&emsp;
+            Não&ensp;<input type="radio" name="Alt" />
+        </h4>
     </div>
     <br />
 
-    <div id="div1" />
-    <h4>Seu equipamento acende as luzes ao iniciar?</h4>
-    <h4>
-        Sim&ensp;<input type="radio" name="Alt" />&emsp;
-        Não&ensp;<input type="radio" name="Alt" />
-    </h4>
+    <div id="div1">
+        <h4>Seu equipamento acende as luzes ao iniciar?</h4>
+        <h4>
+            Sim&ensp;<input type="radio" name="Alt" />&emsp;
+            Não&ensp;<input type="radio" name="Alt" />
+        </h4>
     </div>
     <br />
 
-    <h3>Resolveu seu problema?</h3>
-    <button><a href="/Windows/Principal">Sim</a></button>
-    <button><a href="/Windows/Pre_Chamado">Não</a></button>
-    <br />
-    
-</div>
+    <div>
+        <h3>Resolveu seu problema?</h3>
+        <div class="form-group row">
+            <div class="col-md-1">
+                <input type="submit" id="btnLogar" value="Sim" class="btn btn-primary" />
+            </div>
+            <div class="col-md-1">
+                <p><a href="~/Home/Register" class="btn btn-primary btn-info">Não &raquo;</a></p>
+            </div>
+        </div>
+        <br />
+    </div>

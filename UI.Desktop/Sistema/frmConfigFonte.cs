@@ -51,16 +51,24 @@ namespace UI.Desktop.Sistema
                 Pesquisar((int)codigo);
             }
         }
+
         private void Pesquisar(int usuario)
         {
             var Data = _RepositoryControlConfigFonte.Pesquisar(usuario);
 
             if (Data == null)
+            {
+                toolStripButton1.Enabled = true;
+                salvarToolStripButton1.Enabled = false;
                 return;
+            }
 
+            toolStripButton1.Enabled = false;
+            salvarToolStripButton1.Enabled = true;
             comboBox1.SelectedItem = Data.Fonte;
             numericUpDown1.Value = Convert.ToInt32(Data.Tamanho);
         }
+
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {

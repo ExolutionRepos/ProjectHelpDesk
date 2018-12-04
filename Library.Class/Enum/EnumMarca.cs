@@ -5,8 +5,8 @@
         public enum Marcas
         {
             Samsung = 1,
-            Marca2 = 2,
-            Marca3 = 3
+            LG = 2,
+            Sony = 3
         }
 
     }

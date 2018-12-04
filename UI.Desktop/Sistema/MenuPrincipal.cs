@@ -233,5 +233,12 @@ namespace UI.Desktop
         {
             AbrirForm(new frmChamado(Library.Class.Utils.StringExtension.ToInt32(prechamado.Tag), this));
         }
+
+        private void manualDoUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string FileName = @"C:\Users\rogerio.silva\Documents\Manual do Usuário.docx";
+
+            System.Diagnostics.Process.Start(FileName);
+        }
     }
 }

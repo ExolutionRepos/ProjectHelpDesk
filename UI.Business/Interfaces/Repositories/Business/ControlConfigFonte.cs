@@ -24,7 +24,7 @@ namespace UI.Business.Interfaces.Repositories.Business
             if (DadosUsuario == null)
                 return null;
 
-            var Dados = _RepositoryConfigFont.List().Where(x => x.Usuario == DadosUsuario).FirstOrDefault();
+            var Dados = _RepositoryConfigFont.List().Where(x => x.Usuario.CodigoUsuario == DadosUsuario.CodigoUsuario).FirstOrDefault();
 
             return _RepositoryConfigFont.Find(Dados.Codigo_ConfigFont);
         }

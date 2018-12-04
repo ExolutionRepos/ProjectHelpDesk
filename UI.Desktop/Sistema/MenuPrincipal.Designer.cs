@@ -55,6 +55,7 @@
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.alertaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.manualDoUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -80,7 +81,8 @@
             this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fonteToolStripMenuItem,
             this.toolStripSeparator1,
-            this.configurarToolStripMenuItem});
+            this.configurarToolStripMenuItem,
+            this.manualDoUToolStripMenuItem});
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(55, 20);
             this.toolStripMenuItem3.Text = "Config";
@@ -88,19 +90,19 @@
             // fonteToolStripMenuItem
             // 
             this.fonteToolStripMenuItem.Name = "fonteToolStripMenuItem";
-            this.fonteToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.fonteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fonteToolStripMenuItem.Text = "&Fonte";
             this.fonteToolStripMenuItem.Click += new System.EventHandler(this.fonteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // configurarToolStripMenuItem
             // 
             this.configurarToolStripMenuItem.Name = "configurarToolStripMenuItem";
-            this.configurarToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.configurarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.configurarToolStripMenuItem.Text = "Configurar&";
             this.configurarToolStripMenuItem.Click += new System.EventHandler(this.configurarToolStripMenuItem_Click);
             // 
@@ -151,7 +153,7 @@
             this.toolStripUsuario.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripUsuario.Name = "toolStripUsuario";
-            this.toolStripUsuario.Size = new System.Drawing.Size(109, 126);
+            this.toolStripUsuario.Size = new System.Drawing.Size(111, 126);
             this.toolStripUsuario.Text = "Usuarios";
             this.toolStripUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripUsuario.Click += new System.EventHandler(this.toolStripButton4_Click);
@@ -281,6 +283,13 @@
             this.contextMenuStrip1.ShowCheckMargin = true;
             this.contextMenuStrip1.Size = new System.Drawing.Size(128, 26);
             // 
+            // manualDoUToolStripMenuItem
+            // 
+            this.manualDoUToolStripMenuItem.Name = "manualDoUToolStripMenuItem";
+            this.manualDoUToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manualDoUToolStripMenuItem.Text = "Manual do Usuario";
+            this.manualDoUToolStripMenuItem.Click += new System.EventHandler(this.manualDoUToolStripMenuItem_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,5 +346,6 @@
         private System.Windows.Forms.ToolStripMenuItem alertaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSplitButton prechamado;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.ToolStripMenuItem manualDoUToolStripMenuItem;
     }
 }

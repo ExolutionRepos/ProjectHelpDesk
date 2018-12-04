@@ -4,9 +4,9 @@
     {
         public enum Modelos
         {
-            Modelo1 = 1,
-            Modelo2 = 2,
-            Modelo3 = 3
+            GalaxyJ = 1,
+            GalaxyJ2 = 2,
+            GalaxyJ3 = 3
         }
 
     }
