@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enum\EnumChamado.cs" />
+    <Compile Include="Enum\EnumerableClass.cs" />
     <Compile Include="Enum\EnumMarca.cs" />
     <Compile Include="Enum\EnumModelo.cs" />
     <Compile Include="Enum\EnumPerfil.cs" />

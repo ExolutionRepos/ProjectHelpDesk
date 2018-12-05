@@ -10,12 +10,17 @@ namespace UI.Web.Controllers
     public class WindowsController : Controller
     {
         private readonly ControlChamado _RepositoryControlLogin;
+        private readonly ControlProduto _RepositoryControlProduto;
+
 
         public WindowsController()
         {
             _RepositoryControlLogin = new ControlChamado();
+            _RepositoryControlProduto = new ControlProduto();
         }
 
+
+        
         // GET: Windows
         public ActionResult Acompanhe()
         {
@@ -49,6 +54,14 @@ namespace UI.Web.Controllers
             return View();
         }
 
+        public ActionResult Pre_Chamado()
+        {
+            var Produto = _RepositoryControlProduto.PesquisarProduto().ToList();
+            ViewBag.Produto = new SelectList(Produto, "CodigoProduto","Nome");
+                
+            return View();
+        }
+
         // GET: Windows
         public ActionResult Index()
         {
@@ -73,8 +86,9 @@ namespace UI.Web.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
 
+                var Descricao = Convert.ToString(collection["Descricao"]);
+                
                 return RedirectToAction("Index");
             }
             catch

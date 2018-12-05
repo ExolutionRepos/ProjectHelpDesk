@@ -1,9 +1,12 @@
 ﻿using Library.Class.Models;
 using Library.Class.Utils;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using UI.Business.Interfaces.Repositories.Business;
 using UI.Business.Interfaces.Services;
+using static Library.Class.Enum.EnumerableClass;
 using static Library.Class.Enum.EnumSexo;
 
 namespace UI.Web.Controllers
@@ -41,29 +44,34 @@ namespace UI.Web.Controllers
 
         public ActionResult Filtrar(string Filtro)
         {
-            return View();
+            return RedirectToAction("Chamados","Windows");
         }
 
-        public ActionResult Registrar(string nome, DateTime? datanascimento, string email, string cpf, Sexo sexo, string telefone, string celular
-            , string rua, string bairro, string cep, string cidade, int numero, string uf, string complemento
-            , int codigotipousuario, int codigodepartamento)
+        public ActionResult Registrar(FormCollection collection)
         {
 
             BaseReturn retorno = null;
 
+            var Nome = Convert.ToString(collection["Nome"]);
+
             if (ModelState.IsValid)
             {
-                retorno = _RepositoryControlUsuario.CadastrarUsuario(nome, datanascimento, email, cpf, sexo, telefone, celular
-            , rua, bairro, cep, cidade, numero, uf, complemento
-            , codigotipousuario, codigodepartamento);
+                //    retorno = _RepositoryControlUsuario.CadastrarUsuario(nome, datanascimento, email, cpf, sexo, telefone, celular
+                //, rua, bairro, cep, cidade, numero, uf, complemento
+                //, codigotipousuario, codigodepartamento);
 
             }
 
             return RedirectToAction("Register", retorno);
         }
 
+     
+
         public ActionResult Register(Usuarios _usuarios = null)
         {
+            List<EnumModel> enums = ((Sexo[])Enum.GetValues(typeof(Sexo))).Select(c => new EnumModel()  { Value = (int)c, Name = c.ToString() }).ToList();
+            ViewBag.Sexo = new SelectList(enums, "Value", "Name");
+   
             if (ModelState.IsValid)
             {
                 return View();
