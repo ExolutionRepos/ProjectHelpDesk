@@ -51,11 +51,19 @@ namespace UI.Web.Models
                    "</div>";
         }
 
-        public static string GetAlertInfo(string pTitle, string pContent)
+        public static string GetAlertInfo(string pTitle, string pContent,string MSG =null)
         {
+            if(MSG != null)
+            {
+                return "<div class='alert alert-info' role='alert'>" +
+                   "<strong>" + pTitle + ": </strong>" + MSG +
+                   "</div>";
+            }
+            else { 
             return "<div class='alert alert-info' role='alert'>" +
                    "<strong>" + pTitle + ": </strong>" + pContent +
                    "</div>";
+            }
         }
 
         public static string GetAlertWarning(string pTitle, string pContent)

@@ -1,53 +1,42 @@
 ﻿
+@model Library.Class.Models.Chamados
+
+@using MyBS = UI.Web.Models.ClassBootStrep;
+
 @{
     ViewBag.Title = "FAQ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="color:black">
-    <h2>FAQ</h2>
 
-    <h3>Indique seu equipamento e responda abaixo as perguntas para resolver seus problemas:</h3>
-    <br />
-    <h4>
-        Equipamento: <input type="text" name="Equip." />
-        Problema: @*<input type="text" name="Marca" size="60" />*@
-        <select>
-            <option value="Selecione">Selecione:</option>
-            <option value="Tela">Problema com Tela</option>
-            <option value="CPU">Problema com CPU</option>
-            <option value="conexões">Problema com Conexões</option>
-            <option value="outros">Outros</option>
-        </select>
-    </h4>
+<h2>FAQ</h2>
 
+<div class="row">
+    <div class="form-group">
 
-    @* Exemplo de bordas quadradas *@
-    @*<div style="border: 1px solid #0094ff;">
-            <h4>Seu equipamento se encontra ligado em uma tomada de energia?</h4>
-            <h4>
-                Sim<input type="checkbox" name="Sim" />
-                Não<input type="checkbox" name="Não" />
-            </h4>
-        </div><br />*@
+        <h3>Indique seu equipamento e responda abaixo as perguntas para resolver seus problemas:</h3>
+        <br />
 
+        <div class="col-md-6">
+            <label id="lblEquipamento">Equipamento</label>
+            @Html.DropDownListFor(model => model.Produto, ViewBag.Produto as SelectList, new { @class = "chosen-select form-control" })
+            <br />
+        </div>
 
-    <style type="text/css">
-        #div1 {
-            aa width: 100px;
-            height: 100px;
-            border: solid 1px;
-            border-radius: 20px;
-            1px solid #0094ff;
-            border-color: #0094ff;
-        }
-    </style>
+        <div class="col-md-6">
+            <label id="lblProblema">Problema</label>
 
-    <div id="div1" disabled="true">
+            @Html.DropDownListFor(model => model.TipoChamado, ViewBag.Chamados as SelectList, new { @class = "chosen-select form-control" })
+
+        </div>
+    </div>
+</div>
+
+    <div>
         <h4>Seu equipamento se encontra ligado em uma tomada de energia?</h4>
         <h4>
-            Sim&ensp;<input type="radio" name="Alt" />&emsp;
-            Não&ensp;<input type="radio" name="Alt" />
+            Sim&ensp;<input type="radio" name="Alt1" />&emsp;
+            Não&ensp;<input type="radio" name="Alt1" />
         </h4>
     </div>
     <br />
@@ -56,8 +45,8 @@
     <div id="div1">
         <h4>Seu equipamento não liga? Tente retirar da tomada, espere alguns segundo e coloque novamente.</h4>
         <h4>
-            Sim&ensp;<input type="radio" name="Alt" />&emsp;
-            Não&ensp;<input type="radio" name="Alt" />
+            Sim&ensp;<input type="radio" name="Alt2" />&emsp;
+            Não&ensp;<input type="radio" name="Alt2" />
         </h4>
     </div>
     <br />
@@ -65,8 +54,8 @@
     <div id="div1">
         <h4>Seu sistema operacional está sendo iniciado?</h4>
         <h4>
-            Sim&ensp;<input type="radio" name="Alt" />&emsp;
-            Não&ensp;<input type="radio" name="Alt" />
+            Sim&ensp;<input type="radio" name="Alt3" />&emsp;
+            Não&ensp;<input type="radio" name="Alt3" />
         </h4>
     </div>
     <br />
@@ -74,8 +63,8 @@
     <div id="div1">
         <h4>Seu equipamento acende as luzes ao iniciar?</h4>
         <h4>
-            Sim&ensp;<input type="radio" name="Alt" />&emsp;
-            Não&ensp;<input type="radio" name="Alt" />
+            Sim&ensp;<input type="radio" name="Alt4" />&emsp;
+            Não&ensp;<input type="radio" name="Alt4" />
         </h4>
     </div>
     <br />
@@ -84,7 +73,7 @@
         <h3>Resolveu seu problema?</h3>
         <div class="form-group row">
             <div class="col-md-1">
-                <input type="submit" id="btnLogar" value="Sim" class="btn btn-primary" />
+                <p><a href="~/Home/Sair" class="btn btn-primary">Sim </a></p>
             </div>
             <div class="col-md-1">
                 <p><a href="~/Windows/Pre_Chamado" class="btn btn-primary btn-info">Não &raquo;</a></p>
@@ -92,3 +81,4 @@
         </div>
         <br />
     </div>
+

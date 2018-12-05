@@ -114,7 +114,7 @@ namespace Library.Class.Models
             return this;
         }
 
-        protected Chamados()
+        public Chamados()
         {
 
         }
@@ -122,6 +122,11 @@ namespace Library.Class.Models
         public override string ToString()
         {
             return String.Format("{0}{1}{2}", CodigoDepartamento.ToString().PadLeft(3, '0'), CodigoTipoChamado.ToString().PadLeft(2, '0'), CodigoChamado.ToString().PadLeft(5, '0'));
+        }
+
+        public string ToString(string codigodepartamento,string codigotipochamado, string codigochamado)
+        {
+            return String.Format("{0}{1}{2}", codigodepartamento.ToString().PadLeft(3, '0'), codigotipochamado.ToString().PadLeft(2, '0'), codigochamado.ToString().PadLeft(5, '0'));
         }
     }
 }

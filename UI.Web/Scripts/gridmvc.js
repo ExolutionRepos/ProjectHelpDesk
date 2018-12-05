@@ -389,7 +389,7 @@ GridMvc.lang.en = {
     filterSelectTypes: {
         Equals: "Equals",
         StartsWith: "StartsWith",
-        Contains: "Contains",
+        Contains: "Contem",
         EndsWith: "EndsWith",
         GreaterThan: "Greater than",
         LessThan: "Less than"

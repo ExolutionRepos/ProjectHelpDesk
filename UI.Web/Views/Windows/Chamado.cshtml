@@ -1,42 +1,33 @@
-﻿@model IEnumerable<Library.Class.Models.Chamados>
+﻿@model IEnumerable<UI.Web.Models.ClassGRID>
 
 @using GridMvc.Html
 
 <div class="code-cut">
     @Html.Grid(Model).Columns(columns =>
-                    {
-                        columns.Add(c => c.CodigoChamado).Titled("Scheme ID").Filterable(true);
-                        columns.Add(c => c.Descricao).Titled("SchemeName").Filterable(true);
-                        columns.Add()
-                        .Encoded(false)
-                        .Sanitized(false)
-                        .SetWidth(30)
-                        .RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.CodigoChamado }));
+{
+    columns.Add(c => c.CodigoChamado).Titled("Chamado").Filterable(true);
+    columns.Add(c => c.Descricao).Titled("Descrição").Filterable(true);
+    columns.Add(c => c.Observacao).Titled("Observação").Filterable(true);
+    columns.Add(c => c.Status).Titled("Status").Filterable(true);
+    columns.Add(c => c.DataFinalizacao).Titled("Data de Finalização").Filterable(true);
+    ////columns.Add()
+    ////    .Encoded(false)
+    ////    .Sanitized(false)
+    ////    .SetWidth(30)
+    ////    .RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.CodigoChamado }));
 
-                    }).WithPaging(10).Sortable(true)
-</div>  
-
-    <h2>Abrir chamado</h2>
-
-
-
+}).WithPaging(10).Sortable(true)
+</div>
 
 
-
-
-
-
-
-
-
-<div class="col-md-6">
-    <div class="form-group row">
+<div class="col-md-6 right">
+    <div class="form-group row right">
         @*<div class="col-md-2">
-            <input type="submit" id="btnLogar" value="Cadastrar usuário" class="btn btn-primary" />
-        </div>*@
-        <div class="col-lg-6">
+                <input type="submit" id="btnLogar" value="Cadastrar usuário" class="btn btn-primary" />
+            </div>*@
+        <div class="col-lg-6 right" >
             <br /><br />
-            <p><a href="~/Windows/FAQ" class="btn btn-primary btn-info">Abrir chamado &raquo;</a></p>
+            <p class="right"><a href="~/Windows/FAQ" class="btn btn-primary btn-info">Abrir chamado &raquo;</a></p>
         </div>
     </div>
 </div>
